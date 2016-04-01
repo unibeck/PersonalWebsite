@@ -173,6 +173,7 @@ md-content.md-padding.card.md-teal-theme{
 .projectGridList {
   margin-left: 16px;
   margin-right: 16px;
+  margin-bottom: 16px;
 }
 
 .projectGridTile {
@@ -202,4 +203,9 @@ md-content.md-padding.card.md-teal-theme{
   margin: 0px;
   padding-bottom: 8px;
   max-height: 36px;
+}
+
+.projectCardButton{
+  margin: 0px;
+  padding: 0px;
 }
