@@ -66,47 +66,38 @@
 
             <!-- About Me -->
             <div class="aboutme-img">
-              <div hide show-gt-sm>
-                <div class="wrap">
-                  <h4 class="aboutme-header md-display-2" layout="row" layout-align="center end">{{section.aboutme.title}}</h4>
-                  <md-toolbar class="section-block-aboutme md-warn md-hue-1">
-                    <h1 class="section-text md-subhead">
-                      {{section.aboutme.text}}
-                    </h1>
-                    <section layout="row" layout-align="center center">
-                      <md-button md-no-ink style="color: yellow">Read More</md-button>
-                    </section>
-                  </md-toolbar>
-                </div>
+              <div class="wrap">
+                <h4 class="aboutme-header md-display-2" layout="row" layout-align="center end">{{section.aboutme.title}}</h4>
+                <md-toolbar class="section-block-aboutme md-warn md-hue-1">
+                  <h1 class="section-text md-subhead">
+                    {{section.aboutme.text}}
+                  </h1>
+                  <section layout="row" layout-align="center center">
+                    <md-button md-no-ink style="color: yellow">Read More</md-button>
+                  </section>
+                </md-toolbar>
               </div>
             </div>
             <!-- End About Me -->
             
             <!-- Projects -->
             <div class="project-img wrap-projectimg" md-theme="teal">
-              <div class="wrap-project" layout-wrap>
+              <div class="wrap-project">
                 <h4 class="project-header md-display-2" layout="row" layout-align="center center">{{section.projects.title}}</h4>
                 <md-content class="header-spacer"></md-content>
-                <md-grid-list class="projectGridList" layout="column" layout-align="space-around end" md-cols-xs="1" md-cols-sm="3" md-cols-md="3" md-cols-gt-md="3" md-row-height="1:1" md-gutter="16px">
-                  <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1">
-                  <img class="projectGridTile" ng-src="{{section.projects.activityWeather.img}}" class="md-card-image" alt="">
-                    <md-grid-tile-footer class="projectGridTileFooter">
-                      <h3>{{section.projects.activityWeather.title}}</h3>
-                    </md-grid-tile-footer>
-                  </md-grid-tile>
-                  <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1">
-                  <img class="projectGridTile" ng-src="{{section.projects.activityWeather.img}}" class="md-card-image" alt="">
-                    <md-grid-tile-footer class="projectGridTileFooter">
-                      <h3>{{section.projects.activityWeather.title}}</h3>
-                    </md-grid-tile-footer>
-                  </md-grid-tile>
-                  <md-grid-tile md-rowspan="1" md-colspan="1" md-colspan-sm="1">
-                  <img class="projectGridTile" ng-src="{{section.projects.activityWeather.img}}" class="md-card-image" alt="">
-                    <md-grid-tile-footer class="projectGridTileFooter">
-                      <h3>{{section.projects.activityWeather.title}}</h3>
-                    </md-grid-tile-footer>
-                  </md-grid-tile>
-                </md-grid-list>
+
+                <md-content class="md-padding transparent" layout-xs="column" layout="row">
+                  <div ng-repeat="projectTile in projectTiles" flex-xs="" flex-gt-xs="33" layout="column">
+                    <md-card>
+                      <md-button class="projectCardButton">
+                        <img ng-src="{{projectTile.img}}" class="md-card-image">
+                      </md-button>
+                      <md-card-footer>
+                        {{projectTile.title}}
+                      </md-card-footer>
+                    </md-card>
+                  </div>
+                </md-content>
                
                 <md-toolbar class="section-block-project md-warn md-hue-1">
                   <h1 class="section-text md-subhead">
@@ -127,47 +118,15 @@
                 <md-content class="header-spacer"></md-content>
 
                 <md-content class="md-padding transparent" layout-xs="column" layout="row">
-                  <div flex-xs="" flex-gt-xs="33" layout="column">
+                  <div ng-repeat="updateCard in updateCards" flex-xs="" flex-gt-xs="33" layout="column">
                     <md-card>
                       <md-card-header layout-wrap class="updateCardHeader">
                         <md-card-avatar class="updateCardIcon">
-                          <md-icon>web</md-icon>
+                          <md-icon>{{updateCard.icon}}</md-icon>
                         </md-card-avatar>
                         <md-card-header-text class="updateCardHeaderText">
-                          <span class="md-title">Personal Website</span>
-                          <span class="md-subhead">Update 1.1.3</span>
-                        </md-card-header-text>
-                        <md-card-actions class="updateCardButton" layout-align="end end">
-                          <md-button>Read More</md-button>
-                        </md-card-actions>
-                      </md-card-header>
-                    </md-card>
-                  </div>
-                  <div flex-xs="" flex-gt-xs="33" layout="column">
-                    <md-card>
-                      <md-card-header layout-wrap class="updateCardHeader">
-                        <md-card-avatar class="updateCardIcon">
-                          <md-icon>web</md-icon>
-                        </md-card-avatar>
-                        <md-card-header-text class="updateCardHeaderText">
-                          <span class="md-title">Activity Weather</span>
-                          <span class="md-subhead">Update 0.7.4</span>
-                        </md-card-header-text>
-                        <md-card-actions class="updateCardButton" layout-align="end end">
-                          <md-button>Read More</md-button>
-                        </md-card-actions>
-                      </md-card-header>
-                    </md-card>
-                  </div>
-                  <div flex-xs="" flex-gt-xs="33" layout="column">
-                    <md-card>
-                      <md-card-header layout-wrap class="updateCardHeader">
-                        <md-card-avatar class="updateCardIcon">
-                          <md-icon>web</md-icon>
-                        </md-card-avatar>
-                        <md-card-header-text class="updateCardHeaderText">
-                          <span class="md-title">Career</span>
-                          <span class="md-subhead">3/28/2016</span>
+                          <span class="md-title">{{updateCard.title}}</span>
+                          <span class="md-subhead">{{updateCard.subTitle}}</span>
                         </md-card-header-text>
                         <md-card-actions class="updateCardButton" layout-align="end end">
                           <md-button>Read More</md-button>
