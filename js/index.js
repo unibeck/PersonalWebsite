@@ -3,20 +3,25 @@ angular.module('App', [
 ]);
 
 angular.module('App').config(function($mdThemingProvider) {
-  $mdThemingProvider.theme('blue-grey')
+  $mdThemingProvider.theme('home')
     .primaryPalette('blue-grey')
     .accentPalette('indigo')
+    .warnPalette('red');
+
+  $mdThemingProvider.theme('aboutMe')
+    .primaryPalette('deep-orange')
+    .accentPalette('brown')
     .warnPalette('green');
 
-  $mdThemingProvider.theme('teal')
-      .primaryPalette('teal')
-      .accentPalette('orange')
-      .warnPalette('blue');
+  $mdThemingProvider.theme('projects')
+    .primaryPalette('teal')
+    .accentPalette('orange')
+    .warnPalette('blue');
 
-  $mdThemingProvider.theme('purple')
-      .primaryPalette('purple')
-      .accentPalette('cyan')
-      .warnPalette('deep-orange');
+  $mdThemingProvider.theme('updates')
+    .primaryPalette('purple')
+    .accentPalette('cyan')
+    .warnPalette('deep-orange');
 })
 
 angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
@@ -26,29 +31,29 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
   }
 
   $scope.data = {
-        title: 'Jonathan Beckman',
-        user: {
-            email: 'JonathanTBeckman@gmail.com',
-            iconurl: 'images/profile.png'
-        }
+    title: 'Jonathan Beckman',
+    user: {
+      email: 'JonathanTBeckman@gmail.com',
+      iconurl: 'images/profile.png'
+    }
   };
 
   $scope.section = {
-      aboutme: {
-          title: 'About Me',
-          text: 'You\'re using the first website that I have built. Here you can find all of my notable achievements through-out my career as a software engineer, my contact information, and some other personal updates of my life. To learn more about me, head over to any of my social networks or select \'Read More\'.',
-          position: 'absolute',
-          top: '40%'
-      },
-      projects: {
-          title: 'Projects',
-          text: 'These are the following projects I\'ve been working on in my spare time. I have taken interest in these projects becuase of my curiousity to learn and establish a foundation in the latest languages/technologies.'
-      },
-      updates:{
-          title: 'Updates',
-          text: 'Here you can find the latest updates to my projects, my career, and my life in general. Above are my latest updates, but I implore you to head into the Update page to learn more.'
-      }
-    };
+    aboutme: {
+      title: 'About Me',
+      text: 'You\'re using the first website that I have built. Here you can find all of my notable achievements through-out my career as a software engineer, my contact information, and some other personal updates of my life. To learn more about me, head over to any of my social networks or select \'Read More\'.',
+      position: 'absolute',
+      top: '40%'
+    },
+    projects: {
+      title: 'Projects',
+      text: 'These are the following projects I\'ve been working on in my spare time. I have taken interest in these projects becuase of my curiousity to learn and establish a foundation in the latest languages/technologies.'
+    },
+    updates:{
+      title: 'Updates',
+      text: 'Here you can find the latest updates to my projects, my career, and my life in general. Above are my latest updates, but I implore you to head into the Update page to learn more.'
+    }
+  };
 
   $scope.projectTiles = [
     {
@@ -106,11 +111,26 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
       link : '',
       title: 'Updates',
       icon: 'flag'
+    }
+  ];
+
+  $scope.aboutMeTiles = {
+    mainIntro: 'Most of my free time is spent doing activities and hobbies outside. From camping in the Adirondack\'s with my girlfriend to throwing a football around with the guys, I\'m always enjoying what Earth has to offer. Some other outside hobbies I love are snowboarding, riding my motorcycle, fishing, and hanging around a bonfire with all of my closest friends.',
+    subIntro: 'If I am inside, I\'m probably working on my personal projects or school work, watching Netflix with my love, or playing games on my PC. My favorite show is a throw up between Mad Men or House of Cards, with The Office and Parks and Recreation as 3rd and 4th. As for gaming, lately I\'ve been really enjoying Rainbow Six Seige and Dirt 3.'
+  };
+
+  $scope.aboutMeInformation = [
+    {
+      icon: 'email',
+      title: 'JonathanTBeckman@gmail.com',
     },
     {
-      link : '',
-      title: 'Career',
-      icon: 'work'
+      icon: 'phone',
+      title: '518-567-9965',
+    },
+    {
+      icon: 'location_on',
+      title: 'Hudson, New York 12534',
     }
   ];
 

@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <div ng-controller="AppCtrl" layout="row" layout-fill md-theme="blue-grey"><!--theme declaration-->
+    <div ng-cloak ng-controller="AppCtrl" layout="row" layout-fill md-theme="home"><!--theme declaration-->
       <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar class="md-hue-2 drawer-header">
           <img ng-src="{{data.user.iconurl}}" class="profile-pic" alt="">
@@ -26,7 +26,7 @@
             <span class="md-body-1">{{data.user.email}}</span>
           </div>
         </md-toolbar>
-        <md-toolbar class="md-primary" role="navigation" flex>
+        <md-toolbar role="navigation" flex>
             <md-list-item ng-repeat="item in menu" ng-click="doPrimaryAction($event)">
               <md-icon>{{item.icon}}</md-icon>
               <p class="md-body-2">{{item.title}}</p>
@@ -65,7 +65,7 @@
           <md-content layout="column" flex> <!--Need for full height sidenav-->
 
             <!-- About Me -->
-            <div class="aboutme-img">
+            <div class="aboutme-img" md-theme="aboutMe">
               <div class="wrap">
                 <h4 class="aboutme-header md-display-2" layout="row" layout-align="center end">{{section.aboutme.title}}</h4>
                 <md-toolbar class="section-block-aboutme md-warn md-hue-1">
@@ -81,7 +81,7 @@
             <!-- End About Me -->
             
             <!-- Projects -->
-            <div class="project-img wrap-projectimg" md-theme="teal">
+            <div class="project-img wrap-projectimg" md-theme="projects">
               <div class="wrap-project">
                 <h4 class="project-header md-display-2" layout="row" layout-align="center center">{{section.projects.title}}</h4>
                 <md-content class="header-spacer"></md-content>
@@ -112,7 +112,7 @@
             <!-- End Projects -->
 
             <!-- Updates -->
-            <div class="update-img" layout-wrap md-theme="purple">
+            <div class="update-img" layout-wrap md-theme="updates">
               <div class="wrap-project" layout-wrap>
                 <h4 class="updates-header md-display-2" layout="row" layout-align="center center">{{section.updates.title}}</h4>
                 <md-content class="header-spacer"></md-content>
@@ -150,7 +150,6 @@
 
           </md-content>
         </div>
-
       </section>
     </div>
 
