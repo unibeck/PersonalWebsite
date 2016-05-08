@@ -1,0 +1,152 @@
+body, html{
+  height: 100%;
+  margin:0;
+}
+
+.social-button {
+  color: #888;
+  padding: 8px;
+}
+
+.fa-google-plus-square:hover {
+    color: #dd4b39;
+}
+
+.fa-github-square:hover {
+    color: #4183c4;
+}
+
+.fa-linkedin-square:hover {
+    color: #0077b5;
+}
+
+.aboutme-title{
+  padding-top: 16px;
+  padding-right: 32px;
+  padding-left: 32px;
+  color: #1976D2;
+  text-align: center;
+}
+
+.aboutme-toolbar{
+  padding-bottom: 128px;
+  overflow: auto;
+}
+
+.side-margin{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.cardPic{
+  height: 296px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hobbyTile{
+  position: relative; 
+  margin: 16px 16px 32px;
+  overflow: hidden;
+  background: linear-gradient(240deg, #00BCD4 0%, #00897B 51%, #388E3C 75%);
+}
+
+#hobbyPic{
+  height: 296px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
+
+.hobbyPicText{
+  color: #fff;
+  bottom: 16px;
+  position: absolute;
+  left: 16px;
+  margin-right: 16px;
+}
+
+#hobbyPicTitle{
+  color: #fff;
+}
+
+#hobbyPicBody{
+  color: #fff;
+  display: none;
+}
+
+.hobbyTile:hover #hobbyPic{
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  opacity:0.5;
+}
+
+.hobbyTile:hover #hobbyPicBody{
+  display: block;
+}
+
+.hobbyTileButton{
+  position: absolute;
+  top: 16px;
+    right: 16px;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25));
+}
+
+#hobbyTileReplay{
+    right: 64px;
+}
+
+.skills{
+  position: relative;
+}
+
+.skillsTitle{
+  background-color: #fff;
+  color: #1976D2;
+    padding: 16px;
+}
+
+.donuts{
+  padding-left: 16px;
+  width: 232px;
+  margin: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  height: 116px;
+  margin-bottom: 16px;
+}
+
+.donutNum{
+  position: absolute;
+  margin-top: 92px;
+  left: 49%;
+  right: 49%;
+  color: #2196F3;
+}
+
+.slice {
+  transition: all 200ms ease;
+}
+
+.slice:hover {
+  transform: scale(1.1);
+  stroke-width: 0px;
+}
+
+.fw-100 { font-weight: 100; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-700 { font-weight: 700; }
+.fw-900 { font-weight: 900; }
