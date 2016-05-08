@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+  <head>
+    <meta charset="UTF-8">
+    <title>Unibeck</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900">
+
+    <!-- Material Design icon font -->
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <!-- FontAwesome icon font -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/aboutMe.css">
+  </head>
+
+  <body>
+    <div ng-cloak ng-controller="AppCtrl" layout="column" layout-fill md-theme="projects"><!--theme declaration-->
+      <md-toolbar style="background-color: #fff; color: #888">
+        <div class="md-toolbar-tools">
+          
+          <span class="mdl-layout-title">{{data.title}}</span>
+          <span flex></span>
+          <div class="mdl-layout-spacer"></div>
+          
+          <a href="#"><i class="fa fa-github-square fa-2x social-button"></i>
+            <md-tooltip>
+              rajonbeckman
+            </md-tooltip>
+          </a>
+          <a href="#"><i class="fa fa-linkedin-square fa-2x social-button"></i>
+            <md-tooltip>
+              Jonathan Beckman
+            </md-tooltip>
+          </a>
+          <a href="#"><i class="fa fa-google-plus-square fa-2x social-button"></i>
+            <md-tooltip>
+              rajonbeckman
+            </md-tooltip>
+          </a>
+        </div>
+      </md-toolbar>
+      <section layout="column" role="main" flex>
+        <md-content flex style="background-color: #EEEEEE">
+          <div style="position: relative">
+            <div class="md-display-2 side-margin aboutme-title" style="margin-top: 32px">{{section.aboutme.title}}</div>
+            <div class="md-headline side-margin aboutme-title">{{section.aboutme.text}}</div>
+            <div class="side-margin" layout="column" layout-gt-sm="row" style="margin-top: 32px;">
+              <div flex="100" flex-gt-sm="66">
+                <div ng-repeat="aboutMeCard in aboutMeCards">
+                  <div class="hobbyTile">
+                    <div id="hobbyPic" ng-style="{'background-image':'url({{aboutMeCard.img}})'}"></div>
+                    <md-button class="md-icon-button hobbyTileButton" ng-href="{{aboutMeCard.link}}">
+                      <md-icon style="color: #fff">photo_album</md-icon>
+                    </md-button>
+                    <div class="hobbyPicText">
+                      <div class="md-display-1" id="hobbyPicTitle">{{aboutMeCard.title}}</div>
+                      <div id="hobbyPicBody">{{aboutMeCard.body}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="margin: 16px" flex="100" flex-gt-sm="33">
+                <div>
+                  <div class="cardPic" style="background-image: url('images/profile.jpg')">
+                    <div class="md-display-1 hobbyPicText">Contact Info</div>
+                  </div>
+                  <md-list style="background-color: #fff">
+                    <md-list-item ng-repeat="info in aboutMeInformation">
+                      <md-button ng-disabled="true" class="md-icon-button">
+                        <md-icon style="color: #1976D2">{{info.icon}}</md-icon>
+                      </md-button>
+                      <p>{{info.title}}</p>
+                    </md-list-item>
+                  </md-list>
+                </div>
+                <div style="margin-top: 32px;">
+                  <div class="md-display-1 skillsTitle">Skills</div>
+                  <div style="background-color: #fff; padding: 0px 32px 16px" ng-repeat="chart in charts">
+                    <div class="skills" layout="column" layout-align="space-around center">
+                      <h1 class="donutNum">{{chart.rank}}</h1>
+                      <svg class="donuts" id="donut-{{$index}}"></svg>
+                      <div class="md-headline">{{chart.title}}</div>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                  </div>
+                </div>
+              </div>
+            </div>
+  <!--
+            <div class="md-padding overlap-cards" layout-xs="column" layout="row">
+              <div ng-repeat="aboutMeCard in aboutMeCards" flex-xs="" flex-gt-xs="33" layout="column">
+                <md-card class="md-whiteframe-z2" style="margin: 16px">
+                  <div class="hobbyPic expandPic">
+                    <div class="md-display-1 hobbyPicText">{{aboutMeCard.title}}</div>
+                  </div>
+                  <md-card-content>
+                    <p>{{aboutMeCard.body}}</p>
+                  </md-card-content>
+                </md-card>
+              </div>
+            </div>
+  -->
+          </div>
+        </md-content>
+      </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+      
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+    <script src="js/aboutMe.js"></script>
+
+  </body>
+</html>
