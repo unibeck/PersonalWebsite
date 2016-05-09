@@ -244,7 +244,7 @@ function resetGif(id) {
 };
 
 var myanim = new Image();
-    myanim.src = 'images/motorcycle_frame.jpg';
+    myanim.src = 'images/motorcycle.gif';
     myanim.onload = function() {
         document.getElementById('tilePicGif').src = myanim.src;
     }
