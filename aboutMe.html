@@ -50,9 +50,25 @@
             <div class="md-headline side-margin aboutme-title">{{section.aboutme.text}}</div>
             <div class="side-margin" layout="column" layout-gt-sm="row" style="margin-top: 32px;">
               <div flex="100" flex-gt-sm="66">
+                <div>
+                  <div class="hobbyTile">
+                    <div id="hobbyPic">
+                        <img id="tilePicGif" src="images/motorcycle.gif">
+                    </div>
+                    <md-button class="md-icon-button hobbyTileButton" ng-href="{{aboutMeCard.link}}">
+                      <md-icon style="color: #fff">photo_album</md-icon>
+                    </md-button>
+                    <div class="hobbyPicText">
+                      <div class="md-display-1" id="hobbyPicTitle">Riding</div>
+                      <div id="hobbyPicBody">Cool, crisp air flows around your face as every hue of green flickers past. A 100hp engine block sits between your legs that howls at you to let her breath. Experiencing a road, rather than traveling on one, is the most exceptional feeling - that is what I love most about riding.</div>
+                    </div>
+                  </div>
+                </div>
                 <div ng-repeat="aboutMeCard in aboutMeCards">
                   <div class="hobbyTile">
-                    <div id="hobbyPic" ng-style="{'background-image':'url({{aboutMeCard.img}})'}"></div>
+                    <div id="hobbyPic">
+                        <img class="tilePic" ng-src="{{aboutMeCard.img}}">
+                    </div>
                     <md-button class="md-icon-button hobbyTileButton" ng-href="{{aboutMeCard.link}}">
                       <md-icon style="color: #fff">photo_album</md-icon>
                     </md-button>
@@ -65,7 +81,8 @@
               </div>
               <div style="margin: 16px" flex="100" flex-gt-sm="33">
                 <div>
-                  <div class="cardPic" style="background-image: url('images/profile.jpg')">
+                  <div class="cardPic">
+                    <img class="tilePic" src="images/profile.jpg">
                     <div class="md-display-1 hobbyPicText">Contact Info</div>
                   </div>
                   <md-list style="background-color: #fff">
@@ -90,7 +107,7 @@
                 </div>
               </div>
             </div>
-  <!--
+  <!--style="background-image: url('images/profile.jpg')"
             <div class="md-padding overlap-cards" layout-xs="column" layout="row">
               <div ng-repeat="aboutMeCard in aboutMeCards" flex-xs="" flex-gt-xs="33" layout="column">
                 <md-card class="md-whiteframe-z2" style="margin: 16px">

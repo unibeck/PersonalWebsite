@@ -10,21 +10,6 @@ angular.module('App').config(function($mdThemingProvider) {
     
     .accentPalette('indigo')
     .warnPalette('red');
-
-  $mdThemingProvider.theme('aboutMe')
-    .primaryPalette('deep-orange')
-    .accentPalette('brown')
-    .warnPalette('green');
-
-  $mdThemingProvider.theme('projects')
-    .primaryPalette('light-blue')
-    .accentPalette('orange')
-    .warnPalette('teal');
-
-  $mdThemingProvider.theme('updates')
-    .primaryPalette('purple')
-    .accentPalette('cyan')
-    .warnPalette('deep-orange');
 })
 
 angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
@@ -33,96 +18,15 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
     $mdSidenav(menu).toggle();
   }
 
-  $scope.data = {
-    title: 'Jonathan Beckman',
-    user: {
-      email: 'JonathanTBeckman@gmail.com',
-      iconurl: 'images/profile.jpg'
-    }
-  };
-
   $scope.section = {
     aboutme: {
       title: 'About Me',
-      text: 'Most of my free time is spent having fun outside. From camping in the Adirondack\'s with my girlfriend to throwing a football around with the guys, I\'m always enjoying what Earth has to offer.',
-      position: 'absolute',
-      top: '40%'
-    },
-    projects: {
-      title: 'Projects',
-      text: 'These are the following projects I\'ve been working on in my spare time. I have taken interest in these projects becuase of my curiousity to learn and establish a foundation in the latest languages/technologies.'
-    },
-    updates:{
-      title: 'Updates',
-      text: 'Here you can find the latest updates to my projects, my career, and my life in general. Above are my latest updates, but I implore you to head into the Update page to learn more.'
+      text: 'Most of my free time is spent having fun outside. From camping in the Adirondack\'s with my girlfriend to throwing a football around with the guys, I\'m always enjoying what Earth has to offer.'
     }
   };
 
-  $scope.projectTiles = [
-    {
-      title: 'Activity Weather',
-      img: 'images/ActivityWeather.png',
-      body: 'Find out more about my Android app \"Activity Weather\". Select your preferred weather that you like to do an activity with and the app will let you know when the weather is nice enough to do that sport, lawn work, or any hobby. For example, Activity Weather will let you know if you have enough time to mow your lawn before a thunderstorm hits.'
-    },
-    {
-      title: 'Personal Website',
-      img: 'images/ActivityWeather.png',
-      body: 'You\'re using it! This is my first major project involving the latest web development tools, including HTML5, Angular Material, and CSS3. You can learn more about the development process by clicking read more. Thank you for browsing!',
-    },
-    {
-      title: 'SharePoint',
-      img: 'images/ActivityWeather.png',
-      body: 'This is the project I\'ve been mostly concerned with during my time with NYS Derpartment of Health. SharePoint was the main development tool, where I further learn JS, CSS, and HTML. Though I can not disclose everything about the site, you can select read more if you would like to read about what I learned during the process',
-    }
-  ];
-
-  $scope.updateCards = [
-    {
-      title: 'Activity Weather',
-      subTitle: 'Update 0.7.4',
-      icon: 'android'
-    },
-    {
-      title: 'Personal Website',
-      subTitle: 'Update 0.1.3',
-      icon: 'web'
-    },
-    {
-      title: 'Career',
-      subTitle: '3/28/2016',
-      icon: 'work'
-    }
-  ];
-
-  $scope.menu = [
-    {
-      link : '',
-      title: 'Home',
-      icon: 'home'
-    },
-    {
-      link : '',
-      title: 'About Me',
-      icon: 'person'
-    },
-    {
-      link : '',
-      title: 'Projects',
-      icon: 'content_paste'
-    },
-    {
-      link : '',
-      title: 'Updates',
-      icon: 'flag'
-    }
-  ];
-
   $scope.aboutMeCards = [
-    {
-      img: 'images/motorcycle.gif',
-      title: 'Riding',
-      body: 'Cool, crisp air flows around your face as every hue of green flickers past. A 100hp engine block sits between your legs that howls at you to let her breath. Experiencing a road, rather than traveling on one, is the most exceptional feeling - that is what I love most about riding.'
-    },
+    
     {
       img: 'images/fishing.jpg',
       link: 'https://goo.gl/photos/2eh3c2w9yZnvb98A7',
@@ -338,6 +242,12 @@ function resetGif(id) {
     img.src = "#";
     img.src = imageUrl;
 };
+
+var myanim = new Image();
+    myanim.src = 'images/motorcycle_frame.jpg';
+    myanim.onload = function() {
+        document.getElementById('tilePicGif').src = myanim.src;
+    }
 
 /*
 {
