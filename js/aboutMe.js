@@ -73,6 +73,12 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
       title: "AngularJS",
     }
   ];
+    
+  $scope.resetGif = function() {
+    var myanim = new Image();
+    myanim.src = 'images/motorcycle.gif';
+    document.getElementById('tilePicGif').src = myanim.src;
+  };
 
 });
 
@@ -236,18 +242,12 @@ angular.element(document).ready(function () {
 
 });
 
-function resetGif(id) {
-    var img = document.getElementById(id);
-    var imageUrl = img.src;
-    img.src = "#";
-    img.src = imageUrl;
-};
-
 var myanim = new Image();
     myanim.src = 'images/motorcycle.gif';
     myanim.onload = function() {
         document.getElementById('tilePicGif').src = myanim.src;
     }
+    
 
 /*
 {
