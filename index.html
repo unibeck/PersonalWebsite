@@ -14,142 +14,143 @@
     <!-- FontAwesome icon font -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
   </head>
 
   <body>
-    <div ng-cloak ng-controller="AppCtrl" layout="row" layout-fill md-theme="home"><!--theme declaration-->
-      <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-        <md-toolbar class="md-hue-2 drawer-header">
-          <img ng-src="{{data.user.iconurl}}" class="profile-pic" alt="">
-          <div class="email-container">
-            <span class="md-body-1">{{data.user.email}}</span>
-          </div>
-        </md-toolbar>
-        <md-toolbar role="navigation" flex>
-            <md-list-item ng-repeat="item in menu" ng-click="doPrimaryAction($event)">
-              <md-icon>{{item.icon}}</md-icon>
-              <p class="md-body-2">{{item.title}}</p>
-              <md-icon>chevron_right</md-icon>
-            </md-list-item>
-        </md-toolbar>
-      </md-sidenav>
-      <section layout="column" role="main" flex>
-        <md-toolbar>
-          <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
-              <md-icon>menu</md-icon>
-            </md-button>
-            <span id="headliner" class="mdl-layout-title">{{data.title}}</span>
-            <span flex></span>
-            <div class="mdl-layout-spacer"></div>
-            
-            <a href="#"><i class="fa fa-github-square fa-2x social-button"></i>
-              <md-tooltip>
-                rajonbeckman
-              </md-tooltip>
-            </a>
-            <a href="#"><i class="fa fa-linkedin-square fa-2x social-button"></i>
-              <md-tooltip>
-                Jonathan Beckman
-              </md-tooltip>
-            </a>
-            <a href="#"><i class="fa fa-google-plus-square fa-2x social-button"></i>
-              <md-tooltip>
-                rajonbeckman
-              </md-tooltip>
-            </a>
-          </div>
-        </md-toolbar>
-        <div layout="column" flex class="content-wrapper">
-          <md-content layout="column" flex> <!--Need for full height sidenav-->
-
-            <!-- About Me -->
-            <div class="aboutme-img" md-theme="aboutMe">
-              <div class="wrap">
-                <h4 class="aboutme-header md-display-2" layout="row" layout-align="center end">{{section.aboutme.title}}</h4>
-                <md-toolbar class="section-block-aboutme md-warn md-hue-1">
-                  <h1 class="section-text md-subhead">
-                    {{section.aboutme.text}}
-                  </h1>
-                  <section layout="row" layout-align="center center">
-                    <md-button md-no-ink style="color: yellow">Read More</md-button>
-                  </section>
-                </md-toolbar>
-              </div>
-            </div>
-            <!-- End About Me -->
-            
-            <!-- Projects -->
-            <div class="project-img wrap-projectimg" md-theme="projects">
-              <div class="wrap-project">
-                <h4 class="project-header md-display-2" layout="row" layout-align="center center">{{section.projects.title}}</h4>
-                <md-content class="header-spacer"></md-content>
-
-                <md-content class="md-padding transparent" layout-xs="column" layout="row">
-                  <div ng-repeat="projectTile in projectTiles" flex-xs="" flex-gt-xs="33" layout="column">
-                    <md-card>
-                      <md-button class="projectCardButton">
-                        <img ng-src="{{projectTile.img}}" class="md-card-image">
-                      </md-button>
-                      <md-card-footer>
-                        {{projectTile.title}}
-                      </md-card-footer>
-                    </md-card>
-                  </div>
-                </md-content>
-               
-                <md-toolbar class="section-block-project md-warn md-hue-1">
-                  <h1 class="section-text md-subhead">
-                    {{section.projects.text}}
-                  </h1>
-                  <section layout="row" layout-align="center center">
-                    <md-button md-no-ink style="color: yellow">Read More</md-button>
-                  </section>
-                </md-toolbar>
-              </div>
-            </div>
-            <!-- End Projects -->
-
-            <!-- Updates -->
-            <div class="update-img" layout-wrap md-theme="updates">
-              <div class="wrap-project" layout-wrap>
-                <h4 class="updates-header md-display-2" layout="row" layout-align="center center">{{section.updates.title}}</h4>
-                <md-content class="header-spacer"></md-content>
-
-                <md-content class="md-padding transparent" layout-xs="column" layout="row">
-                  <div ng-repeat="updateCard in updateCards" flex-xs="" flex-gt-xs="33" layout="column">
-                    <md-card>
-                      <md-card-header layout-wrap class="updateCardHeader">
-                        <md-card-avatar class="updateCardIcon">
-                          <md-icon>{{updateCard.icon}}</md-icon>
-                        </md-card-avatar>
-                        <md-card-header-text class="updateCardHeaderText">
-                          <span class="md-title">{{updateCard.title}}</span>
-                          <span class="md-subhead">{{updateCard.subTitle}}</span>
-                        </md-card-header-text>
-                        <md-card-actions class="updateCardButton" layout-align="end end">
-                          <md-button>Read More</md-button>
-                        </md-card-actions>
-                      </md-card-header>
-                    </md-card>
-                  </div>
-                </md-content>
-               
-                <md-toolbar class="section-block-project md-warn md-hue-1">
-                  <h1 class="section-text md-subhead">
-                    {{section.updates.text}}
-                  </h1>
-                  <section layout="row" layout-align="center center">
-                    <md-button md-no-ink style="color: yellow">Learn More</md-button>
-                  </section>
-                </md-toolbar>
-              </div>
-            </div>
-            <!-- End Updates -->
-
-          </md-content>
+    <div ng-cloak ng-controller="AppCtrl" layout="column" layout-fill md-theme="home"><!--theme declaration-->
+      <md-toolbar style="background-color: #fff; color: #888">
+        <div class="md-toolbar-tools">
+          
+          <span class="mdl-layout-title">Jonathan Beckman</span>
+          <span flex></span>
+          <div class="mdl-layout-spacer"></div>
+          
+          <a href="https://github.com/rajonbeckman"><i class="fa fa-github-square fa-2x social-button"></i>
+            <md-tooltip>
+              rajonbeckman
+            </md-tooltip>
+          </a>
+          <a href="https://www.linkedin.com/in/jonathantbeckman"><i class="fa fa-linkedin-square fa-2x social-button"></i>
+            <md-tooltip>
+              Jonathan Beckman
+            </md-tooltip>
+          </a>
+          <a href="https://www.google.com/+JonathanBeckman9"><i class="fa fa-google-plus-square fa-2x social-button"></i>
+            <md-tooltip>
+              rajonbeckman
+            </md-tooltip>
+          </a>
         </div>
+      </md-toolbar>
+      <section layout="column" role="main" flex>
+        <md-content flex style="background-color: #EEEEEE">
+          <div class="side-margin">
+            <div class="md-display-2 aboutme-title" style="margin-top: 32px">Welcome</div>
+            <div class="md-headline aboutme-title">You're using the first website that I have built. Here you can find all of my notable achievements through-out my career as a software engineer, my contact information, and some other personal updates of my life.</div>
+            <div layout="column" layout-gt-sm="row" style="margin-top: 32px;">
+
+              <!-- About Me Section -->
+              <div flex="100" flex-gt-sm="33" style="padding: 16px">
+                <div md-whiteframe="2" style="margin-bottom: 32px; border-color: #2980B9" class="sectionBorder">
+                  <md-toolbar class="section-text-container" style="background-color: #2980B9 !important;">
+                    <div class="md-display-1 section-text">
+                      About Me
+                      <md-button class="section-button" aria-label="Visit About Me" href="aboutMe.html">
+                      Visit
+                        <md-icon >arrow_forward</md-icon>
+                      </md-button>
+                      <h1 class="md-subhead">
+                        {{section.aboutme.text}}
+                      </h1>
+                    </div>
+                  </md-toolbar>
+
+                  <div style="padding: 16px 16px 0px">
+                    <div style="position: relative">
+                      <div id="img-tile">
+                        <img class="img-fill" ng-src="{{section.aboutme.img}}">
+                      </div>
+                      <div class="md-display-1 tileTitle">Contact Info</div>
+                    </div>
+                    <div style="padding-top: 16px">
+                      <div ng-repeat="info in aboutMeInformation">
+                        <div class="list-item" layout="row">
+                          <md-icon class="list-item-icon">{{info.icon}}</md-icon>
+                          <h1 class="md-subhead list-item-text">{{info.title}}</h1>
+                        </div>
+                        <md-divider ng-if="!$last"></md-divider>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project Section -->
+              <div flex="100" flex-gt-sm="33" style="padding: 16px" md-theme="projects">
+                <div md-whiteframe="2" style="margin-bottom: 32px; border-color: #66BB6A" class="sectionBorder">
+                  <md-toolbar class="section-text-container" style="background-color: #66BB6A !important;">
+                    <div class="md-display-1 section-text">Projects
+                      <h1 class="md-subhead">
+                        {{section.projects.text}}
+                      </h1>
+                    </div>
+                  </md-toolbar>
+
+                  <div ng-repeat="projectTile in projectTiles" style="padding: 16px 16px 0px">
+                    <div style="padding-bottom: 16px">
+                      <div class="md-headline project-title">{{projectTile.title}}
+                        <md-button class="md-icon-button md-primary section-button" href="https://github.com/rajonbeckman/PersonalWebsite">
+                          <md-icon md-font-icon="fa-github-square" class="fa s24"></md-icon>
+                        </md-button>
+                        <p class="md-subhead" style="color: #000; margin-bottom: 8px">{{projectTile.body}}</p>
+                      </div>
+                      
+                      <md-chips>
+                        <md-chip>{{projectTile.tag1}}</md-chip>
+                        <md-chip>{{projectTile.tag2}}</md-chip>
+                        <md-chip>{{projectTile.tag3}}</md-chip>
+                      </md-chips>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- Update Section -->
+              <div flex="100" flex-gt-sm="33" style="padding: 16px">
+                <div md-whiteframe="2" style="margin-bottom: 32px; background-color: transparent">
+                  <div style="margin-bottom: 32px; border-color: #E67E22;" class="sectionBorder">
+                    <md-toolbar class="section-text-container" style="background-color: #e67e22 !important">
+                      <div class="md-display-1 section-text">Updates
+                        <h1 class="md-subhead">
+                          {{section.updates.text}}
+                        </h1>
+                      </div>
+                    </md-toolbar>
+                    <div layout-xs="column" style="padding: 0px 16px 0px">
+                      <div flex="100" layout="column">
+                        <md-list-item class="md-2-line" ng-repeat="updateCard in updateCards" style="padding: 0px" ng-click="showUpdate(updateCard.title, $event)">
+                          <md-icon style="margin: auto; color: #e67e22">{{updateCard.icon}}</md-icon>
+                          <div class="md-list-item-text" style="margin: 16px 8px 16px 16px">
+                            <h3>{{updateCard.title}}</h3>
+                            <p>{{updateCard.subTitle}}</p>
+                          </div>
+                          <md-divider ng-if="!$last"></md-divider>
+                        </md-list-item>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <md-toolbar style="height: 24px; background-color: #4579AD !important">
+            <p class="md-subhead footer-text">Powered by Angular Material. Code licensed under the MIT License.</p>
+          </md-toolbar>
+          <p class="md-subhead footer-text" style="background-color: #2c3e50">© 2015-2016 Unibeck, All rights reserved.</p>
+        </md-content>
       </section>
     </div>
 
@@ -165,3 +166,16 @@
 
   </body>
 </html>
+
+<!--
+<md-button class="md-raised section-button" aria-label="Visit About Me">
+                      Visit
+                      <md-icon style="color: #2980b9">arrow_forward</md-icon>
+                    </md-button>
+                  -->
+
+<!--
+md-button ng-if="$index < 1" class="md-icon-button md-primary">
+                            <md-icon>photo</md-icon>
+                          </md-button>
+-->

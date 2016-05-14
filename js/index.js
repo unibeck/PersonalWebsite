@@ -4,54 +4,74 @@ angular.module('App', [
 
 angular.module('App').config(function($mdThemingProvider) {
   $mdThemingProvider.theme('home')
-    .primaryPalette('blue-grey')
-    .accentPalette('indigo')
+    .primaryPalette('blue', {
+      'hue-2': 'A400'
+    })
+    .accentPalette('blue-grey', {
+      'hue-2': '600'
+    })
     .warnPalette('red');
 
   $mdThemingProvider.theme('aboutMe')
-    .primaryPalette('deep-orange')
-    .accentPalette('brown')
-    .warnPalette('green');
+    .primaryPalette('blue', {
+      'default': '700'
+    })
+    .accentPalette('yellow')
+    .warnPalette('red');
 
   $mdThemingProvider.theme('projects')
-    .primaryPalette('teal')
-    .accentPalette('orange')
-    .warnPalette('blue');
+    .primaryPalette('green', {
+      'default': '600'
+    })
+    .accentPalette('yellow')
+    .warnPalette('red');
 
   $mdThemingProvider.theme('updates')
-    .primaryPalette('purple')
+    .primaryPalette('yellow', {
+      'default': '900'
+    })
     .accentPalette('cyan')
-    .warnPalette('deep-orange');
+    .warnPalette('red');
 })
 
-angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
+angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDialog) {
   
   $scope.toggleSidenav = function(menu) {
     $mdSidenav(menu).toggle();
   }
 
-  $scope.data = {
-    title: 'Jonathan Beckman',
-    user: {
-      email: 'JonathanTBeckman@gmail.com',
-      iconurl: 'images/profile.png'
-    }
+  $scope.isOpen = false;
+
+  $scope.demo = {
+    isOpen: false,
+    count: 0,
+    selectedDirection: 'left'
+  };
+
+  $scope.showUpdate = function(title, event) {
+    $mdDialog.show(
+      $mdDialog.alert()
+        .title('Latest '+title+' Update')
+        .textContent('Inspect')
+        .ariaLabel('Person inspect demo')
+        .ok('Awesome')
+        .targetEvent(event)
+    );
   };
 
   $scope.section = {
     aboutme: {
       title: 'About Me',
-      text: 'You\'re using the first website that I have built. Here you can find all of my notable achievements through-out my career as a software engineer, my contact information, and some other personal updates of my life. To learn more about me, head over to any of my social networks or select \'Read More\'.',
-      position: 'absolute',
-      top: '40%'
+      text: 'Most of my free time is spent doing activities and hobbies outside. From camping in the Adirondack\'s with my girlfriend to throwing a football around with the guys, I\'m always enjoying what Earth has to offer.',
+      img: "images/profile.jpg"
     },
     projects: {
       title: 'Projects',
-      text: 'These are the following projects I\'ve been working on in my spare time. I have taken interest in these projects becuase of my curiousity to learn and establish a foundation in the latest languages/technologies.'
+      text: 'These are the following projects I\'ve been working on in my spare time. I have taken interest in these projects becuase of my curiousity to learn and establish a foundation in the latest languages and technologies.'
     },
     updates:{
       title: 'Updates',
-      text: 'Here you can find the latest updates to my projects, my career, and my life in general. Above are my latest updates, but I implore you to head into the Update page to learn more.'
+      text: 'Here you can find the latest updates to my projects, my career, and my life in general. Below are my latest updates, but I implore you to check out the project section to learn more.'
     }
   };
 
@@ -59,17 +79,18 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
     {
       title: 'Activity Weather',
       img: 'images/ActivityWeather.png',
-      body: 'Find out more about my Android app \"Activity Weather\". Select your preferred weather that you like to do an activity with and the app will let you know when the weather is nice enough to do that sport, lawn work, or any hobby. For example, Activity Weather will let you know if you have enough time to mow your lawn before a thunderstorm hits.'
+      body: 'The Android app that I\'ve been developing in my free time. Select your preferred weather that you like to do an activity with and the app will let you know when the weather is nice enough to do that sport, lawn work, or any hobby. For example, Activity Weather will let you know if you have enough time to mow your lawn before a thunderstorm hits.',
+      tag1: 'Java',
+      tag2: 'JSON',
+      tag3: 'Android Studio',
     },
     {
       title: 'Personal Website',
-      img: 'images/ActivityWeather.png',
-      body: 'You\'re using it! This is my first major project involving the latest web development tools, including HTML5, Angular Material, and CSS3. You can learn more about the development process by clicking read more. Thank you for browsing!',
-    },
-    {
-      title: 'SharePoint',
-      img: 'images/ActivityWeather.png',
-      body: 'This is the project I\'ve been mostly concerned with during my time with NYS Derpartment of Health. SharePoint was the main development tool, where I further learn JS, CSS, and HTML. Though I can not disclose everything about the site, you can select read more if you would like to read about what I learned during the process',
+      img: 'images/website.png',
+      body: 'You\'re using it! This is my first major project involving the latest web development tools. I first started with the Material Design Lite framework and realized that I needed something different. Though, I still love the feel of material design and went with Angular Material. A few major redesigns later, I am quite happy with what I have built. Enjoy!',
+      tag1: 'AngularJS',
+      tag2: 'HTML5',
+      tag3: 'CSS3',
     }
   ];
 
@@ -91,34 +112,6 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
     }
   ];
 
-  $scope.menu = [
-    {
-      link : '',
-      title: 'Home',
-      icon: 'home'
-    },
-    {
-      link : '',
-      title: 'About Me',
-      icon: 'person'
-    },
-    {
-      link : '',
-      title: 'Projects',
-      icon: 'content_paste'
-    },
-    {
-      link : '',
-      title: 'Updates',
-      icon: 'flag'
-    }
-  ];
-
-  $scope.aboutMeTiles = {
-    mainIntro: 'Most of my free time is spent doing activities and hobbies outside. From camping in the Adirondack\'s with my girlfriend to throwing a football around with the guys, I\'m always enjoying what Earth has to offer. Some other outside hobbies I love are snowboarding, riding my motorcycle, fishing, and hanging around a bonfire with all of my closest friends.',
-    subIntro: 'If I am inside, I\'m probably working on my personal projects or school work, watching Netflix with my love, or playing games on my PC. My favorite show is a throw up between Mad Men or House of Cards, with The Office and Parks and Recreation as 3rd and 4th. As for gaming, lately I\'ve been really enjoying Rainbow Six Seige and Dirt 3.'
-  };
-
   $scope.aboutMeInformation = [
     {
       icon: 'email',
@@ -129,7 +122,7 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
       title: '518-567-9965',
     },
     {
-      icon: 'location_on',
+      icon: 'home',
       title: 'Hudson, New York 12534',
     }
   ];
