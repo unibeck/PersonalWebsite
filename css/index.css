@@ -19,11 +19,27 @@ body, html{
     color: #0077b5;
 }
 
+.welcome-img {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)),
+      url("images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 128px;
+}
+
+.side-margin{ /**/
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+}
+
 .aboutme-title{
-  padding-top: 16px;
   padding-right: 32px;
   padding-left: 32px;
-  color: #4579AD;
+  color: #FFF;
   text-align: center;
 }
 
@@ -55,20 +71,12 @@ body, html{
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: auto;
-  color: #2980B9 !important;
 }
 
 .list-item-text{
   word-break: break-all;
   margin: 0px;
   padding: 16px 0px;
-}
-
-.side-margin{ /**/
-  margin-left: 10%;
-  margin-right: 10%;
-  position: relative;
-  background-color: #EEEEEE !important;
 }
 
 .sectionBorder{

@@ -72,6 +72,10 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
     updates:{
       title: 'Updates',
       text: 'Here you can find the latest updates to my projects, my career, and my life in general. Below are my latest updates, but I implore you to check out the project section to learn more.'
+    },
+    education:{
+      title: 'Education',
+      text: 'I am starting my senior year of university this fall. The past three years of my journey have been exciting, intense, and rewarding. I have been loving every minute of it!'
     }
   };
 
@@ -87,7 +91,7 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
     {
       title: 'Personal Website',
       img: 'images/website.png',
-      body: 'You\'re using it! This is my first major project involving the latest web development tools. I first started with the Material Design Lite framework and realized that I needed something different. Though, I still love the feel of material design and went with Angular Material. A few major redesigns later, I am quite happy with what I have built. Enjoy!',
+      body: 'You\'re using it! This is my first major project involving the latest web development tools. I first started with the Material Design Lite framework and realized that I needed something different. Still loving the feel of material design I went with framework called Angular Material. A few major redesigns later, I am quite happy with what I have built. Enjoy!',
       tag1: 'AngularJS',
       tag2: 'HTML5',
       tag3: 'CSS3',
@@ -115,15 +119,38 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
   $scope.aboutMeInformation = [
     {
       icon: 'email',
-      title: 'JonathanTBeckman@gmail.com',
+      title: 'JonathanTBeckman@gmail.com'
     },
     {
       icon: 'phone',
-      title: '518-567-9965',
+      title: '518-567-9965'
+    },
+    {
+      icon: 'work',
+      title: 'Auto/Mate'
+    },
+    {
+      icon: 'school',
+      title: 'University at Albany'
     },
     {
       icon: 'home',
-      title: 'Hudson, New York 12534',
+      title: 'Albany, New York 12222'
+    }
+  ];
+
+  $scope.eduInformation = [
+    {
+      icon: 'location_on',
+      title: 'University at Albany'
+    },
+    {
+      icon: 'school',
+      title: 'B.S. in Computer Science'
+    },
+    {
+      icon: 'event',
+      title: 'Graduation: May 2017'
     }
   ];
 
