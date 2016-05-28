@@ -3,20 +3,15 @@ angular.module('App', [
 ]);
 
 angular.module('App').config(function($mdThemingProvider) {
-  $mdThemingProvider.theme('home')
-    .primaryPalette('blue-grey', {
-      'hue-2': '800'
+  $mdThemingProvider.theme('aboutMe')
+    .primaryPalette('blue', {
+      'default': '700'
     })
-    
-    .accentPalette('indigo')
+    .accentPalette('yellow')
     .warnPalette('red');
 })
 
-angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
-  
-  $scope.toggleSidenav = function(menu) {
-    $mdSidenav(menu).toggle();
-  }
+angular.module('App').controller('AppCtrl', function($scope) {
 
   $scope.section = {
     aboutme: {
@@ -50,38 +45,28 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav) {
       title: '518-567-9965',
     },
     {
-      icon: 'location_on',
-      title: 'Hudson, New York 12534',
+      icon: 'home',
+      title: 'Albany, NY 12222',
     }
   ];
 
-  $scope.charts = [
-    {
-      rank: '9',
-      title: "Java",
-    },
-    {
-      rank: '9',
-      title: "C",
-    },
-    {
-      rank: '8',
-      title: "HTML/CSS",
-    },
-    {
-      rank: '7',
-      title: "AngularJS",
-    }
-  ];
+  $scope.gifIsLoading = true;
     
+  var myanim = new Image();
+  myanim.src = 'images/motorcycle.gif';
+
   $scope.resetGif = function() {
-    var myanim = new Image();
-    myanim.src = 'images/motorcycle.gif';
     document.getElementById('tilePicGif').src = myanim.src;
   };
 
+  myanim.onload = function() {
+    $scope.gifIsLoading = false;
+    document.getElementById('tilePicGif').src = myanim.src;
+  }
+    
 });
 
+/* Use to make SVG donuts from D3
 angular.element(document).ready(function () {
     var w = 200,    //width
         h = 100,    //height
@@ -100,8 +85,9 @@ angular.element(document).ready(function () {
             .data([data])          
                 .attr("width", w)  
                 .attr("height", h)
-            .append("svg:g")       
-                .attr("transform", "translate(" + r + "," + r + ")")    
+                .attr("viewBox", "0, 0, 232, 116")
+            .append("svg:g")
+                .attr("transform", "translate(116,116)")
 
         var arc = d3.svg.arc()              
             .outerRadius(r)
@@ -121,138 +107,5 @@ angular.element(document).ready(function () {
             arcs.append("svg:path")
                     .attr("fill", function(d, i) { return color(i); } ) 
                     .attr("d", arc);
-
-    var w = 200,    //width
-        h = 100,    //height
-        r = 100,    //radius
-        ir = 50,
-        pi = Math.PI,
-        color = d3.scale.category20c();     
-
-        data = [{"value":1}, 
-                {"value":9}];
-    
-        var color = d3.scale.ordinal()
-        .range(["#FFC107", "#2196F3"]);
-
-        var vis = d3.select("#donut-1") 
-            .data([data])          
-                .attr("width", w)  
-                .attr("height", h)
-            .append("svg:g")       
-                .attr("transform", "translate(" + r + "," + r + ")")    
-
-        var arc = d3.svg.arc()              
-            .outerRadius(r)
-        .innerRadius(ir);
-
-        var pie = d3.layout.pie()          
-            .value(function(d) { return d.value; })
-            .startAngle(-90 * (pi/180))
-            .endAngle(90 * (pi/180));
-
-        var arcs = vis.selectAll("g.slice")     
-            .data(pie)                          
-            .enter()                            
-                .append("svg:g")                
-                    .attr("class", "slice");    
-
-            arcs.append("svg:path")
-                    .attr("fill", function(d, i) { return color(i); } ) 
-                    .attr("d", arc);
-    
-    
-    var w = 200,    //width
-        h = 100,    //height
-        r = 100,    //radius
-        ir = 50,
-        pi = Math.PI,
-        color = d3.scale.category20c();     
-
-        data = [{"value":2}, 
-                {"value":8}];
-    
-        var color = d3.scale.ordinal()
-        .range(["#FFC107", "#2196F3"]);
-
-        var vis = d3.select("#donut-2") 
-            .data([data])          
-                .attr("width", w)  
-                .attr("height", h)
-            .append("svg:g")       
-                .attr("transform", "translate(" + r + "," + r + ")")    
-
-        var arc = d3.svg.arc()              
-            .outerRadius(r)
-        .innerRadius(ir);
-
-        var pie = d3.layout.pie()          
-            .value(function(d) { return d.value; })
-            .startAngle(-90 * (pi/180))
-            .endAngle(90 * (pi/180));
-
-        var arcs = vis.selectAll("g.slice")     
-            .data(pie)                          
-            .enter()                            
-                .append("svg:g")                
-                    .attr("class", "slice");    
-
-            arcs.append("svg:path")
-                    .attr("fill", function(d, i) { return color(i); } ) 
-                    .attr("d", arc);
-    
-    var w = 200,    //width
-        h = 100,    //height
-        r = 100,    //radius
-        ir = 50,
-        pi = Math.PI,
-        color = d3.scale.category20c();     
-
-        data = [{"value":3}, 
-                {"value":7}];
-    
-        var color = d3.scale.ordinal()
-        .range(["#FFC107", "#2196F3"]);
-
-        var vis = d3.select("#donut-3") 
-            .data([data])          
-                .attr("width", w)  
-                .attr("height", h)
-            .append("svg:g")       
-                .attr("transform", "translate(" + r + "," + r + ")")    
-
-        var arc = d3.svg.arc()              
-            .outerRadius(r)
-        .innerRadius(ir);
-
-        var pie = d3.layout.pie()          
-            .value(function(d) { return d.value; })
-            .startAngle(-90 * (pi/180))
-            .endAngle(90 * (pi/180));
-
-        var arcs = vis.selectAll("g.slice")     
-            .data(pie)                          
-            .enter()                            
-                .append("svg:g")                
-                    .attr("class", "slice");    
-
-            arcs.append("svg:path")
-                    .attr("fill", function(d, i) { return color(i); } ) 
-                    .attr("d", arc);
-
 });
-
-var myanim = new Image();
-    myanim.src = 'images/motorcycle.gif';
-    myanim.onload = function() {
-        document.getElementById('tilePicGif').src = myanim.src;
-    }
-    
-
-/*
-{
-      img: 'images/motorcycle.gif',
-      title: 'Snowboarding',
-      body: 'Going snowboarding with my girlfriend is the best part of winter. Nothing comes close to the amount of fun we have up on the mountain. It\'s the perfect getaway from the nasty New York winters.'
-    },
 */
