@@ -4,21 +4,19 @@
     <meta charset="UTF-8">
     <title>Unibeck</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900">
-
+    <!-- Google API Roboto font is included in the Angular Material Library-->
     <!-- Material Design icon font -->
-    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-    <!-- FontAwesome icon font -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
     <link rel="stylesheet" href="css/aboutMe.css">
   </head>
 
   <body>
-    <div ng-controller="AppCtrl" layout="column" layout-fill><!--theme declaration-->
+    <div ng-controller="AppCtrl as ctrl" layout="column" layout-fill md-theme="aboutMe"><!--theme declaration-->
       <md-toolbar style="background-color: #fff; color: #888">
         <div class="md-toolbar-tools">
           
@@ -26,17 +24,20 @@
           <span flex></span>
           <div class="mdl-layout-spacer"></div>
           
-          <a href="#"><i class="fa fa-github-square fa-2x social-button"></i>
+          <a href="#">
+            <md-icon md-svg-src="images/github.svg" class="social-button github"></md-icon>
             <md-tooltip>
               rajonbeckman
             </md-tooltip>
           </a>
-          <a href="#"><i class="fa fa-linkedin-square fa-2x social-button"></i>
+          <a href="#">
+            <md-icon md-svg-src="images/linkedin.svg" class="social-button linkedin"></md-icon>
             <md-tooltip>
               Jonathan Beckman
             </md-tooltip>
           </a>
-          <a href="#"><i class="fa fa-google-plus-square fa-2x social-button"></i>
+          <a href="#">
+            <md-icon md-svg-src="images/google_plus.svg" class="social-button google-plus"></md-icon>
             <md-tooltip>
               rajonbeckman
             </md-tooltip>
@@ -46,20 +47,22 @@
       <section layout="column" role="main" flex>
         <md-content flex style="background-color: #EEEEEE">
           <div style="position: relative">
-            <div class="md-display-2 side-margin aboutme-title" style="margin-top: 32px">{{section.aboutme.title}}</div>
-            <div class="md-headline side-margin aboutme-title">{{section.aboutme.text}}</div>
-            <div class="side-margin" layout="column" layout-gt-sm="row" style="margin-top: 32px;">
+            <div ng-cloak class="md-display-2 side-margin aboutme-title" style="margin-top: 32px">{{section.aboutme.title}}</div>
+            <div ng-cloak class="md-headline side-margin aboutme-title">{{section.aboutme.text}}</div>
+            <div class="side-margin" layout="column" layout-gt-sm="row" style="margin-top: 32px;  padding-bottom: 16px">
+              <!-- Column 1 (Left and Middle) -->
               <div flex="100" flex-gt-sm="66">
                 <div>
                   <div class="hobbyTile">
-                    <div id="hobbyPic">
+                    <div id="hobbyPic" class="tile-size">
                         <img id="tilePicGif" src="images/motorcycle_frame.jpg">
                     </div>
+                    <md-progress-linear ng-if="gifIsLoading" md-mode="indeterminate" class="hobbyTileLoader"></md-progress-linear>
                     <md-button class="md-icon-button hobbyTileButton" style="right: 64px" ng-click="resetGif()">
-                      <md-icon style="color: #fff">replay</md-icon>
+                      <md-icon style="color: #fff;">replay</md-icon>
                     </md-button>  
                     <md-button class="md-icon-button hobbyTileButton" href="">
-                      <md-icon style="color: #fff">photo_album</md-icon>
+                      <md-icon style="color: #fff;">photo_album</md-icon>
                     </md-button>
                     <div class="hobbyPicText">
                       <div class="md-display-1" id="hobbyPicTitle">Riding</div>
@@ -69,62 +72,86 @@
                 </div>
                 <div ng-repeat="aboutMeCard in aboutMeCards">
                   <div class="hobbyTile">
-                    <div id="hobbyPic">
-                        <img class="tilePic" ng-src="{{aboutMeCard.img}}">
+                    <div id="hobbyPic" class="tile-size">
+                        <img ng-cloak class="tilePic" ng-src="{{aboutMeCard.img}}">
                     </div>
-                    <md-button class="md-icon-button hobbyTileButton" ng-href="{{aboutMeCard.link}}">
-                      <md-icon style="color: #fff">photo_album</md-icon>
+                    <md-button ng-cloak class="md-icon-button hobbyTileButton" ng-href="{{aboutMeCard.link}}">
+                      <md-icon style="color: #fff;">photo_album</md-icon>
                     </md-button>
                     <div class="hobbyPicText">
-                      <div class="md-display-1" id="hobbyPicTitle">{{aboutMeCard.title}}</div>
-                      <div id="hobbyPicBody">{{aboutMeCard.body}}</div>
+                      <div ng-cloak class="md-display-1" id="hobbyPicTitle">{{aboutMeCard.title}}</div>
+                      <div ng-cloak id="hobbyPicBody">{{aboutMeCard.body}}</div>
                     </div>
                   </div>
                 </div>
               </div>
+
+              <!--Column 2 (Right) -->
               <div style="margin: 16px" flex="100" flex-gt-sm="33">
-                <div>
+                <!-- Contact Info Section -->
+                <div md-whiteframe="2">
                   <div class="cardPic">
                     <img class="tilePic" src="images/profile.jpg">
                     <div class="md-display-1 hobbyPicText">Contact Info</div>
                   </div>
-                  <md-list style="background-color: #fff">
-                    <md-list-item ng-repeat="info in aboutMeInformation">
-                      <md-button ng-disabled="true" class="md-icon-button">
-                        <md-icon style="color: #1976D2">{{info.icon}}</md-icon>
-                      </md-button>
-                      <p>{{info.title}}</p>
-                    </md-list-item>
-                  </md-list>
+                  <div style="padding: 16px; background-color: #fff;">
+                    <div ng-repeat="info in aboutMeInformation">
+                      <div class="list-item" layout="row">
+                        <md-icon class="list-item-icon" style="color: #1976D2 !important;">{{info.icon}}</md-icon>
+                        <h1 class="md-subhead list-item-text">{{info.title}}</h1>
+                      </div>
+                      <md-divider ng-if="!$last"></md-divider>
+                    </div>
+                  </div>
                 </div>
-                <div style="margin-top: 32px;">
+
+                <!-- Skills Section -->
+                <div md-whiteframe="2" style="margin-top: 32px;">
                   <div class="md-display-1 skillsTitle">Skills</div>
-                  <div style="background-color: #fff; padding: 0px 32px 16px" ng-repeat="chart in charts">
+                  <!-- Use to make SVG donuts from D3
+                  <div style="background-color: #fff;>
                     <div class="skills" layout="column" layout-align="space-around center">
-                      <h1 class="donutNum">{{chart.rank}}</h1>
-                      <svg class="donuts" id="donut-{{$index}}"></svg>
-                      <div class="md-headline">{{chart.title}}</div>
+                      <div class="md-headline donutNum">rank</div>
+                      <svg class="donuts" id="donut1"></svg>
+                      <div class="md-headline" style="padding-bottom: 16px">title</div>
                     </div>
                     <md-divider ng-if="!$last"></md-divider>
                   </div>
+                  -->
+                  <div style="background-color: #fff;">
+                    <div class="skills" layout="column" layout-align="space-around center">
+                      <div class="md-headline donutNum">9</div>
+                      <svg class="donuts" width="200" height="100" viewBox="0, 0, 232, 116"><g transform="translate(116,116)"><g class="slice"><path fill="#FFC107" d="M95.10565162951535,-30.901699437494738A100,100 0 0,1 100,0L50,0A50,50 0 0,0 47.552825814757675,-15.450849718747369Z"></path></g><g class="slice"><path fill="#2196F3" d="M-100,-1.2246467991473532e-14A100,100 0 0,1 95.10565162951535,-30.901699437494738L47.552825814757675,-15.450849718747369A50,50 0 0,0 -50,-6.123233995736766e-15Z"></path></g></g></svg>
+                      <div class="md-headline" style="padding-bottom: 16px">Java</div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div class="skills" layout="column" layout-align="space-around center">
+                      <div class="md-headline donutNum">8</div>
+                      <svg class="donuts" width="200" height="100" viewBox="0, 0, 232, 116"><g transform="translate(116,116)"><g class="slice"><path fill="#FFC107" d="M80.90169943749474,-58.778525229247315A100,100 0 0,1 100,0L50,0A50,50 0 0,0 40.45084971874737,-29.389262614623657Z"></path></g><g class="slice"><path fill="#2196F3" d="M-100,-1.2246467991473532e-14A100,100 0 0,1 80.90169943749474,-58.778525229247315L40.45084971874737,-29.389262614623657A50,50 0 0,0 -50,-6.123233995736766e-15Z"></path></g></g></svg>
+                      <div class="md-headline" style="padding-bottom: 16px">C</div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div class="skills" layout="column" layout-align="space-around center">
+                      <div class="md-headline donutNum">8</div>
+                      <svg class="donuts" width="200" height="100" viewBox="0, 0, 232, 116"><g transform="translate(116,116)"><g class="slice"><path fill="#FFC107" d="M80.90169943749474,-58.778525229247315A100,100 0 0,1 100,0L50,0A50,50 0 0,0 40.45084971874737,-29.389262614623657Z"></path></g><g class="slice"><path fill="#2196F3" d="M-100,-1.2246467991473532e-14A100,100 0 0,1 80.90169943749474,-58.778525229247315L40.45084971874737,-29.389262614623657A50,50 0 0,0 -50,-6.123233995736766e-15Z"></path></g></g></svg>
+                      <div class="md-headline" style="padding-bottom: 16px">HTML/CSS</div>
+                    </div>
+                    <md-divider></md-divider>
+                    <div class="skills" layout="column" layout-align="space-around center">
+                      <div class="md-headline donutNum">7</div>
+                      <svg class="donuts" width="200" height="100" viewBox="0, 0, 232, 116"><g transform="translate(116,116)"><g class="slice"><path fill="#FFC107" d="M58.778525229247315,-80.90169943749474A100,100 0 0,1 100,0L50,0A50,50 0 0,0 29.389262614623657,-40.45084971874737Z"></path></g><g class="slice"><path fill="#2196F3" d="M-100,-1.2246467991473532e-14A100,100 0 0,1 58.778525229247315,-80.90169943749474L29.389262614623657,-40.45084971874737A50,50 0 0,0 -50,-6.123233995736766e-15Z"></path></g></g></svg>
+                      <div class="md-headline" style="padding-bottom: 16px">AngularJS</div>
+                    </div>
+                    
+                  </div>
                 </div>
               </div>
             </div>
-  <!--style="background-image: url('images/profile.jpg')"
-            <div class="md-padding overlap-cards" layout-xs="column" layout="row">
-              <div ng-repeat="aboutMeCard in aboutMeCards" flex-xs="" flex-gt-xs="33" layout="column">
-                <md-card class="md-whiteframe-z2" style="margin: 16px">
-                  <div class="hobbyPic expandPic">
-                    <div class="md-display-1 hobbyPicText">{{aboutMeCard.title}}</div>
-                  </div>
-                  <md-card-content>
-                    <p>{{aboutMeCard.body}}</p>
-                  </md-card-content>
-                </md-card>
-              </div>
-            </div>
-  -->
           </div>
+          <md-toolbar style="background-color: #607D8B !important">
+            <p class="side-margin" style="text-align: center; font-size: small">All artwork, photos, code, and documents available on this site are property of Jonathan Beckman. For permission to use materials found of this site please contact me via email. © 2015-2016 Jonathan Beckman, All rights reserved.</p>
+          </md-toolbar>
+          <p class="footer-text" style="background-color: #455A64; font-size: small">Powered by Angular Material. Code licensed under the MIT License.</p>
         </md-content>
       </section>
     </div>
@@ -137,7 +164,7 @@
     <!-- Angular Material Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
       
-    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
 
     <script src="js/aboutMe.js"></script>
 

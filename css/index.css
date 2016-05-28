@@ -65,6 +65,39 @@ body, html{
   width: 100%;
 }
 
+.date-chip {
+  border-radius: 24px;
+  background: #DDD;
+  padding: 8px 12px;
+  min-width: 1em;
+  text-align: center;
+  display: inline-flex;
+}
+
+md-chips-wrap.md-chips.ng-scope.md-readonly {
+  height: 32px;
+  box-shadow: 0 0px;
+  padding: 0px;
+}
+
+.horizontal-line {
+  height: 1px;
+  width: 100%;
+  background-color: #DDD;
+  position: absolute;
+  bottom: 16px;
+  margin-left: 70px;
+}
+
+.vertical-line {
+  border-style: dotted;
+  border-width: 0px 0px 0px 2px;
+  height: 24px;
+  
+  margin: 0px 0px 0px 36px;
+  color: #DDD;
+}
+
 .list-item-icon{
   padding: 16px 16px 16px 0px;
   margin-top: auto;
@@ -98,13 +131,8 @@ body, html{
 }
 
 .project-title{
-  color: #66BB6A;
+  color: #E67E22;
   margin: 0px;
-}
-
-md-chips-wrap.md-chips.ng-scope.md-readonly {
-    box-shadow: 0 0px;
-    padding-bottom: 0px;
 }
 
 /*
