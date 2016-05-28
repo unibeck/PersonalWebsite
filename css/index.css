@@ -1,0 +1,144 @@
+body, html{
+  height: 100%;
+  margin:0;
+}
+
+.social-button {
+  padding: 8px;
+}
+
+.fa-google-plus-square:hover {
+    color: #dd4b39;
+}
+
+.fa-github-square:hover {
+    color: #800080;
+}
+
+.fa-linkedin-square:hover {
+    color: #0077b5;
+}
+
+.welcome-img {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)),
+      url("images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 128px;
+}
+
+.side-margin{ /**/
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+}
+
+.aboutme-title{
+  padding-right: 32px;
+  padding-left: 32px;
+  color: #FFF;
+  text-align: center;
+}
+
+.section-text { /**/
+  color: #FFF;
+  margin: 0px;
+  padding: 16px 16px 0px;
+}
+
+.section-text-container { /**/
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+.section-button{ /**/
+  margin: auto;
+  vertical-align: top;
+  float: right;
+  color: #fff !important;
+}
+
+.list-item{
+  width: 100%;
+}
+
+.list-item-icon{
+  padding: 16px 16px 16px 0px;
+  margin-top: auto;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: auto;
+}
+
+.list-item-text{
+  word-break: break-all;
+  margin: 0px;
+  padding: 16px 0px;
+}
+
+.sectionBorder{
+  border-style: none none solid none;
+  padding-bottom: 24px;
+  background-color: #FFF;
+}
+
+#img-tile{
+  height: 256px;
+  position: relative;
+  padding: 0px;
+}
+
+.img-fill{ /*Emulates background-img cover affect, use within img-containter*/
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.project-title{
+  color: #66BB6A;
+  margin: 0px;
+}
+
+md-chips-wrap.md-chips.ng-scope.md-readonly {
+    box-shadow: 0 0px;
+    padding-bottom: 0px;
+}
+
+/*
+.calculated-width {
+    width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
+}
+*/
+
+.tileTitle{
+  color: #fff;
+  bottom: 16px;
+  position: absolute;
+  left: 16px;
+  margin-right: 16px;
+}
+
+.footer-text{
+  margin: auto;
+  padding: 8px;
+  color: #fff;
+  text-align: center;
+}
+
+button.md-no-style.md-button.md-home-theme.md-ink-ripple {
+  padding: 0px;
+}
+
+.s24 {
+  font-size:24px;
+}
+
+md-icon.fa {
+  display: block;
+  padding-left: 0px;
+}
