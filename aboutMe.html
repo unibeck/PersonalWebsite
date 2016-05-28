@@ -7,8 +7,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
-
     <!-- Google API Roboto font is included in the Angular Material Library-->
+    
     <!-- Material Design icon font -->
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
@@ -19,28 +19,18 @@
     <div ng-controller="AppCtrl as ctrl" layout="column" layout-fill md-theme="aboutMe"><!--theme declaration-->
       <md-toolbar style="background-color: #fff; color: #888">
         <div class="md-toolbar-tools">
-          
           <span class="mdl-layout-title">Jonathan Beckman</span>
           <span flex></span>
           <div class="mdl-layout-spacer"></div>
           
-          <a href="#">
+          <a href="https://github.com/rajonbeckman">
             <md-icon md-svg-src="images/github.svg" class="social-button github"></md-icon>
-            <md-tooltip>
-              rajonbeckman
-            </md-tooltip>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/jonathantbeckman">
             <md-icon md-svg-src="images/linkedin.svg" class="social-button linkedin"></md-icon>
-            <md-tooltip>
-              Jonathan Beckman
-            </md-tooltip>
           </a>
-          <a href="#">
+          <a href="https://www.google.com/+JonathanBeckman9">
             <md-icon md-svg-src="images/google_plus.svg" class="social-button google-plus"></md-icon>
-            <md-tooltip>
-              rajonbeckman
-            </md-tooltip>
           </a>
         </div>
       </md-toolbar>
@@ -50,6 +40,7 @@
             <div ng-cloak class="md-display-2 side-margin aboutme-title" style="margin-top: 32px">{{section.aboutme.title}}</div>
             <div ng-cloak class="md-headline side-margin aboutme-title">{{section.aboutme.text}}</div>
             <div class="side-margin" layout="column" layout-gt-sm="row" style="margin-top: 32px;  padding-bottom: 16px">
+              
               <!-- Column 1 (Left and Middle) -->
               <div flex="100" flex-gt-sm="66">
                 <div>

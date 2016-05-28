@@ -2,16 +2,16 @@ angular.module('App', [
   'ngMaterial'
 ]);
 
-angular.module('App').config(function($mdThemingProvider) {
+angular.module('App').config(function ($mdThemingProvider) {
   $mdThemingProvider.theme('aboutMe')
     .primaryPalette('blue', {
       'default': '700'
     })
     .accentPalette('yellow')
     .warnPalette('red');
-})
+});
 
-angular.module('App').controller('AppCtrl', function($scope) {
+angular.module('App').controller('AppCtrl', function ($scope) {
 
   $scope.section = {
     aboutme: {
@@ -55,15 +55,15 @@ angular.module('App').controller('AppCtrl', function($scope) {
   var myanim = new Image();
   myanim.src = 'images/motorcycle.gif';
 
-  $scope.resetGif = function() {
+  $scope.resetGif = function () {
     document.getElementById('tilePicGif').src = myanim.src;
   };
 
-  myanim.onload = function() {
+  myanim.onload = function () {
     $scope.gifIsLoading = false;
     document.getElementById('tilePicGif').src = myanim.src;
     $scope.$apply();
-  }
+  };
     
 });
 

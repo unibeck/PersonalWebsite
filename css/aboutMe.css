@@ -6,7 +6,7 @@ body, html{
 .social-button {
   height: 32px;
   width: 32px;
-  margin: 8px;
+  margin: 12px;
 }
 
 .google-plus:hover path{
