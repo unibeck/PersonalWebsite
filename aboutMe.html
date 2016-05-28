@@ -57,7 +57,7 @@
                     <div id="hobbyPic" class="tile-size">
                         <img id="tilePicGif" src="images/motorcycle_frame.jpg">
                     </div>
-                    <md-progress-linear ng-if="gifIsLoading" md-mode="indeterminate" class="hobbyTileLoader"></md-progress-linear>
+                    <md-progress-linear ng-show="gifIsLoading" md-mode="indeterminate" class="hobbyTileLoader"></md-progress-linear>
                     <md-button class="md-icon-button hobbyTileButton" style="right: 64px" ng-click="resetGif()">
                       <md-icon style="color: #fff;">replay</md-icon>
                     </md-button>  
