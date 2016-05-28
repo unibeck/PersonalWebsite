@@ -62,6 +62,7 @@ angular.module('App').controller('AppCtrl', function($scope) {
   myanim.onload = function() {
     $scope.gifIsLoading = false;
     document.getElementById('tilePicGif').src = myanim.src;
+    $scope.$apply();
   }
     
 });
