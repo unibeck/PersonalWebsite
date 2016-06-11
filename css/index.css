@@ -39,8 +39,8 @@ body, html{
 }
 
 .full-page{
-  bacground-color: #EEE;
-  min-height: calc(100vh - 132px);
+  bacground-color: #EEE !important;
+  min-height: calc(100vh - 135px);
 }
 
 .aboutme-title{
