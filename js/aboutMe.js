@@ -26,7 +26,7 @@ angular.module('App').controller('AppCtrl', function ($scope) {
       img: 'images/fishing.jpg',
       link: 'https://goo.gl/photos/2eh3c2w9yZnvb98A7',
       title: 'Fishing',
-      body: 'Fishing is the ultimate getaway. Fighting with a fish is both a challenge and relaxing. To see some amazing photospheres of my fishing spots select the button in the top right.'
+      body: 'Fishing is the ultimate getaway. Fighting with a fish is both challenging and relaxing. To see some amazing photospheres of my fishing spots select the button in the top right.'
     },
     {
       img: 'images/hiking.jpg',

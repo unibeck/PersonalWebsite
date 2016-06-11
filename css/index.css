@@ -38,6 +38,11 @@ body, html{
   position: relative;
 }
 
+.full-page{
+  bacground-color: #EEE;
+  min-height: calc(100vh - 132px);
+}
+
 .aboutme-title{
   padding-right: 32px;
   padding-left: 32px;
@@ -155,11 +160,9 @@ md-chips-wrap.md-chips.ng-scope.md-readonly {
 
 .footer-text{
   margin: auto;
-  padding: 8px 32px;
+  padding: 8px;
   color: #fff;
   text-align: center;
-  font-size: small;
-  width: calc(100% - 64px);
 }
 
 button.md-no-style.md-button.md-home-theme.md-ink-ripple {

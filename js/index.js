@@ -98,7 +98,7 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog) {
       what: 'Software Development Intern',
       whenTo: 'Present',
       whenFrom: 'May 16',
-      body: 'Advancing the development of our Dealership Managament System (DMS) using mostly Java. Advancing the development of our Dealership Managament System (DMS) using mostly Java.'
+      body: 'Developing new, more efficient and effective, systems for dealerships to communicate with vehicle manufacturers. Ensuring that messages are received and if not, we have logs of these events. Languages include mostly Java, though Ruby and shell scipts were also used. Tools used include Git, GitLab, SourceTree, Vagrant, Gauge, Chef, and Intellij.'
     },
     {
       who: 'Office of Quality and Patient Safety (OQPS)',
@@ -106,7 +106,7 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog) {
       what: 'Web Developer Intern',
       whenTo: 'May 16',
       whenFrom: 'Oct 15',
-      body: 'Developing an intranet catered to the Office of Quality and Patient Safety (OQPS), though also accessible by other employees at the Department of Health (DOH). Developer tools included HTML, CSS, JavaScript, and SharePoint.'
+      body: 'Developing an intranet catered to the Office of Quality and Patient Safety (OQPS), though also accessible by other employees at the Department of Health (DOH). Languages and tools included HTML, CSS, JavaScript, and SharePoint.'
     }
   ];
 
