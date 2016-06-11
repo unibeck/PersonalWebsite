@@ -7,8 +7,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
-
     <!-- Google API Roboto font is included in the Angular Material Library-->
+    
     <!-- Material Design icon font -->
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
@@ -19,28 +19,18 @@
     <div ng-controller="AppCtrl as ctrl" layout="column" layout-fill md-theme="aboutMe"><!--theme declaration-->
       <md-toolbar style="background-color: #fff; color: #888">
         <div class="md-toolbar-tools">
-          
           <span class="mdl-layout-title">Jonathan Beckman</span>
           <span flex></span>
           <div class="mdl-layout-spacer"></div>
           
-          <a href="#">
+          <a href="https://github.com/rajonbeckman">
             <md-icon md-svg-src="images/github.svg" class="social-button github"></md-icon>
-            <md-tooltip>
-              rajonbeckman
-            </md-tooltip>
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/jonathantbeckman">
             <md-icon md-svg-src="images/linkedin.svg" class="social-button linkedin"></md-icon>
-            <md-tooltip>
-              Jonathan Beckman
-            </md-tooltip>
           </a>
-          <a href="#">
+          <a href="https://www.google.com/+JonathanBeckman9">
             <md-icon md-svg-src="images/google_plus.svg" class="social-button google-plus"></md-icon>
-            <md-tooltip>
-              rajonbeckman
-            </md-tooltip>
           </a>
         </div>
       </md-toolbar>
@@ -50,6 +40,7 @@
             <div ng-cloak class="md-display-2 side-margin aboutme-title" style="margin-top: 32px">{{section.aboutme.title}}</div>
             <div ng-cloak class="md-headline side-margin aboutme-title">{{section.aboutme.text}}</div>
             <div class="side-margin" layout="column" layout-gt-sm="row" style="margin-top: 32px;  padding-bottom: 16px">
+              
               <!-- Column 1 (Left and Middle) -->
               <div flex="100" flex-gt-sm="66">
                 <div>
@@ -57,7 +48,7 @@
                     <div id="hobbyPic" class="tile-size">
                         <img id="tilePicGif" src="images/motorcycle_frame.jpg">
                     </div>
-                    <md-progress-linear ng-if="gifIsLoading" md-mode="indeterminate" class="hobbyTileLoader"></md-progress-linear>
+                    <md-progress-linear ng-show="gifIsLoading === true" md-mode="indeterminate" class="hobbyTileLoader"></md-progress-linear>
                     <md-button class="md-icon-button hobbyTileButton" style="right: 64px" ng-click="resetGif()">
                       <md-icon style="color: #fff;">replay</md-icon>
                     </md-button>  
@@ -148,10 +139,10 @@
               </div>
             </div>
           </div>
-          <md-toolbar style="background-color: #607D8B !important">
-            <p class="side-margin" style="text-align: center; font-size: small">All artwork, photos, code, and documents available on this site are property of Jonathan Beckman. For permission to use materials found of this site please contact me via email. © 2015-2016 Jonathan Beckman, All rights reserved.</p>
-          </md-toolbar>
-          <p class="footer-text" style="background-color: #455A64; font-size: small">Powered by Angular Material. Code licensed under the MIT License.</p>
+          <div>
+            <p class="footer-text" style="background-color: #607D8B">All artwork, photos, code, and documents available on this site are property of Jonathan Beckman. For permission to use materials found of this site please contact me via email. © 2015-2016 Jonathan Beckman, All rights reserved.</p>
+            <p class="footer-text" style="background-color: #455A64; font-size: small">Powered by Angular Material. Code licensed under the MIT License. Icons proivided by FontAwesome and Google Material Design icon library.</p>
+          </div>
         </md-content>
       </section>
     </div>

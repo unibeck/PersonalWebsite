@@ -2,7 +2,7 @@ angular.module('App', [
   'ngMaterial'
 ]);
 
-angular.module('App').config(function($mdThemingProvider) {
+angular.module('App').config(function ($mdThemingProvider) {
   $mdThemingProvider.theme('home')
     .primaryPalette('blue', {
       'hue-2': 'A400'
@@ -11,44 +11,11 @@ angular.module('App').config(function($mdThemingProvider) {
       'hue-2': '600'
     })
     .warnPalette('red');
+});
 
-  $mdThemingProvider.theme('aboutMe')
-    .primaryPalette('blue', {
-      'default': '700'
-    })
-    .accentPalette('yellow')
-    .warnPalette('red');
-
-  $mdThemingProvider.theme('projects')
-    .primaryPalette('green', {
-      'default': '600'
-    })
-    .accentPalette('yellow')
-    .warnPalette('red');
-
-  $mdThemingProvider.theme('updates')
-    .primaryPalette('yellow', {
-      'default': '900'
-    })
-    .accentPalette('cyan')
-    .warnPalette('red');
-})
-
-angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDialog) {
+angular.module('App').controller('AppCtrl', function ($scope, $mdDialog) {
   
-  $scope.toggleSidenav = function(menu) {
-    $mdSidenav(menu).toggle();
-  }
-
-  $scope.isOpen = false;
-
-  $scope.demo = {
-    isOpen: false,
-    count: 0,
-    selectedDirection: 'left'
-  };
-  
-  $scope.showProject = function(event, title, body, tag1, tag2, tag3) {
+  $scope.showProject = function (event, title, body, tag1, tag2, tag3) {
     $mdDialog.show({
       controller: DialogController,
       template:
@@ -77,14 +44,6 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
     $scope.hide = function() {
       $mdDialog.hide();
     };
-
-    $scope.cancel = function() {
-      $mdDialog.cancel();
-    };
-
-    $scope.answer = function(answer) {
-      $mdDialog.hide(answer);
-    };
   }
 
   $scope.section = {
@@ -110,25 +69,6 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
       text: 'I am starting my senior year of university this fall. The past three years of my journey have been exciting, intense, and rewarding. I have been loving every minute of it!'
     }
   };
-
-  $scope.projectTiles = [
-    {
-      title: 'Activity Weather',
-      img: 'images/ActivityWeather.png',
-      body: 'The Android app that I\'ve been developing in my free time. Select your preferred weather that you like to do an activity with and the app will let you know when the weather is nice enough to do that sport, lawn work, or any hobby. For example, Activity Weather will let you know if you have enough time to mow your lawn before a thunderstorm hits.',
-      tag1: 'Java',
-      tag2: 'JSON',
-      tag3: 'Android Studio',
-    },
-    {
-      title: 'Personal Website',
-      img: 'images/website.png',
-      body: 'You\'re using it! This is my first major project involving the latest web development tools. I first started with the Material Design Lite framework and realized that I needed something different. Still loving the feel of material design I went with framework called Angular Material. A few major redesigns later, I am quite happy with what I have built. Enjoy!',
-      tag1: 'AngularJS',
-      tag2: 'HTML5',
-      tag3: 'CSS3',
-    }
-  ];
   
   $scope.projectList = [
     {
@@ -138,7 +78,7 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
       body: 'The Android app that I\'ve been developing in my free time. Select your preferred weather that you like to do an activity with and the app will let you know when the weather is nice enough to do that sport, lawn work, or any hobby. For example, Activity Weather will let you know if you have enough time to mow your lawn before a thunderstorm hits.',
       tag1: 'Java',
       tag2: 'JSON',
-      tag3: 'Android Studio',
+      tag3: 'Android Studio'
     },
     {
       title: 'Personal Website',
@@ -147,7 +87,7 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
       body: 'You\'re using it! This is my first major project involving the latest web development tools. I first started with the Material Design Lite framework and realized that I needed something different. Still loving the feel of material design I went with framework called Angular Material. A few major redesigns later, I am quite happy with what I have built. Enjoy!',
       tag1: 'AngularJS',
       tag2: 'HTML5',
-      tag3: 'CSS3',
+      tag3: 'CSS3'
     }
   ];
 
@@ -158,7 +98,7 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
       what: 'Software Development Intern',
       whenTo: 'Present',
       whenFrom: 'May 16',
-      body: 'Advancing the development of our Dealership Managament System (DMS) using mostly Java. Advancing the development of our Dealership Managament System (DMS) using mostly Java.'
+      body: 'Developing new, more efficient and effective, systems for dealerships to communicate with vehicle manufacturers. Ensuring that messages are received and if not, we have logs of these events. Languages include mostly Java, though Ruby and shell scipts were also used. Tools used include Git, GitLab, SourceTree, Vagrant, Gauge, Chef, and Intellij.'
     },
     {
       who: 'Office of Quality and Patient Safety (OQPS)',
@@ -166,25 +106,7 @@ angular.module('App').controller('AppCtrl', function($scope, $mdSidenav, $mdDial
       what: 'Web Developer Intern',
       whenTo: 'May 16',
       whenFrom: 'Oct 15',
-      body: 'Developing an intranet catered to the Office of Quality and Patient Safety (OQPS), though also accessible by other employees at the Department of Health (DOH). Developer tools included HTML, CSS, JavaScript, and SharePoint.'
-    }
-  ];
-  
-  $scope.updateCards = [
-    {
-      title: 'Activity Weather',
-      subTitle: 'Update 0.7.4',
-      icon: 'android'
-    },
-    {
-      title: 'Personal Website',
-      subTitle: 'Update 0.1.3',
-      icon: 'web'
-    },
-    {
-      title: 'Career',
-      subTitle: '3/28/2016',
-      icon: 'work'
+      body: 'Developing an intranet catered to the Office of Quality and Patient Safety (OQPS), though also accessible by other employees at the Department of Health (DOH). Languages and tools included HTML, CSS, JavaScript, and SharePoint.'
     }
   ];
 

@@ -4,166 +4,73 @@
     <meta charset="UTF-8">
     <title>Unibeck</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
-
+    <!-- Google API Roboto font is included in the Angular Material Library-->
+    
     <!-- Material Design icon font -->
-    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-    <!-- FontAwesome icon font -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
     <link rel="stylesheet" href="css/index.css">
   </head>
 
   <body>
-    <div ng-cloak ng-controller="AppCtrl" layout="column" layout-fill md-theme="home"><!--theme declaration-->
+    <div ng-controller="AppCtrl" layout="column" layout-fill md-theme="home"><!--theme declaration-->
       <md-toolbar style="background-color: #fff; color: #888">
         <div class="md-toolbar-tools">
-          
           <span class="mdl-layout-title">Jonathan Beckman</span>
           <span flex></span>
           <div class="mdl-layout-spacer"></div>
           
-          <a href="https://github.com/rajonbeckman"><i class="fa fa-github-square fa-2x social-button"></i>
-            <md-tooltip>
-              rajonbeckman
-            </md-tooltip>
+          <a href="https://github.com/rajonbeckman">
+            <md-icon md-svg-src="images/github.svg" class="social-button github"></md-icon>
           </a>
-          <a href="https://www.linkedin.com/in/jonathantbeckman"><i class="fa fa-linkedin-square fa-2x social-button"></i>
-            <md-tooltip>
-              Jonathan Beckman
-            </md-tooltip>
+          <a href="https://www.linkedin.com/in/jonathantbeckman">
+            <md-icon md-svg-src="images/linkedin.svg" class="social-button linkedin"></md-icon>
           </a>
-          <a href="https://www.google.com/+JonathanBeckman9"><i class="fa fa-google-plus-square fa-2x social-button"></i>
-            <md-tooltip>
-              rajonbeckman
-            </md-tooltip>
+          <a href="https://www.google.com/+JonathanBeckman9">
+            <md-icon md-svg-src="images/google_plus.svg" class="social-button google-plus"></md-icon>
           </a>
         </div>
       </md-toolbar>
       <section layout="column" role="main" flex>
-        <md-content flex style="background-color: #EEEEEE">
-          <div class="welcome-img">
-            <div class="md-display-2 aboutme-title side-margin" style="padding-top: 48px">Welcome</div>
-            <div class="md-headline aboutme-title side-margin" style="padding-top: 16px">You're using the first website that I have built. Here you can find all of my notable achievements through-out my career as a software engineer, my contact information, and some other personal updates of my life.</div>
-          </div>
-          <div layout="column" layout-gt-sm="row" style="margin-top: -96px;" class="side-margin">
-
-            <!-- Column 1 (Left) -->
-            <div flex="100" flex-gt-sm="33" style="padding: 16px">
-              <!-- About Me Section -->
-              <div md-whiteframe="2" style="margin-bottom: 32px; border-color: #2980B9" class="sectionBorder">
-                <md-toolbar class="section-text-container" style="background-color: #2980B9 !important;">
-                  <div class="md-display-1 section-text">
-                    About Me
-                    <md-button class="section-button" aria-label="Visit About Me" href="aboutMe.html">
-                    Visit
-                      <md-icon >chevron_right</md-icon>
-                    </md-button>
-                    <h1 class="md-subhead">
-                      {{section.aboutme.text}}
-                    </h1>
-                  </div>
-                </md-toolbar>
-
-                <div style="padding: 0px 16px 0px">
-                  <div style="position: relative">
-                    <div id="img-tile">
-                      <img class="img-fill" ng-src="{{section.aboutme.img}}">
-                    </div>
-                    <div class="md-display-1 tileTitle">Contact Info</div>
-                  </div>
-                  <div style="padding-top: 16px">
-                    <div ng-repeat="info in aboutMeInformation">
-                      <div class="list-item" layout="row">
-                        <md-icon class="list-item-icon" style="color: #2980B9 !important;">{{info.icon}}</md-icon>
-                        <h1 class="md-subhead list-item-text">{{info.title}}</h1>
-                      </div>
-                      <md-divider ng-if="!$last"></md-divider>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div>
+          <md-content flex class="full-page">
+            <div class="welcome-img">
+              <div class="md-display-2 aboutme-title side-margin" style="padding-top: 48px">Welcome</div>
+              <div class="md-headline aboutme-title side-margin" style="padding-top: 16px">You're using the first website that I have built. Here you can find all of my notable achievements through-out my career as a software engineer, my contact information, and some other personal updates of my life.</div>
             </div>
+            <div layout="column" layout-gt-sm="row" style="margin-top: -96px;" class="side-margin">
 
-            <!-- Column 2 (Center) -->
-            <div flex="100" flex-gt-sm="33" style="padding: 16px" md-theme="projects">
-              <!-- Career Section -->
-              <div md-whiteframe="2" style="margin-bottom: 32px; border-color: #66BB6A" class="sectionBorder">
-                <md-toolbar class="section-text-container" style="background-color: #66BB6A !important;">
-                  <div class="md-display-1 section-text">Career
-                    <md-button class="section-button" aria-label="Visit About Me" href="documents/Resume.pdf">
-                    Resume
-                      <md-icon >file_download</md-icon>
-                    </md-button>
-                    <h1 class="md-subhead">
-                      {{section.career.text}}
-                    </h1>
-                  </div>
-                </md-toolbar>
-
-                <div style="padding: 0px 16px 0px">
-                  <div ng-repeat="careerItem in careerList" style="overflow: hidden">
-                    <div ng-if="!$first" class="vertical-line"></div>
-                    <div style="position: relative">
-                      <div class="date-chip">{{careerItem.whenTo}}</div>
-                      <div class="horizontal-line"></div>
-                    </div>
-                    <h2 class="md-title" style="color: #66BB6A; padding-left: 16px">{{careerItem.who}}</h2>
-                    <h1 class="md-subhead" style="padding-left: 16px">{{careerItem.body}}</h1>
-                    <div style="position: relative">
-                      <div class="date-chip">{{careerItem.whenFrom}}</div>
-                      <div class="horizontal-line"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-            <!-- Column 3 (Right)-->
-            <div flex="100" flex-gt-sm="33" style="padding: 16px">
-              <!-- Personal Projects Section -->
-              <div md-whiteframe="2" style="margin-bottom: 32px; background-color: transparent">
-                <div style="margin-bottom: 32px; border-color: #E67E22;" class="sectionBorder">
-                  <md-toolbar class="section-text-container" style="background-color: #e67e22 !important">
-                    <div class="md-display-1 section-text">Personal Projects
+              <!-- Column 1 (Left) -->
+              <div flex="100" flex-gt-sm="33" style="padding: 16px">
+                <!-- About Me Section -->
+                <div md-whiteframe="2" style="border-color: #2980B9" class="sectionBorder">
+                  <md-toolbar class="section-text-container" style="background-color: #2980B9 !important;">
+                    <div class="md-display-1 section-text">
+                      About Me
+                      <md-button class="section-button" aria-label="Visit About Me" href="aboutMe.html">
+                      Visit
+                        <md-icon >chevron_right</md-icon>
+                      </md-button>
                       <h1 class="md-subhead">
-                        {{section.projects.text}}
-                      </h1>
-                    </div>
-                  </md-toolbar>
-
-                  <div layout-xs="column" style="padding: 0px 16px 0px">
-                    <div flex="100" layout="column">
-                      <md-list-item class="md-2-line" ng-repeat="projectItem in projectList" style="padding: 0px" ng-click="showProject($event, projectItem.title, projectItem.body, projectItem.tag1, projectItem.tag2, projectItem.tag3)">
-                        <md-icon style="margin: auto; color: #E67E22">{{projectItem.icon}}</md-icon>
-                        <div class="md-list-item-text" style="margin: 16px 8px 16px 16px">
-                          <h3>{{projectItem.title}}</h3>
-                        </div>
-                        <md-divider ng-if="!$last"></md-divider>
-                      </md-list-item>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Education Section -->
-              <div md-whiteframe="2" style="margin-bottom: 32px; background-color: transparent">
-                <div style="margin-bottom: 32px; border-color: #9b59b6;" class="sectionBorder">
-                  <md-toolbar class="section-text-container" style="background-color: #9b59b6 !important">
-                    <div class="md-display-1 section-text">Education
-                      <h1 class="md-subhead">
-                        {{section.education.text}}
+                        {{section.aboutme.text}}
                       </h1>
                     </div>
                   </md-toolbar>
 
                   <div style="padding: 0px 16px 0px">
-                    <div>
-                      <div ng-repeat="info in eduInformation">
+                    <div style="position: relative">
+                      <div id="img-tile">
+                        <img class="img-fill" ng-src="{{section.aboutme.img}}">
+                      </div>
+                      <div class="md-display-1 tileTitle">Contact Info</div>
+                    </div>
+                    <div style="padding-top: 16px">
+                      <div ng-repeat="info in aboutMeInformation">
                         <div class="list-item" layout="row">
-                          <md-icon class="list-item-icon" style="color: #9b59b6 !important;">{{info.icon}}</md-icon>
+                          <md-icon class="list-item-icon" style="color: #2980B9 !important;">{{info.icon}}</md-icon>
                           <h1 class="md-subhead list-item-text">{{info.title}}</h1>
                         </div>
                         <md-divider ng-if="!$last"></md-divider>
@@ -173,13 +80,99 @@
                 </div>
               </div>
 
+              <!-- Column 2 (Center) -->
+              <div flex="100" flex-gt-sm="33" style="padding: 16px" md-theme="projects">
+                <!-- Career Section -->
+                <div md-whiteframe="2" style="border-color: #66BB6A" class="sectionBorder">
+                  <md-toolbar class="section-text-container" style="background-color: #66BB6A !important;">
+                    <div class="md-display-1 section-text">Career
+                      <md-button class="section-button" aria-label="Visit About Me" href="documents/Resume.pdf" target="_blank">
+                      Resume
+                        <md-icon >file_download</md-icon>
+                      </md-button>
+                      <h1 class="md-subhead">
+                        {{section.career.text}}
+                      </h1>
+                    </div>
+                  </md-toolbar>
+
+                  <div style="padding: 0px 16px 0px">
+                    <div ng-repeat="careerItem in careerList" style="overflow: hidden">
+                      <div ng-if="!$first" class="vertical-line"></div>
+                      <div style="position: relative">
+                        <div class="date-chip">{{careerItem.whenTo}}</div>
+                        <div class="horizontal-line"></div>
+                      </div>
+                      <h2 class="md-title" style="color: #66BB6A; padding-left: 16px">{{careerItem.who}}</h2>
+                      <h1 class="md-subhead" style="padding-left: 16px">{{careerItem.body}}</h1>
+                      <div style="position: relative">
+                        <div class="date-chip">{{careerItem.whenFrom}}</div>
+                        <div class="horizontal-line"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Column 3 (Right)-->
+              <div flex="100" flex-gt-sm="33" style="padding: 16px">
+                <!-- Personal Projects Section -->
+                <div md-whiteframe="2" style="margin-bottom: 32px; background-color: transparent">
+                  <div style="margin-bottom: 32px; border-color: #E67E22;" class="sectionBorder">
+                    <md-toolbar class="section-text-container" style="background-color: #e67e22 !important">
+                      <div class="md-display-1 section-text">Personal Projects
+                        <h1 class="md-subhead">
+                          {{section.projects.text}}
+                        </h1>
+                      </div>
+                    </md-toolbar>
+
+                    <div layout-xs="column" style="padding: 0px 16px 0px">
+                      <div flex="100" layout="column">
+                        <md-list-item class="md-2-line" ng-repeat="projectItem in projectList" style="padding: 0px" ng-click="showProject($event, projectItem.title, projectItem.body, projectItem.tag1, projectItem.tag2, projectItem.tag3)">
+                          <md-icon style="margin: auto; color: #E67E22">{{projectItem.icon}}</md-icon>
+                          <div class="md-list-item-text" style="margin: 16px 8px 16px 16px">
+                            <h3>{{projectItem.title}}</h3>
+                          </div>
+                          <md-divider ng-if="!$last"></md-divider>
+                        </md-list-item>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Education Section -->
+                <div md-whiteframe="2" style="margin-bottom: 32px; background-color: transparent">
+                  <div style="margin-bottom: 32px; border-color: #9b59b6;" class="sectionBorder">
+                    <md-toolbar class="section-text-container" style="background-color: #9b59b6 !important">
+                      <div class="md-display-1 section-text">Education
+                        <h1 class="md-subhead">
+                          {{section.education.text}}
+                        </h1>
+                      </div>
+                    </md-toolbar>
+
+                    <div style="padding: 0px 16px 0px">
+                      <div>
+                        <div ng-repeat="info in eduInformation">
+                          <div class="list-item" layout="row">
+                            <md-icon class="list-item-icon" style="color: #9b59b6 !important;">{{info.icon}}</md-icon>
+                            <h1 class="md-subhead list-item-text">{{info.title}}</h1>
+                          </div>
+                          <md-divider ng-if="!$last"></md-divider>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
-          </div>
-          <md-toolbar style="background-color: #607D8B !important">
-            <p class="side-margin" style="text-align: center; font-size: small">All artwork, photos, code, and documents available on this site are property of Jonathan Beckman. For permission to use materials found of this site please contact me via email. © 2015-2016 Jonathan Beckman, All rights reserved.</p>
-          </md-toolbar>
-          <p class="footer-text" style="background-color: #455A64; font-size: small">Powered by Angular Material. Code licensed under the MIT License.</p>
-        </md-content>
+          </md-content>
+        </div>
+        <div>
+          <p class="footer-text" style="background-color: #607D8B">All artwork, photos, code, and documents available on this site are property of Jonathan Beckman. For permission to use materials found of this site please contact me via email. © 2015-2016 Jonathan Beckman, All rights reserved.</p>
+          <p class="footer-text" style="background-color: #455A64; font-size: small">Powered by Angular Material. Code licensed under the MIT License. Icons proivided by FontAwesome and Google Material Design icon library.</p>
+        </div>
       </section>
     </div>
 
@@ -195,16 +188,3 @@
 
   </body>
 </html>
-
-<!--
-<md-button class="md-raised section-button" aria-label="Visit About Me">
-                      Visit
-                      <md-icon style="color: #2980b9">arrow_forward</md-icon>
-                    </md-button>
-                  -->
-
-<!--
-md-button ng-if="$index < 1" class="md-icon-button md-primary">
-                            <md-icon>photo</md-icon>
-                          </md-button>
--->
