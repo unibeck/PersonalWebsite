@@ -121,10 +121,6 @@ body, html{
   width: calc(100% - 168px);
 }
 
-#hobbyTileReplay{
-  right: 64px;
-}
-
 .list-item-icon{
   padding: 16px 16px 16px 0px;
   margin-top: auto;

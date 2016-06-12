@@ -32,14 +32,14 @@ body, html{
   padding-bottom: 128px;
 }
 
-.side-margin{ /**/
+.side-margin{ 
   margin-left: 10%;
   margin-right: 10%;
   position: relative;
 }
 
 .full-page{
-  bacground-color: #EEE !important;
+  background-color: #EEE !important;
   min-height: calc(100vh - 135px);
 }
 
@@ -50,18 +50,18 @@ body, html{
   text-align: center;
 }
 
-.section-text { /**/
+.section-text {
   color: #FFF;
   margin: 0px;
   padding: 16px 16px 0px;
 }
 
-.section-text-container { /**/
+.section-text-container {
   overflow: auto;
   margin-bottom: 16px;
 }
 
-.section-button{ /**/
+.section-button{
   margin: auto;
   vertical-align: top;
   float: right;
@@ -131,7 +131,7 @@ md-chips-wrap.md-chips.ng-scope.md-readonly {
   padding: 0px;
 }
 
-.img-fill{ /*Emulates background-img cover affect, use within img-containter*/
+.img-fill{
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -141,14 +141,6 @@ md-chips-wrap.md-chips.ng-scope.md-readonly {
   color: #E67E22;
   margin: 0px;
 }
-
-/*
-.calculated-width {
-    width: -moz-calc(100% - 100px);
-    width: -webkit-calc(100% - 100px);
-    width: calc(100% - 100px);
-}
-*/
 
 .tileTitle{
   color: #fff;
