@@ -6,13 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.css">
-    <!-- Google API Roboto font is included in the Angular Material Library-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
     
     <!-- Material Design icon font -->
     <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
     <link rel="stylesheet" href="css/index.css">
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-89697804-1', 'auto');
+        ga('send', 'pageview');
+    </script>
   </head>
 
   <body>
@@ -81,7 +89,7 @@
               </div>
 
               <!-- Column 2 (Center) -->
-              <div flex="100" flex-gt-sm="33" style="padding: 16px" md-theme="projects">
+              <div flex="100" flex-gt-sm="33" style="padding: 16px">
                 <!-- Career Section -->
                 <div md-whiteframe="2" style="border-color: #66BB6A" class="sectionBorder">
                   <md-toolbar class="section-text-container" style="background-color: #66BB6A !important;">
@@ -129,10 +137,11 @@
 
                     <div layout-xs="column" style="padding: 0px 16px 0px">
                       <div flex="100" layout="column">
-                        <md-list-item class="md-2-line" ng-repeat="projectItem in projectList" style="padding: 0px" ng-click="showProject($event, projectItem.title, projectItem.body, projectItem.tag1, projectItem.tag2, projectItem.tag3)">
-                          <md-icon style="margin: auto; color: #E67E22">{{projectItem.icon}}</md-icon>
-                          <div class="md-list-item-text" style="margin: 16px 8px 16px 16px">
-                            <h3>{{projectItem.title}}</h3>
+                        <md-list-item ng-repeat="projectItem in projectList" style="padding: 0px" layout="row" layout-align="start center"
+                                      ng-click="showProject($event, projectItem.title, projectItem.body, projectItem.tag1, projectItem.tag2, projectItem.tag3)">
+                          <md-icon style="margin: 16px 24px 16px 16px; color: #E67E22">{{projectItem.icon}}</md-icon>
+                          <div class="md-list-item-text">
+                            <p>{{projectItem.title}}</p>
                           </div>
                           <md-divider ng-if="!$last"></md-divider>
                         </md-list-item>
@@ -182,9 +191,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
     <!-- Angular Material Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.5/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
 
     <script src="js/index.js"></script>
-
   </body>
 </html>
