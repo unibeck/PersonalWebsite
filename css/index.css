@@ -96,6 +96,40 @@ md-chips-wrap.md-chips.ng-scope.md-readonly {
   margin-left: 70px;
 }
 
+.career-body {
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+
+  -webkit-transition: all 0.5s cubic-bezier(0,1,0,1);
+  -moz-transition: all 0.5s cubic-bezier(0,1,0,1);
+  -o-transition: all 0.5s cubic-bezier(0,1,0,1);
+  transition: all 0.5s cubic-bezier(0,1,0,1);
+}
+
+.show-career-body {
+  max-height: 432px;
+  margin-bottom: 12px;
+
+  -webkit-transition: all 0.5s cubic-bezier(1,0,1,0);
+  -moz-transition: all 0.5s cubic-bezier(1,0,1,0);
+  -o-transition: all 0.5s cubic-bezier(1,0,1,0);
+  transition: all 0.5s cubic-bezier(.5,0,.5,0);
+}
+
+.career-arrow {
+  transform: rotate(0deg);
+
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.rotate-career-arrow {
+  transform: rotate(180deg);
+}
+
 .vertical-line {
   border-style: dotted;
   border-width: 0px 0px 0px 2px;

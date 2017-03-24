@@ -46,6 +46,11 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog) {
     };
   }
 
+  $scope.toggleCareerItem = function (item) {
+      console.log("we clicked item " + item.showBody);
+      item.showBody = !item.showBody;
+  };
+
   $scope.section = {
     aboutme: {
       title: 'About Me',

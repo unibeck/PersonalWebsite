@@ -2,7 +2,7 @@
 <html lang="en" ng-app="App">
   <head>
     <meta charset="UTF-8">
-    <title>Unibeck</title>
+    <title>Jonathan Beckman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
@@ -94,7 +94,7 @@
                 <div md-whiteframe="2" style="border-color: #66BB6A" class="sectionBorder">
                   <md-toolbar class="section-text-container" style="background-color: #66BB6A !important;">
                     <div class="md-display-1 section-text">Career
-                      <md-button class="section-button" aria-label="Visit About Me" href="documents/Resume.pdf" target="_blank">
+                      <md-button class="section-button" aria-label="Download Resume" href="documents/Resume.pdf" target="_blank">
                       Resume
                         <md-icon >file_download</md-icon>
                       </md-button>
@@ -111,8 +111,13 @@
                         <div class="date-chip">{{careerItem.whenTo}}</div>
                         <div class="horizontal-line"></div>
                       </div>
-                      <h2 class="md-title" style="color: #66BB6A; padding-left: 16px">{{careerItem.who}}</h2>
-                      <h1 class="md-subhead" style="padding-left: 16px">{{careerItem.body}}</h1>
+                      <div layout="row" layout-align="space-between stretch">
+                        <h2 class="md-title" style="color: #66BB6A; padding-left: 16px">{{careerItem.who}}</h2>
+                        <md-button class="md-icon-button" ng-click="toggleCareerItem(careerItem)" aria-label="Expand job information">
+                          <md-icon ng-class="{'rotate-career-arrow' : careerItem.showBody}" class="career-arrow">expand_more</md-icon>
+                        </md-button>
+                      </div>
+                      <h1 ng-class="{'show-career-body' : careerItem.showBody}" class="md-subhead career-body" style="padding-left: 16px">{{careerItem.body}}</h1>
                       <div style="position: relative">
                         <div class="date-chip">{{careerItem.whenFrom}}</div>
                         <div class="horizontal-line"></div>
