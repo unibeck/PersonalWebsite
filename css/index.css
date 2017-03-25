@@ -139,6 +139,10 @@ md-chips-wrap.md-chips.ng-scope.md-readonly {
   color: #DDD;
 }
 
+.md-button.md-no-style {
+  padding-left: 0 !important;
+}
+
 .list-item-icon{
   padding: 16px 16px 16px 0px;
   margin-top: auto;

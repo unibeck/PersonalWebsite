@@ -20,26 +20,31 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog, $http) 
       .then(function(result) {
           $scope.careerList = result.data;
       });
+
+    $http.get('https://personalwebsite-4caa3.firebaseio.com/public/projects.json')
+      .then(function(result) {
+          $scope.projectList = result.data;
+      });
   };
 
   init();
   
-  $scope.showProject = function (event, title, body, tag1, tag2, tag3) {
+  $scope.showProject = function (event, projectItem) {
     $mdDialog.show({
       controller: DialogController,
       template:
         '<md-dialog aria-label="Project dialog" style="width: 512px">'+
         '  <md-dialog-content style="padding: 24px">'+
-        '     <div class="md-headline project-title">'+title+''+
+        '     <div class="md-headline project-title">'+projectItem.title+''+
         '      <md-button class="md-icon-button section-button" href="https://github.com/rajonbeckman/PersonalWebsite">'+
         '        <md-icon md-font-icon="fa-github-square" class="fa s24" style="color: #E67E22"></md-icon>'+
         '      </md-button>'+
-        '      <p class="md-subhead" style="color: #000; margin-bottom: 8px">'+body+'</p>'+
+        '      <p class="md-subhead" style="color: #000; margin-bottom: 8px">'+projectItem.body+'</p>'+
         '    </div>'+
         '    <md-chips>'+
-        '      <md-chip>'+tag1+'</md-chip>'+
-        '      <md-chip>'+tag2+'</md-chip>'+
-        '      <md-chip>'+tag3+'</md-chip>'+
+        '      <md-chip>'+projectItem.tag1+'</md-chip>'+
+        '      <md-chip>'+projectItem.tag2+'</md-chip>'+
+        '      <md-chip>'+projectItem.tag3+'</md-chip>'+
         '    </md-chips>'+
         '  </md-dialog-content>'+
         '</md-dialog>',
@@ -54,11 +59,6 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog, $http) 
       $mdDialog.hide();
     };
   }
-
-  $scope.toggleCareerItem = function (item) {
-      console.log("we clicked item " + item.showBody);
-      item.showBody = !item.showBody;
-  };
 
   $scope.section = {
     aboutme: {
@@ -83,27 +83,6 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog, $http) 
       text: 'I am starting my senior year of university this fall. The past three years of my journey have been exciting, intense, and rewarding. I have been loving every minute of it!'
     }
   };
-  
-  $scope.projectList = [
-    {
-      title: 'Activity Weather',
-      icon: 'android',
-      img: 'images/ActivityWeather.png',
-      body: 'The Android app that I\'ve been developing in my free time. Select your preferred weather that you like to do an activity with and the app will let you know when the weather is nice enough to do that sport, lawn work, or any hobby. For example, Activity Weather will let you know if you have enough time to mow your lawn before a thunderstorm hits.',
-      tag1: 'Java',
-      tag2: 'JSON',
-      tag3: 'Android Studio'
-    },
-    {
-      title: 'Personal Website',
-      icon: 'web',
-      img: 'images/website.png',
-      body: 'You\'re using it! This is my first major project involving the latest web development tools. I first started with the Material Design Lite framework and realized that I needed something different. Still loving the feel of material design I went with framework called Angular Material. A few major redesigns later, I am quite happy with what I have built. Enjoy!',
-      tag1: 'AngularJS',
-      tag2: 'HTML5',
-      tag3: 'CSS3'
-    }
-  ];
 
   $scope.aboutMeInformation = [
     {

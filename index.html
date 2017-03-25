@@ -114,7 +114,7 @@
                       <div layout="column" layout-align="start stretch" style="padding-left: 16px">
                         <div layout="row" layout-align="space-between stretch">
                           <h2 class="md-title" style="margin-bottom: 8px; color: #66BB6A">{{careerItem.who}}</h2>
-                          <md-button class="md-icon-button" ng-click="toggleCareerItem(careerItem)" aria-label="Expand job information">
+                          <md-button class="md-icon-button" ng-click="careerItem.showBody = !careerItem.showBody" aria-label="Expand job information">
                             <md-icon ng-class="{'rotate-career-arrow' : careerItem.showBody}" class="career-arrow">expand_more</md-icon>
                           </md-button>
                         </div>
@@ -134,7 +134,7 @@
               <div flex="100" flex-gt-sm="33" style="padding: 16px">
                 <!-- Personal Projects Section -->
                 <div md-whiteframe="2" style="margin-bottom: 32px; background-color: transparent">
-                  <div style="margin-bottom: 32px; border-color: #E67E22;" class="sectionBorder">
+                  <div style="margin-bottom: 32px; border-color: #E67E22; padding-bottom: 16px" class="sectionBorder">
                     <md-toolbar class="section-text-container" style="background-color: #e67e22 !important">
                       <div class="md-display-1 section-text">Personal Projects
                         <h1 class="md-subhead">
@@ -144,16 +144,16 @@
                     </md-toolbar>
 
                     <div layout-xs="column" style="padding: 0px 16px 0px">
-                      <div flex="100" layout="column">
-                        <md-list-item ng-repeat="projectItem in projectList" style="padding: 0px" layout="row" layout-align="start center"
-                                      ng-click="showProject($event, projectItem.title, projectItem.body, projectItem.tag1, projectItem.tag2, projectItem.tag3)">
-                          <md-icon style="margin: 16px 24px 16px 16px; color: #E67E22">{{projectItem.icon}}</md-icon>
-                          <div class="md-list-item-text">
+                      <md-list flex>
+                        <md-list-item ng-repeat="projectItem in projectList" ng-click="showProject($event, projectItem)">
+                          <md-icon style="margin: 16px 20px 16px 0px; color: #E67E22">{{projectItem.icon}}</md-icon>
+                          <div class="md-list-item-text" layout="column">
                             <p>{{projectItem.title}}</p>
                           </div>
+                          <md-icon style="margin-right: 0; margin-left: auto">launch</md-icon>
                           <md-divider ng-if="!$last"></md-divider>
                         </md-list-item>
-                      </div>
+                      </md-list>
                     </div>
                   </div>
                 </div>
