@@ -16,6 +16,11 @@ angular.module('App').config(function ($mdThemingProvider) {
 angular.module('App').controller('AppCtrl', function ($scope, $mdDialog, $http) {
 
   var init = function () {
+    $http.get('https://personalwebsite-4caa3.firebaseio.com/public/headers.json')
+      .then(function(result) {
+          $scope.section = result.data;
+      });
+
     $http.get('https://personalwebsite-4caa3.firebaseio.com/public/career.json')
       .then(function(result) {
           $scope.careerList = result.data;
@@ -60,30 +65,6 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog, $http) 
     };
   }
 
-  $scope.section = {
-    aboutme: {
-      title: 'About Me',
-      text: 'Most of my free time is spent doing activities and hobbies outside. From camping in the Adirondack\'s with my girlfriend to throwing a football around with the guys, I\'m always enjoying what Earth has to offer.',
-      img: "images/profile.jpg"
-    },
-    career: {
-      title: 'Career',
-      text: 'Below is a timeline of my career path in chronological order. For a more in-depth analysis of my past jobs please reference my resume.'
-    },
-    projects: {
-      title: 'Personal Projects',
-      text: 'These are the following projects I\'ve been working on in my spare time. I have taken interest in these projects becuase of my curiousity to learn and establish a foundation in the latest languages and technologies.'
-    },
-    updates:{
-      title: 'Updates',
-      text: 'Here you can find the latest updates to my projects, my career, and my life in general. Below are my latest updates, but I implore you to check out the project section to learn more.'
-    },
-    education:{
-      title: 'Education',
-      text: 'I am starting my senior year of university this fall. The past three years of my journey have been exciting, intense, and rewarding. I have been loving every minute of it!'
-    }
-  };
-
   $scope.aboutMeInformation = [
     {
       icon: 'email',
@@ -110,24 +91,7 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog, $http) 
     },
     {
       icon: 'event',
-      title: 'Anticipated May 2017'
+      title: 'Graduated May 2017'
     }
   ];
-
-
 });
-
-/*
-<div class="md-headline project-title">{{title}}'+
-        '     <md-button class="md-icon-button md-primary section-button" href="https://github.com/rajonbeckman/PersonalWebsite">'+
-        '       <md-icon md-font-icon="fa-github-square" class="fa s24"></md-icon>'+
-        '     </md-button>'+
-        '     <p class="md-subhead" style="color: #000; margin-bottom: 8px">{{projectTile.body}}</p>'+
-        '   </div>'+
-        '   <md-chips>'+
-        '     <md-chip>{{projectTile.tag1}}</md-chip>'+
-        '     <md-chip>{{projectTile.tag2}}</md-chip>'+
-        '     <md-chip>{{projectTile.tag3}}</md-chip>'+
-        '   </md-chips>'+
-        */
-

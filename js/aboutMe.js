@@ -11,17 +11,19 @@ angular.module('App').config(function ($mdThemingProvider) {
     .warnPalette('red');
 });
 
-angular.module('App').controller('AppCtrl', function ($scope) {
+angular.module('App').controller('AppCtrl', function ($scope, $http) {
 
-  $scope.section = {
-    aboutme: {
-      title: 'About Me',
-      text: 'Most of my free time is spent having fun outside. From camping in the Adirondack\'s with my girlfriend to throwing a football around with the guys, I\'m always enjoying what Earth has to offer.'
-    }
+  var init = function () {
+    $http.get('https://personalwebsite-4caa3.firebaseio.com/public/headers/aboutme.json')
+      .then(function (result) {
+          $scope.section = {};
+          $scope.section.aboutme = result.data;
+      });
   };
 
+  init();
+
   $scope.aboutMeCards = [
-    
     {
       img: 'images/fishing.jpg',
       link: 'https://goo.gl/photos/2eh3c2w9yZnvb98A7',
@@ -38,15 +40,15 @@ angular.module('App').controller('AppCtrl', function ($scope) {
   $scope.aboutMeInformation = [
     {
       icon: 'email',
-      title: 'JonathanTBeckman@gmail.com',
+      title: 'JonathanTBeckman@gmail.com'
     },
     {
       icon: 'phone',
-      title: '518-567-9965',
+      title: '518-567-9965'
     },
     {
       icon: 'home',
-      title: 'Albany, NY 12222',
+      title: 'Albany, NY 12222'
     }
   ];
 
@@ -64,7 +66,6 @@ angular.module('App').controller('AppCtrl', function ($scope) {
     document.getElementById('tilePicGif').src = myanim.src;
     $scope.$apply();
   };
-    
 });
 
 /* Use to make SVG donuts from D3
