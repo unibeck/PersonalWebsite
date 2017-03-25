@@ -111,11 +111,14 @@
                         <div class="date-chip">{{careerItem.whenTo}}</div>
                         <div class="horizontal-line"></div>
                       </div>
-                      <div layout="row" layout-align="space-between stretch">
-                        <h2 class="md-title" style="color: #66BB6A; padding-left: 16px">{{careerItem.who}}</h2>
-                        <md-button class="md-icon-button" ng-click="toggleCareerItem(careerItem)" aria-label="Expand job information">
-                          <md-icon ng-class="{'rotate-career-arrow' : careerItem.showBody}" class="career-arrow">expand_more</md-icon>
-                        </md-button>
+                      <div layout="column" layout-align="start stretch" style="padding-left: 16px">
+                        <div layout="row" layout-align="space-between stretch">
+                          <h2 class="md-title" style="margin-bottom: 8px; color: #66BB6A">{{careerItem.who}}</h2>
+                          <md-button class="md-icon-button" ng-click="toggleCareerItem(careerItem)" aria-label="Expand job information">
+                            <md-icon ng-class="{'rotate-career-arrow' : careerItem.showBody}" class="career-arrow">expand_more</md-icon>
+                          </md-button>
+                        </div>
+                        <h1 class="md-subhead" style="margin-top: 0; font-style: italic">{{careerItem.what}}</h1>
                       </div>
                       <h1 ng-class="{'show-career-body' : careerItem.showBody}" class="md-subhead career-body" style="padding-left: 16px">{{careerItem.body}}</h1>
                       <div style="position: relative">

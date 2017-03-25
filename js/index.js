@@ -13,7 +13,16 @@ angular.module('App').config(function ($mdThemingProvider) {
     .warnPalette('red');
 });
 
-angular.module('App').controller('AppCtrl', function ($scope, $mdDialog) {
+angular.module('App').controller('AppCtrl', function ($scope, $mdDialog, $http) {
+
+  var init = function () {
+    $http.get('https://personalwebsite-4caa3.firebaseio.com/public/career.json')
+      .then(function(result) {
+          $scope.careerList = result.data;
+      });
+  };
+
+  init();
   
   $scope.showProject = function (event, title, body, tag1, tag2, tag3) {
     $mdDialog.show({
@@ -93,25 +102,6 @@ angular.module('App').controller('AppCtrl', function ($scope, $mdDialog) {
       tag1: 'AngularJS',
       tag2: 'HTML5',
       tag3: 'CSS3'
-    }
-  ];
-
-  $scope.careerList = [
-    {
-      who: 'Auto/Mate',
-      where: 'Albany, NY 12222',
-      what: 'Software Development Intern',
-      whenTo: 'Present',
-      whenFrom: 'May 16',
-      body: 'Developing new, more efficient and effective, systems for dealerships to communicate with vehicle manufacturers. Ensuring that messages are received and if not, we have logs of these events. Languages include mostly Java, though Ruby and shell scipts were also used. Tools used include Git, GitLab, SourceTree, Vagrant, Gauge, Chef, and Intellij.'
-    },
-    {
-      who: 'Office of Quality and Patient Safety (OQPS)',
-      where: 'Albany, NY 12222',
-      what: 'Web Developer Intern',
-      whenTo: 'May 16',
-      whenFrom: 'Oct 15',
-      body: 'Developing an intranet catered to the Office of Quality and Patient Safety (OQPS), though also accessible by other employees at the Department of Health (DOH). Languages and tools included HTML, CSS, JavaScript, and SharePoint.'
     }
   ];
 
