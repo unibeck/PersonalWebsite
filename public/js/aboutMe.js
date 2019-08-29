@@ -48,7 +48,7 @@ angular.module('App').controller('AppCtrl', function ($scope, $http) {
     },
     {
       icon: 'home',
-      title: 'Albany, NY 12222'
+      title: 'Woodstock, Georgia 30188'
     }
   ];
 
