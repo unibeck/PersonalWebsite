@@ -10,7 +10,6 @@ module.exports = {
     title: siteConfig.title,
     subtitle: siteConfig.subtitle,
     copyright: siteConfig.copyright,
-    disqusShortname: siteConfig.disqusShortname,
     menu: siteConfig.menu,
     author: siteConfig.author
   },
@@ -18,15 +17,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content`,
-        name: 'pages'
+        name: 'pages',
+        path: `${__dirname}/content`
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/media`,
-        name: 'media'
+        name: 'media',
+        path: `${__dirname}/static/media`
       }
     },
     {
@@ -50,7 +49,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                site_url: url
+                siteUrl: url
                 title
                 description: subtitle
               }
@@ -63,8 +62,8 @@ module.exports = {
               ...edge.node.frontmatter,
               description: edge.node.frontmatter.description,
               date: edge.node.frontmatter.date,
-              url: site.siteMetadata.site_url + edge.node.fields.slug,
-              guid: site.siteMetadata.site_url + edge.node.fields.slug,
+              url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+              guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
               custom_elements: [{ 'content:encoded': edge.node.html }]
             }))
           ),
@@ -129,24 +128,25 @@ module.exports = {
         ]
       }
     },
+
+    // Parse all images files
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-netlify',
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/index.js`,
-      }
-    },
+
     {
       resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: [siteConfig.googleAnalyticsId],
         pluginConfig: {
+          // Puts tracking script in the head instead of the body
           head: true,
+
+          // Setting this parameter is also optional
+          respectDNT: true
         },
       },
     },
+
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
@@ -178,6 +178,9 @@ module.exports = {
         }))
       }
     },
+
+    // This plugin takes generates a web manifest file so the website can be added to a
+    // homescreen on Android.
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -187,9 +190,12 @@ module.exports = {
         background_color: '#FFF',
         theme_color: '#F7A046',
         display: 'standalone',
-        icon: 'static/headshot_square.jpeg'
+        icon: 'static/profile.jpg'
       },
     },
+
+    // Generates a service worker and AppShell html file so the site works offline and is otherwise
+    // resistant to bad networks.
     'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',

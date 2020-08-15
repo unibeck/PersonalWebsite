@@ -7,7 +7,7 @@ module.exports = {
   subtitle: 'Personal Website & Blog of Jonathan Beckman',
   copyright: 'Copyright © Jonathan Beckman 2020. All rights reserved.',
   postsPerPage: 4,
-  googleAnalyticsId: '', //TODO
+  googleAnalyticsId: '',
   menu: [
     {
       label: 'Articles',
@@ -20,12 +20,20 @@ module.exports = {
     {
       label: 'Contact me',
       path: '/pages/contacts'
+    },
+    {
+      label: 'RSS',
+      path: '/rss.xml'
+    },
+    {
+      label: 'Site Map',
+      path: '/sitemap.xml'
     }
   ],
   author: {
     name: 'Jonathan Beckman',
-    photo: '/headshot_square.jpeg',
-    bio: 'A Senior DevOps Engineer and Office Manager by day -- real estate investor and property manager by night', //TODO
+    photo: '/profile.jpg',
+    bio: 'A Senior DevOps Engineer and Office Manager by day -- angler and carpenter by night',
     contacts: {
       email: 'jonathantbeckman@gmail.com',
       linkedin: '#jbeckman',
