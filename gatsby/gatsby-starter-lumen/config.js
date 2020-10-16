@@ -35,10 +35,10 @@ module.exports = {
     photo: '/profile.jpg',
     bio: 'A Senior DevOps Engineer and Office Manager by day -- angler and carpenter by night',
     contacts: {
-      email: 'jonathantbeckman@gmail.com',
-      linkedin: '#jbeckman',
+      email: 'hello@jonbeckman.com',
+      linkedin: 'jonathantbeckman',
       gitlab: 'jbeckman',
-      github: '#unibeck',
+      github: 'unibeck',
     }
   }
 };

@@ -16,4 +16,4 @@ My own personal website to  connect with anyone. It describes who I am, what I d
 All HTML, CSS, and JS code contained within the site was developed by me. Some icons are provided by Font Awesome by 
 Dave Gandy - http://fontawesome.io and by Google's Material Design icons. All other artwork and photographs are owned 
 by me. Usage of images on this site is prohibited unless given consent. You can contact me at 
-jonathantbeckman@gmail.com.
+hello@jonbeckman.com.

@@ -4,8 +4,9 @@ template: "page"
 socialImage: "/media/image-2.jpg"
 ---
 
-Jonathan Beckman is one part angler, one part carpenter, and a generous dash of Senior DevOps Engineer. Jonathan works 
-at Jahnel Group (JG), a top consulting firm, shaping countless companies' SDLC processes. Most recently he managed a 
+Jonathan Beckman is one part angler, one part carpenter, and a generous dash of DevOps Engineer. Jonathan works 
+at Jahnel Group (JG), a top consulting firm, shaping several companies' SDLC processes. Most recently he reduced the 
+duration of building out production environments so that clients can go live quicker. This involved managing a 
 220+ VM migration to Chef Automate. He also helps lead JG's Architecture Review Board (ARB) and oversees JG's Atlanta 
 office initiative.
 
@@ -15,5 +16,5 @@ Developer to Senior DevOps Engineer. Jonathan attributes his strong and pragmati
 governance, and attention to detail to his success.
 
 When Jonathan is not working, you can find him outside enjoying what mother Earth has to offer. He loves to fish with 
-his girlfriend, ride ATV/UTVs with his buddies, and hunt in solitude. Jonathan loves meeting new people and building 
+his girlfriend, ride ATV/UTVs with his buddies, and hunt in solitude. Jonathan enjoys meeting new people and building 
 ever-lasting connections. Please reach out and share your story as well!

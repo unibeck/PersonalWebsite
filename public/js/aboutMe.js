@@ -40,7 +40,7 @@ angular.module('App').controller('AppCtrl', function ($scope, $http) {
   $scope.aboutMeInformation = [
     {
       icon: 'email',
-      title: 'JonathanTBeckman@gmail.com'
+      title: 'hello@jonbeckman.com'
     },
     {
       icon: 'phone',
@@ -53,7 +53,7 @@ angular.module('App').controller('AppCtrl', function ($scope, $http) {
   ];
 
   $scope.gifIsLoading = true;
-    
+
   var myanim = new Image();
   myanim.src = 'images/motorcycle.gif';
 
@@ -75,39 +75,39 @@ angular.element(document).ready(function () {
         r = 100,    //radius
         ir = 50,
         pi = Math.PI,
-        color = d3.scale.category20c();     
+        color = d3.scale.category20c();
 
-        data = [{"value":1}, 
+        data = [{"value":1},
                 {"value":9}];
 
         var color = d3.scale.ordinal()
         .range(["#FFC107", "#2196F3"]);
 
-        var vis = d3.select("#donut-0") 
-            .data([data])          
-                .attr("width", w)  
+        var vis = d3.select("#donut-0")
+            .data([data])
+                .attr("width", w)
                 .attr("height", h)
                 .attr("viewBox", "0, 0, 232, 116")
             .append("svg:g")
                 .attr("transform", "translate(116,116)")
 
-        var arc = d3.svg.arc()              
+        var arc = d3.svg.arc()
             .outerRadius(r)
         .innerRadius(ir);
 
-        var pie = d3.layout.pie()          
+        var pie = d3.layout.pie()
             .value(function(d) { return d.value; })
             .startAngle(-90 * (pi/180))
             .endAngle(90 * (pi/180));
 
-        var arcs = vis.selectAll("g.slice")     
-            .data(pie)                          
-            .enter()                            
-                .append("svg:g")                
-                    .attr("class", "slice");    
+        var arcs = vis.selectAll("g.slice")
+            .data(pie)
+            .enter()
+                .append("svg:g")
+                    .attr("class", "slice");
 
             arcs.append("svg:path")
-                    .attr("fill", function(d, i) { return color(i); } ) 
+                    .attr("fill", function(d, i) { return color(i); } )
                     .attr("d", arc);
 });
 */
