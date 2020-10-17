@@ -1,0 +1,108 @@
+image: latest
+
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+test:lint:
+  script:
+    - npm run lint
+
+test:vulnerabilities:
+  script:
+    - npm run vuln-test
+
+test:node:4:
+  image: node:4
+  script:
+    - npm run build
+    - npm test
+
+# Publish tagged versions to npm
+publish:
+  stage: deploy
+  only:
+    - master
+  script:
+    - npm run build
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+    - npm publish
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn install --frozen-lockfile
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "yarn.lock" }}
+
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn lint
+
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn test --runInBand --no-cache
+
+  coverage:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run: yarn test:coverage --runInBand --no-cache
+      - save_cache:
+          key: coverage-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - coverage
+
+  codecov:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          keys:
+            - coverage-output-{{ .Environment.CIRCLE_SHA1 }}
+      - run: yarn global add codecov
+      - run: yarn codecov
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - install
+      - lint:
+          requires:
+            - install
+      - test:
+          requires:
+            - install
+      - coverage:
+          requires:
+            - install
+      - codecov:
+          requires:
+            - coverage

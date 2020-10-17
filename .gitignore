@@ -1,4 +1,17 @@
+# Intellij
 .idea/
+gatsby-starter-lumen.iml
 
-.firebase/
-firebase-debug.log
+# Node / NPM
+node_modules/
+npm-debug.log
+
+# Build
+.cache/
+public/
+
+# Eslint
+.eslintcache
+
+# Gatsby
+.gatsby-context.js
