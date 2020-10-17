@@ -59,12 +59,13 @@ $ gatsby serve
 #TODO:
 - Clean up readme
 - https://search.google.com/search-console/about
-- Remove Katex
 - Remove unnecessary dependencies
 - Remove old references
 - Fix CI/CD job
 - Write blog posts
 - Implement Dark Mode
+- robots.txt
+- favicon
 
 ## Credits
 
