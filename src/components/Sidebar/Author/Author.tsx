@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import { withPrefix, Link } from 'gatsby';
 // @ts-ignore

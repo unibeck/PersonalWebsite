@@ -1,6 +1,6 @@
 # Intellij
 .idea/
-gatsby-starter-lumen.iml
+*.iml
 
 # Node / NPM
 node_modules/
@@ -9,9 +9,6 @@ npm-debug.log
 # Build
 .cache/
 public/
-
-# Eslint
-.eslintcache
 
 # Gatsby
 .gatsby-context.js

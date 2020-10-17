@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 // @ts-ignore
 import styles from './Copyright.module.scss';

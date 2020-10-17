@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react';
 import Author from './Author';
 import Contacts from './Contacts';

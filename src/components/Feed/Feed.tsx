@@ -1,6 +1,5 @@
-// @flow strict
 import * as React from 'react';
-import * as moment from 'moment';
+import moment from 'moment';
 import { Link } from 'gatsby';
 import type { Edges } from '../../types';
 // @ts-ignore

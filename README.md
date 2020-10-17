@@ -56,6 +56,16 @@ $ npm run build
 $ gatsby serve
 ```
 
+#TODO:
+- Clean up readme
+- https://search.google.com/search-console/about
+- Remove Katex
+- Remove unnecessary dependencies
+- Remove old references
+- Fix CI/CD job
+- Write blog posts
+- Implement Dark Mode
+
 ## Credits
 
 All HTML, CSS, and JS code contained within the site was developed by me. Some icons are provided by Font Awesome by 

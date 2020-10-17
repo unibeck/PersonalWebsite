@@ -27,9 +27,8 @@ publish:
   only:
     - master
   script:
-    - npm run build
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
-    - npm publish
+    - npm run deploy
 
 jobs:
   install:
