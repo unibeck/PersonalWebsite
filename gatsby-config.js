@@ -18,7 +18,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/content`
+        path: `${__dirname}/static/content`
       }
     },
     {
@@ -33,13 +33,6 @@ module.exports = {
       options: {
         name: 'css',
         path: `${__dirname}/static/css`
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'assets',
-        path: `${__dirname}/static`
       }
     },
     {
@@ -190,7 +183,7 @@ module.exports = {
         background_color: '#FFF',
         theme_color: '#F7A046',
         display: 'standalone',
-        icon: 'static/profile.jpg'
+        icon: 'static/media/profile.jpg'
       },
     },
 

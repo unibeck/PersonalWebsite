@@ -32,7 +32,7 @@ module.exports = {
   ],
   author: {
     name: 'Jonathan Beckman',
-    photo: '/profile.jpg',
+    photo: '/media/profile.jpg',
     bio: 'A Senior DevOps Engineer and Office Manager by day -- angler and carpenter by night',
     contacts: {
       email: 'hello@jonbeckman.com',
