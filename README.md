@@ -1,3 +1,4 @@
+# PersonalWebsite
 
 ## Table of contents
 + [Features](http://github.com/alxshelepenok/gatsby-starter-lumen#features)
@@ -24,6 +25,15 @@
 + Lighthouse Report - [WebPageTest](https://www.webpagetest.org/result/190510_FE_3f2b13d0beed320f477467d433f56f43/)
 + Visual Comparison - [WebPageTest](https://www.webpagetest.org/video/compare.php?tests=190510_KZ_1228c343ccf04148619a5d0b89a41f71,190510_RE_b3bfad442f32c690a9f420fe46025b8d,190510_RS_3b5f0bff2d95161351dc6934cadbf1cf,190510_SC_5c458c451941f81b12911ccf4171a817,190510_63_52d5edd8743773815fbacb2e9c66d228,190510_AS_741b29f5af5a6e54980d82826d7bb5bb)
 
+## Getting Started
+This repo is npm based, so getting set up is as simple as running `npm install`. Automatic jobs run in GitLab CI when
+there is a new commit to master. 
+
+### Running GitLab Jobs Locally
+While it is not required, you can duplicate this pipeline locally. First you must install [gitlab-runner](https://docs.gitlab.com/runner/install/)
+per your OS. Then start the gitlab runner with `gitlab-runner start`. Finally, choose the GitLab CI job you want to 
+test and run something like `gitlab-runner exec docker test:lighthouse`. Be aware the runner only runs with your latest 
+committed code, which makes for an odd workflow.
 
 #### Start Developing
 
@@ -45,10 +55,7 @@ Open the `blog` directory in your code editor of choice and edit `src/templates/
 
 #### Access Locally
 ```
-$ git clone https://github.com/[GITHUB_USERNAME]/[REPO_NAME].git
-$ cd [REPO_NAME]
-$ yarn
-$ npm run develop
+npm run develop
 ```
 To test the CMS locally, you'll need run a production build of the site:
 ```
