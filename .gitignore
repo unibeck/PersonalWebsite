@@ -12,3 +12,6 @@ public/
 
 # Gatsby
 .gatsby-context.js
+
+# Lighthouse
+.lighthouseci/

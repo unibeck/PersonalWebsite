@@ -16,6 +16,9 @@ build:
   stage: build
   script:
     - npm run build
+  artifacts:
+    paths:
+      - public/
 
 test:lint:
   stage: test
@@ -25,10 +28,12 @@ test:lint:
 test:lighthouse:
   stage: test
   script:
-    - npm install -g @lhci/cli@0.5.0 gatsby-cli@2.12.109
-    - lhci autorun --collect.start-server-command="gatsby serve" --collect.url=http://localhost:9000/ --upload.target=filesystem --upload.outputDir=lighthouse-reports --collect.settings.chromeFlags="--no-sandbox"
-    - ls -lah
-    - ls -lah lighthouse-reports/
+# Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
+# GitLab, however, it does not local. Thus you have to run it as part of this job
+#    - npm run build
+    - npm install --include=dev
+    - npm run lighthouse
+    - ls -lah .lighthouseci/
 
 deploy:staging:
   stage: deploy
