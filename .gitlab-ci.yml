@@ -34,6 +34,9 @@ test:lighthouse:
     - npm install --include=dev
     - npm run lighthouse
     - ls -lah .lighthouseci/
+  artifacts:
+    paths:
+      - .lighthouseci/*.html
 
 deploy:staging:
   stage: deploy

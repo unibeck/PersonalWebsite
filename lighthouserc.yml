@@ -1,0 +1,10 @@
+ci:
+  collect:
+    additive: false
+    start-server-command: gatsby serve
+    url: http://localhost:9000/
+    settings:
+      chromeFlags: --no-sandbox
+  upload:
+    target: filesystem
+    outputDir: .lighthouseci

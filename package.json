@@ -11,7 +11,7 @@
     "lint:js": "eslint --config \"lint/.eslintrc.json\" --ignore-path \"lint/.eslintignore\" --ext .js,.jsx .",
     "lint:scss": "stylelint --config \"lint/.stylelintrc.json\" \"src/**/*.scss\"",
     "lint": "concurrently \"npm run lint:js\" \"npm run lint:scss\"",
-    "lighthouse": "lhci autorun --collect.start-server-command=\"gatsby serve\" --collect.url=http://localhost:9000/ --collect.settings.chromeFlags=\"--no-sandbox\" --upload.target=filesystem --upload.outputDir=.lighthouseci"
+    "lighthouse": "lhci collect"
   },
   "repository": "https://gitlab.com/jbeckman/PersonalWebsite",
   "author": "Jonathan Beckman <jonathantbeckman@gmail.com>",
