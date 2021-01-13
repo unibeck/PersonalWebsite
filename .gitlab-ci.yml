@@ -1,4 +1,9 @@
-image: latest
+image: cypress/browsers:node12.18.3-chrome83-ff77
+
+stages:
+  - build
+  - test
+  - deploy
 
 before_script:
   - npm install
@@ -7,101 +12,48 @@ cache:
   paths:
     - node_modules/
 
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - public/
+
 test:lint:
+  stage: test
   script:
     - npm run lint
 
-test:vulnerabilities:
+test:lighthouse:
+  stage: test
   script:
-    - npm run vuln-test
+# Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
+# GitLab, however, it does not local. Thus you have to run it as part of this job
+#    - npm run build
+    - npm install --include=dev
+    - npm run lighthouse
+    - ls -lah .lighthouseci/
+  artifacts:
+    paths:
+      - .lighthouseci/*.html
 
-test:node:4:
-  image: node:4
-  script:
-    - npm run build
-    - npm test
-
-# Publish tagged versions to npm
-publish:
+deploy:staging:
   stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: staging
+    url: https://staging.jonbeckman.com
+  only:
+    - inflight
+
+deploy:production:
+  stage: deploy
+  script:
+    - npm run deploy
+  environment:
+    name: production
+    url: https://jonbeckman.com
   only:
     - master
-  script:
-    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
-    - npm run deploy
-
-jobs:
-  install:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn install --frozen-lockfile
-      - save_cache:
-          paths:
-            - node_modules
-          key: dependencies-{{ checksum "yarn.lock" }}
-
-  lint:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn lint
-
-  test:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn test --runInBand --no-cache
-
-  coverage:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn test:coverage --runInBand --no-cache
-      - save_cache:
-          key: coverage-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - coverage
-
-  codecov:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - restore_cache:
-          keys:
-            - coverage-output-{{ .Environment.CIRCLE_SHA1 }}
-      - run: yarn global add codecov
-      - run: yarn codecov
-
-workflows:
-  version: 2
-  test:
-    jobs:
-      - install
-      - lint:
-          requires:
-            - install
-      - test:
-          requires:
-            - install
-      - coverage:
-          requires:
-            - install
-      - codecov:
-          requires:
-            - coverage
