@@ -40,14 +40,39 @@ per your OS. Then start the gitlab runner with `gitlab-runner start`. Finally, c
 test and run something like `gitlab-runner exec docker test:lighthouse`. Be aware the runner only runs with your latest 
 committed code, which makes for an odd workflow.
 
+## Deploy
+The following instructions are to set up deploying manually, and they largely reflect the same actions the GitLab jobs 
+take. These commands assumed you have built the project and it is accessible in the `public/` folder. Also note there 
+are two environments, so choose the commands needed for the environment you wish to deploy too.
+
+First, set your environment variables. An example file is located at `.env_example`, copy that to a file named `.env` 
+and fill out the variables. The `.env` is ignored in Git, so don't worry about your secrets being committed. Now source 
+that file to make them available to your shell:
+```
+source .env
+```
+
+Next, copy the files to S3:
+```
+aws s3 sync public s3://${STAGING_BUCKET_NAME} --delete
+# or
+aws s3 sync public s3://${PROD_BUCKET_NAME} --delete
+```
+
+Lastly, invalidate the cloudfront cache:
+```
+aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} --paths "/*"
+# or
+aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --paths "/*"
+```
+
 #TODO:
 - https://search.google.com/search-console/about
-- Remove unnecessary dependencies
-- Remove old references
 - Write blog posts
 - Implement Dark Mode
 - robots.txt
 - favicon
+- error page (+s3)
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 

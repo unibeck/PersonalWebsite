@@ -5,7 +5,7 @@ module.exports = {
   pathPrefix: '/',
   title: 'Jonathan Beckman',
   subtitle: 'Personal Website & Blog of Jonathan Beckman',
-  copyright: 'Copyright © Jonathan Beckman 2020. All rights reserved.',
+  copyright: 'Copyright © Jonathan Beckman 2021. All rights reserved.',
   postsPerPage: 4,
   googleAnalyticsId: '',
   menu: [
@@ -33,7 +33,7 @@ module.exports = {
   author: {
     name: 'Jonathan Beckman',
     photo: '/media/profile.jpg',
-    bio: 'A Senior DevOps Engineer and Office Manager by day -- angler and carpenter by night',
+    bio: 'A Senior DevOps Engineer by day -- angler and investor by night',
     contacts: {
       email: 'hello@jonbeckman.com',
       linkedin: 'jonathantbeckman',

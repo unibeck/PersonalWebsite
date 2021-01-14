@@ -15,3 +15,6 @@ public/
 
 # Lighthouse
 .lighthouseci/
+
+# Secrets
+.env

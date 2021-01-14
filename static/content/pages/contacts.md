@@ -10,5 +10,6 @@ DevOps, though please feel free to share any of your stories.
 
 ---
 ## ✉️ -- [hello@jonbeckman.com](mailto:hello@jonbeckman.com)
-## 📍 -- [Roswell, Georgia](https://goo.gl/maps/modkDqAXHpgNpLyA8)
-## 🏢 -- [Jahnel Group](https://www.jahnelgroup.com/)
+## 📱 -- [678.404.1601](tel:6784041601)
+## 📍 -- [Atlanta, Georgia](https://goo.gl/maps/modkDqAXHpgNpLyA8)
+## 🏢 -- [ConsenSys](https://www.consensys.net/)
