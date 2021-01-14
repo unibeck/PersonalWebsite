@@ -6,7 +6,6 @@
   "scripts": {
     "develop": "npm run clean && gatsby develop",
     "build": "npm run clean && gatsby build",
-    "deploy": "npm run clean && gatsby build --prefix-paths && aws s3 //TODO",
     "clean": "rimraf .cache public .lighthouseci",
     "lint:js": "eslint --config \"lint/.eslintrc.json\" --ignore-path \"lint/.eslintignore\" --ext .js,.jsx .",
     "lint:scss": "stylelint --config \"lint/.stylelintrc.json\" \"src/**/*.scss\"",

@@ -5,9 +5,6 @@ stages:
   - test
   - deploy
 
-before_script:
-  - npm install
-
 cache:
   paths:
     - node_modules/
@@ -15,6 +12,7 @@ cache:
 build:
   stage: build
   script:
+    - npm install
     - npm run build
   artifacts:
     paths:
@@ -22,11 +20,16 @@ build:
 
 test:lint:
   stage: test
+  dependencies:
+    - build
   script:
+    - npm install --include=dev
     - npm run lint
 
 test:lighthouse:
   stage: test
+  dependencies:
+    - build
   script:
 # Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
 # GitLab, however, it does not local. Thus you have to run it as part of this job
@@ -39,9 +42,13 @@ test:lighthouse:
       - .lighthouseci/*.html
 
 deploy:staging:
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   stage: deploy
+  dependencies:
+    - build
   script:
-    - echo "Deploy to staging server"
+    - aws s3 sync public s3://${STAGING_BUCKET_NAME} --delete
+    - aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} --paths "/*"
   environment:
     name: staging
     url: https://staging.jonbeckman.com
@@ -49,9 +56,13 @@ deploy:staging:
     - inflight
 
 deploy:production:
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   stage: deploy
+  dependencies:
+    - build
   script:
-    - npm run deploy
+    - aws s3 sync public s3://${PROD_BUCKET_NAME} --delete
+    - aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --paths "/*"
   environment:
     name: production
     url: https://jonbeckman.com
