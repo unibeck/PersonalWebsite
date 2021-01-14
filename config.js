@@ -5,7 +5,7 @@ module.exports = {
   pathPrefix: '/',
   title: 'Jonathan Beckman',
   subtitle: 'Personal Website & Blog of Jonathan Beckman',
-  copyright: 'Copyright © Jonathan Beckman 2020. All rights reserved.',
+  copyright: 'Copyright © Jonathan Beckman 2021. All rights reserved.',
   postsPerPage: 4,
   googleAnalyticsId: '',
   menu: [

@@ -14,6 +14,7 @@ build:
   script:
     - npm install
     - npm run build
+    - ls -lah public/
   artifacts:
     paths:
       - public/
@@ -23,6 +24,7 @@ test:lint:
   dependencies:
     - build
   script:
+    - ls -lah public/
     - npm install --include=dev
     - npm run lint
 
@@ -31,7 +33,8 @@ test:lighthouse:
   dependencies:
     - build
   script:
-# Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
+    - ls -lah public/
+  # Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
 # GitLab, however, it does not local. Thus you have to run it as part of this job
 #    - npm run build
     - npm install --include=dev
@@ -47,6 +50,7 @@ deploy:staging:
   dependencies:
     - build
   script:
+    - ls -lah public/
     - aws s3 sync public s3://${STAGING_BUCKET_NAME} --delete
     - aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} --paths "/*"
   environment:

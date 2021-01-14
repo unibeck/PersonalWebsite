@@ -68,8 +68,6 @@ aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --p
 
 #TODO:
 - https://search.google.com/search-console/about
-- Remove unnecessary dependencies
-- Remove old references
 - Write blog posts
 - Implement Dark Mode
 - robots.txt
