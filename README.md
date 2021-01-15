@@ -71,7 +71,7 @@ aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --p
 - Implement Dark Mode
 - robots.txt
 - error page (+s3)
-- Update employment to Consensys
+- remove redundant post metadata
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 
