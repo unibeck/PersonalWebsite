@@ -22,6 +22,7 @@ const useSiteMetadata = () => {
             menu {
               label
               path
+              isNotGatsbyPage
             }
             url
             title

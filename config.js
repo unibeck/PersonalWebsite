@@ -23,11 +23,13 @@ module.exports = {
     },
     {
       label: 'RSS',
-      path: '/rss.xml'
+      path: '/rss.xml',
+      isNotGatsbyPage: true
     },
     {
       label: 'Site Map',
-      path: '/sitemap.xml'
+      path: '/sitemap.xml',
+      isNotGatsbyPage: true
     }
   ],
   author: {

@@ -66,11 +66,25 @@ aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} 
 aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --paths "/*"
 ```
 
+## Updating Dependencies
+There is a convenient called `npm-check-updates` which updates the dependencies in `package.json`. It also prints out a 
+detailed report of what major, minor, and patch versions changed. Run `npm install -g npm-check-updates`to install it. 
+Some common commands to run are:
+```
+# Update all packages to the latest minor and patch versions
+ncu --target minor -u
+
+# Update all packages except ones that start with 'react'
+ncu '/^(?!react).*$/' -u
+```
+
 #TODO:
 - https://search.google.com/search-console/about
 - Implement Dark Mode
 - robots.txt
 - error page (+s3)
+- favicon
+- update all packages to latest
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 
