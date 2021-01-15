@@ -1,9 +1,7 @@
 ---
 title: A DevOps Way to a Smart Home
-date: "2018-08-19"
 template: "post"
 draft: false
-slug: "a-devops-way-to-a-smart-home"
 category: "DEVOPS"
 tags:
   - "DevOps"

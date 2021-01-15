@@ -1,9 +1,7 @@
 ---
 title: "Historic States in Home Assistant"
-date: "2019-06-30"
 template: "post"
 draft: false
-slug: "historic-states-in-home-assistant"
 category: "Development"
 tags:
   - "Open source"

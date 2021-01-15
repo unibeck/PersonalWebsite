@@ -1,6 +1,5 @@
 ---
 title: Scalable Chess PWA with Deep Learning
-date: "2018-01-09T22:40:32.169Z"
 template: "post"
 draft: false
 slug: "scalable-chess-pwa-with-deep-learning"
