@@ -40,6 +40,7 @@ module.exports = {
       gitlab: 'jbeckman',
       github: 'unibeck',
       medium: 'jonathantbeckman',
+      phone: '6784041601',
     }
   }
 };

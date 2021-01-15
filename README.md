@@ -68,11 +68,10 @@ aws cloudfront create-invalidation --distribution-id ${PROD_DISTRIBUTION_ID} --p
 
 #TODO:
 - https://search.google.com/search-console/about
-- Write blog posts
 - Implement Dark Mode
 - robots.txt
-- favicon
 - error page (+s3)
+- Update employment to Consensys
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 

@@ -15,6 +15,8 @@ const useSiteMetadata = () => {
                 linkedin
                 gitlab
                 github
+                medium
+                phone
               }
             }
             menu {
