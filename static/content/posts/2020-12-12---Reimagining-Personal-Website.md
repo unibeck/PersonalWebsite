@@ -12,5 +12,4 @@ tags:
 - "Open Source"
 - "Development"
 description: ""
-socialImage: "/media/.jpg"
 ---

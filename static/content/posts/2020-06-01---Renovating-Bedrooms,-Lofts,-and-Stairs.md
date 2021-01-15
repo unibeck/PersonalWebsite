@@ -11,5 +11,4 @@ tags:
 - "DIY"
 - "Remodel"
 description: ""
-socialImage: "/media/.jpg"
 ---

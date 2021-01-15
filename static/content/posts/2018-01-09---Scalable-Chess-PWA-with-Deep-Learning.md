@@ -15,7 +15,6 @@ tags:
 description: "Ever been annoyed with an app's price model or incessant ads or poor UI? Ever thought 'I could do this 
 better'? That is the position I found myself in when my father and I started to get involved with chess. Along this 
 journey I built some amazing friendships and learned more than I ever expected."
-socialImage: "/media/chessmates.png"
 ---
 
 - [What is ChessMates](#what-is-chessmates)

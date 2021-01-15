@@ -13,5 +13,4 @@ tags:
   - "iOS"
   - "Development"
 description: ""
-socialImage: "/media/.jpg"
 ---
