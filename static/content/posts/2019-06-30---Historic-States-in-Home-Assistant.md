@@ -4,9 +4,9 @@ template: "post"
 draft: false
 category: "Development"
 tags:
+  - "Development"
   - "Open source"
   - "Home Assistant"
-  - "Development"
   - "Python"
   - "Smart Home"
 description: "Users have been using Home Assistant with inaccurate datetimes since its creation. While it is usually

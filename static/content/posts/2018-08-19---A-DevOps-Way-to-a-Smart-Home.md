@@ -2,7 +2,7 @@
 title: A DevOps Way to a Smart Home
 template: "post"
 draft: false
-category: "DEVOPS"
+category: "DevOps"
 tags:
   - "DevOps"
   - "Infrastructure-as-Code"

@@ -3,12 +3,12 @@ title: Scalable Chess PWA with Deep Learning
 template: "post"
 draft: false
 slug: "scalable-chess-pwa-with-deep-learning"
-category: "DEVOPS"
+category: "DevOps"
 tags:
+  - "DevOps"
   - "Kubernetes"
   - "GCP"
   - "Tensorflow"
-  - "K8"
   - "Deep Learning"
   - "Artificial Intelligence"
 description: "Ever been annoyed with an app's price model or incessant ads or poor UI? Ever thought 'I could do this 

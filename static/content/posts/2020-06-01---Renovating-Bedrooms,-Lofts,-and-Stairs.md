@@ -4,9 +4,9 @@ template: "post"
 draft: true
 category: "Renovation"
 tags:
-- "Renovation"
-- "Carpentry"
-- "DIY"
-- "Remodel"
+  - "Renovation"
+  - "Carpentry"
+  - "DIY"
+  - "Remodel"
 description: ""
 ---

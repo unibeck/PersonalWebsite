@@ -83,6 +83,8 @@ ncu '/^(?!react).*$/' -u
 - Implement Dark Mode
 - robots.txt
 - error page (+s3)
+- Resume?
+- Banner?
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 

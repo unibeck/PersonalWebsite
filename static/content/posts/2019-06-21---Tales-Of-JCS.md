@@ -4,11 +4,11 @@ template: "post"
 draft: true
 category: "Development"
 tags:
+  - "Development"
   - "Open source"
   - "Mobile"
   - "Flutter"
   - "Android"
   - "iOS"
-  - "Development"
 description: ""
 ---
