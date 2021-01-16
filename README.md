@@ -83,8 +83,6 @@ ncu '/^(?!react).*$/' -u
 - Implement Dark Mode
 - robots.txt
 - error page (+s3)
-- favicon
-- update all packages to latest
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 

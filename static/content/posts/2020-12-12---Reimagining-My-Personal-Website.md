@@ -34,5 +34,12 @@ bellwether of what I was capable of and opened several opportunities in my young
 However, as I alluded to earlier, I now feel like the style and architecture is out-of-date. 
 
 
+![New website lighthouse score](/media/new_website_lighthouse_score.png)
+_New website lighthouse score_
+
+![Old website lighthouse score](/media/old_website_lighthouse_score.png)
+_Old website lighthouse score_
+
+As of Lighthouse version 6.4.0
 
 https://www.gatsbyjs.com/starters/alxshelepenok/gatsby-starter-lumen

@@ -118,7 +118,12 @@ module.exports = {
 
     // Parse all images files
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        icon: 'static/media/profile.jpg'
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-google-gtag',
