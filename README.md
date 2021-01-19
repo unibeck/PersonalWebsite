@@ -81,10 +81,12 @@ ncu '/^(?!react).*$/' -u
 #TODO:
 - https://search.google.com/search-console/about
 - Implement Dark Mode
+  - Fade?
+  - Code snippets
+  - Images
+  - more contrast-y primary and secondary colors
 - robots.txt
 - error page (+s3)
-- Resume?
-- Banner?
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 

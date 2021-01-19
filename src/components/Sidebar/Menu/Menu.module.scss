@@ -15,25 +15,21 @@
 
       &-link {
         font-size: $typographic-base-font-size;
-        color: $typographic-base-font-color;
+        color: var(--v-color-base);
         font-weight: normal;
         border: 0;
 
         &:hover,
         &:focus {
-          color: $color-primary;
-          border-bottom: 1px solid $color-primary;
+          color: var(--v-color-primary);
+          border-bottom: 1px solid var(--v-color-primary);
         }
 
         &--active {
-          color: $color-base;
-          border-bottom: 1px solid $color-base;
+          color: var(--v-color-base);
+          border-bottom: 1px solid var(--v-color-base);
         }
-
       }
-
     }
-
   }
-
 }

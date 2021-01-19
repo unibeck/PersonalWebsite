@@ -8,7 +8,6 @@ html {
 body {
   margin: 0 0 0 calc(100vw - 100%);
   font-family: $typographic-font-family;
-  color: $typographic-base-font-color;
   line-height: $typographic-base-line-height;
   font-size: $typographic-base-font-size;
   -ms-text-size-adjust: 100%;
@@ -16,6 +15,23 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --v-color-base: #{$color-light-mode-base};
+  --v-background-color: #{$color-light-mode-background};
+  --v-color-primary: #{$color-light-mode-primary};
+  --v-color-secondary: #{$color-light-mode-secondary};
+
+  color: var(--v-color-base);
+  background-color: var(--v-background-color);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --v-color-base: #{$color-dark-mode-base};
+  --v-background-color: #{$color-dark-mode-background};
+  --v-color-primary: #{$color-dark-mode-primary};
+  --v-color-secondary: #{$color-dark-mode-secondary};
 }
 
 h1,
@@ -81,26 +97,25 @@ hr {
   margin-top: 52px;
   margin-bottom: 52px;
   border: 0;
-  color: $color-base;
+  color: var(--v-color-base);
   display: block;
   height: 26px;
   margin-right: auto;
   margin-left: auto;
   background-size: 100% 26px;
-  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, $color-base 11px, $color-base 15px, transparent 15px, transparent 26px);
+  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, var(--v-color-base) 11px, var(--v-color-base) 15px, transparent 15px, transparent 26px);
   width: 100px;
 }
 
 a {
-  color: $typographic-link-p-font-color;
+  color: var(--v-color-primary);
   text-decoration: none;
 
   &:hover,
   &:focus,
   &:active {
-    color: $typographic-link-s-font-color;
+    color: var(--v-color-secondary);
   }
-
 }
 
 b,
@@ -116,7 +131,6 @@ ul {
     padding: 0 5px;
     margin-bottom: 10px;
   }
-
 }
 
 p {
@@ -139,7 +153,7 @@ figure {
 figcaption {
   @include line-height(.75);
   @include margin-top(.25);
-  color: $color-base;
+  color: var(--v-color-base);
   font-size: $typographic-small-font-size;
   font-style: italic;
   margin-bottom: 0;
@@ -165,5 +179,4 @@ figcaption {
   .float-left {
     float: left;
   }
-
 }

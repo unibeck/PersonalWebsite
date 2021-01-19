@@ -16,15 +16,13 @@
     @include margin(.5, 0, .5, 0);
 
     &-link {
-      color: $color-base;
+      color: var(--v-color-base);
 
       &:hover,
       &:focus {
-        color: $color-base
+        color: var(--v-color-base)
       }
-
     }
-
   }
 
   &__subtitle {
@@ -32,5 +30,4 @@
     @include line-height(1);
     @include margin-bottom(1)
   }
-
 }

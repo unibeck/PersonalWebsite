@@ -31,17 +31,13 @@
       &-link {
         border: 0;
         display: flex;
-        color: $color-base;
+        color: var(--v-color-base);
   
         &:hover,
         &:focus {
-          color: $color-primary;
+          color: var(--v-color-primary);
         }
-
       }
-
     }
-
   }
-
 }
