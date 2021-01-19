@@ -52,7 +52,8 @@ but let's go over some of the most compelling features:
 So how did I do it? Well, I first started with being more pragmatic about the situation. I didn't need to build the 
 site from scratch to prove my capabilities like I did for my first site. Instead, I used Gatsby which provides 
 templates and plugins for common use cases to build websites. Gatsby is built on top of React and allows for fast, 
-lightweight apps. 
+lightweight apps. Gatsby and its plugins use a unified GraphQL layer that manages and aggregates all content and data. 
+This makes it straightforward to integrate most aspects of the website with plugins, it is great.
 
 The React components, which use Typescript, are bundled together with webpack into a PWA. This artifact is deployed to 
 AWS S3 and AWS CloudFront, which acts as a CDN and proxy. DNS is handled by CloudFlare. It is nothing crazy, but these 
