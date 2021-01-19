@@ -1,0 +1,193 @@
+/** 
+ * Generic
+ */
+html {
+  font-size: $typographic-root-font-size;
+}
+
+body {
+  margin: 0 0 0 calc(100vw - 100%);
+  font-family: $typographic-font-family;
+  line-height: $typographic-base-line-height;
+  font-size: $typographic-base-font-size;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+  --v-color-primary: #{$color-light-mode-primary};
+  --v-color-secondary: #{$color-light-mode-secondary};
+  --v-color-primary-text: #{$color-light-mode-primary-text};
+  --v-color-secondary-text: #{$color-light-mode-secondary-text};
+  --v-color-primary-background: #{$color-light-mode-primary-background};
+  --v-color-secondary-background: #{$color-light-mode-secondary-background};
+  --v-color-border: #{$color-light-mode-border};
+  --v-color-disabled: #{$color-light-mode-disabled};
+
+  color: var(--v-color-primary-text);
+  background-color: var(--v-color-primary-background);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  --v-color-primary: #{$color-dark-mode-primary};
+  --v-color-secondary: #{$color-dark-mode-secondary};
+  --v-color-primary-text: #{$color-dark-mode-primary-text};
+  --v-color-secondary-text: #{$color-dark-mode-secondary-text};
+  --v-color-primary-background: #{$color-dark-mode-primary-background};
+  --v-color-secondary-background: #{$color-dark-mode-secondary-background};
+  --v-color-border: #{$color-dark-mode-border};
+  --v-color-disabled: #{$color-dark-mode-disabled};
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $typographic-font-family;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: $typographic-base-font-size * 2.5;
+  @include line-height(2);
+  @include margin-top(4);
+  @include margin-bottom(1);
+}
+
+h2 {
+  font-size: $typographic-base-font-size * 1.6875;
+  @include line-height(1.5);
+  @include margin-top(2);
+  @include margin-bottom(.5);
+}
+
+h3 {
+  font-size: $typographic-base-font-size * 1.375;
+  @include line-height(1);
+  @include margin-top(2);
+  @include margin-bottom(.5);
+}
+
+h4 {
+  font-size: $typographic-base-font-size * 1.2;
+  @include line-height(1);
+  @include margin-top(1.5);
+  @include margin-bottom(.5);
+}
+
+h5 {
+  font-size: $typographic-base-font-size;
+  @include line-height(1);
+  @include margin-top(2.5);
+  @include margin-bottom(.5);
+}
+
+h6 {
+  font-size: $typographic-base-font-size;
+  @include line-height(1);
+  @include margin-top(2.5);
+  @include margin-bottom(.5);
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  display: block;
+  margin: inherit auto;
+}
+
+hr {
+  margin-top: 52px;
+  margin-bottom: 52px;
+  border: 0;
+  color: var(--v-color-primary-text);
+  display: block;
+  height: 26px;
+  margin-right: auto;
+  margin-left: auto;
+  background-size: 100% 26px;
+  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, var(--v-color-primary-text) 11px, var(--v-color-primary-text) 15px, transparent 15px, transparent 26px);
+  width: 100px;
+}
+
+a {
+  color: var(--v-color-primary);
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--v-color-secondary);
+  }
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+ul {
+  list-style: square;
+  @include margin-bottom(1);
+
+  & li {
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+}
+
+p {
+  @include line-height(1);
+  @include margin-bottom(1);
+}
+
+blockquote {
+  padding: 0;
+  font-style: italic;
+  text-align: center;
+}
+
+figure {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  @include line-height(.75);
+  @include margin-top(.25);
+  color: var(--v-color-primary-text);
+  font-size: $typographic-small-font-size;
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.anchor {
+  margin-left: 0 !important;
+  padding-right: 8px !important;
+  fill: var(--v-color-primary-text);
+}
+
+@include breakpoint-sm {
+  figure.float-left,
+  figure.float-right {
+    max-width: 310px;
+    @include padding(0, 1, 0, 1);
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .float-left {
+    float: left;
+  }
+}

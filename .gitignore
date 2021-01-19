@@ -1,4 +1,20 @@
+# Intellij
 .idea/
+*.iml
 
-.firebase/
-firebase-debug.log
+# Node / NPM
+node_modules/
+npm-debug.log
+
+# Build
+.cache/
+public/
+
+# Gatsby
+.gatsby-context.js
+
+# Lighthouse
+.lighthouseci/
+
+# Secrets
+.env
