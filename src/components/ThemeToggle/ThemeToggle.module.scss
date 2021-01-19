@@ -18,7 +18,7 @@
         width: 45px;
         height: 25px;
         border-radius: 100px;
-        background-color: var(--v-color-secondary-background);
+        background-color: $color-dark-mode-secondary-background;
         overflow: hidden;
         cursor: pointer;
 
@@ -32,7 +32,7 @@
             border-radius: 50%;
             top: 3px;
             left: 3px;
-            transition: 0.5s ease;
+            transition: 0.3s ease;
         }
 
         &:before {
@@ -40,7 +40,7 @@
         }
 
         &:after {
-            background-color: var(--v-color-secondary-background);
+            background-color: $color-dark-mode-secondary-background;
             left: -58px;
             transform: scale(0.1);
         }
