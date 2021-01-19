@@ -13,14 +13,14 @@ const ThemeToggle = ({ className }: Props) => {
     <div className={className}>
       <ThemeToggler>
         {({ theme, toggleTheme }) => (
-          <div className={styles["theme-toggle-button"]}>
+          <div className={styles['theme-toggle-button']}>
             <input
-              type="checkbox"
-              id="toggle"
+              type='checkbox'
+              id='toggle'
               onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
               checked={theme === 'dark'}
             />
-            <label htmlFor="toggle"/>
+            <label htmlFor='toggle'/>
           </div>
         )}
       </ThemeToggler>

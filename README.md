@@ -80,12 +80,6 @@ ncu '/^(?!react).*$/' -u
 
 #TODO:
 - https://search.google.com/search-console/about
-- Implement Dark Mode
-  - Fade?
-  - Code snippets
-  - Images
-  - more contrast-y primary and secondary colors
-  - https://material.io/design/color/dark-theme.html + apple?
 - robots.txt
 - error page (+s3)
 

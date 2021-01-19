@@ -171,7 +171,8 @@ module.exports = {
       }
     },
 
-    // This plugin takes generates a web manifest file so the website can be added to a homescreen on Android.
+    // This plugin takes generates a web manifest file so the website can be added to a
+    // homescreen on Android.
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

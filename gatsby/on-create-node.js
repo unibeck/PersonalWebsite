@@ -4,14 +4,13 @@ const _ = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
 const path = require('path');
 
-
 const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark') {
     // Get metadata from file
     const filePath = createFilePath({ node, getNode });
-    const filename = path.parse(filePath).base
+    const filename = path.parse(filePath).base;
     const date = filename.split('---')[0];
 
     createNodeField({
