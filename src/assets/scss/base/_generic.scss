@@ -170,8 +170,9 @@ figcaption {
 }
 
 .anchor {
-  margin-left: -30px !important;
-  padding-right: 14px !important;
+  margin-left: 0 !important;
+  padding-right: 8px !important;
+  fill: var(--v-color-primary-text);
 }
 
 @include breakpoint-sm {

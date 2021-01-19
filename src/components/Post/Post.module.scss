@@ -25,7 +25,6 @@
   }
 
   &__home-button {
-    max-width: 90px;
     height: $button-height;
     padding: 0 24px;
     line-height: $button-height;
@@ -42,7 +41,7 @@
   }
 
   &__theme-toggle {
-    padding: 0 24px;
+    padding: 24px;
   }
 }
 
@@ -58,10 +57,15 @@
 
     &__menu {
       position: fixed;
-      max-width: auto;
       margin: 0;
       top: 30px;
-      left: 30px
+      left: 30px;
+
+      display: block;
+    }
+    &__home-button {
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
   }
 }
