@@ -78,10 +78,9 @@ ncu --target minor -u
 ncu '/^(?!react).*$/' -u
 ```
 
-#TODO:
+## Admin
+Here are some useful URLs:
 - https://search.google.com/search-console/about
-- robots.txt
-- error page (+s3)
 
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 
