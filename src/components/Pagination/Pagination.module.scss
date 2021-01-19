@@ -21,7 +21,7 @@
 
       &--disable {
         pointer-events: none;
-        color: lighten($color-gray, 20%);
+        color: var(--v-color-disabled);
       }
     }
   }
@@ -42,7 +42,7 @@
 
       &--disable {
         pointer-events: none;
-        color: lighten($color-gray, 20%);
+        color: var(--v-color-disabled);
       }
     }
   }

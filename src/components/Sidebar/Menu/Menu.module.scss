@@ -15,7 +15,7 @@
 
       &-link {
         font-size: $typographic-base-font-size;
-        color: var(--v-color-base);
+        color: var(--v-color-primary-text);
         font-weight: normal;
         border: 0;
 
@@ -26,8 +26,8 @@
         }
 
         &--active {
-          color: var(--v-color-base);
-          border-bottom: 1px solid var(--v-color-base);
+          color: var(--v-color-primary-text);
+          border-bottom: 1px solid var(--v-color-primary-text);
         }
       }
     }

@@ -18,7 +18,7 @@
         width: 45px;
         height: 25px;
         border-radius: 100px;
-        background-color: rgb(37, 37, 37);
+        background-color: var(--v-color-secondary-background);
         overflow: hidden;
         cursor: pointer;
 
@@ -36,11 +36,11 @@
         }
 
         &:before {
-            background-color: rgb(241, 110, 101);
+            background-color: $color-light-mode-secondary;
         }
 
         &:after {
-            background-color: rgb(37, 37, 37);
+            background-color: var(--v-color-secondary-background);
             left: -58px;
             transform: scale(0.1);
         }
@@ -51,7 +51,7 @@
 
         &:checked + label {
             &:before {
-                background-color: rgb(1, 219, 198);
+                background-color: $color-light-mode-primary;
                 transform: translateX(20px);
             }
 

@@ -2,28 +2,24 @@
  * Variables
  */
 
-// Colors
-$color-light-mode-base: #222;
-$color-light-mode-background: #FFF;
+// Theme colors
 $color-light-mode-primary: #5D93FF;
 $color-light-mode-secondary: #F7A046;
+$color-light-mode-primary-text: #222;
+$color-light-mode-secondary-text: #555;
+$color-light-mode-primary-background: #FFF;
+$color-light-mode-secondary-background: #DDD;
+$color-light-mode-border: #888;
+$color-light-mode-disabled: #AAA;
 
-$color-dark-mode-base: #DDD;
-$color-dark-mode-background: #222;
-$color-dark-mode-primary: #5d93ff;
+$color-dark-mode-primary: #5D93FF;
 $color-dark-mode-secondary: #F7A046;
-
-$body: #121212;
-$surface: #1D1D1D;
-$font: #D1D1D1;
-
-$color-black: #000;
-$color-white: #FFF;
-
-$color-gray: lighten($color-black, 70%);
-$color-gray-dark: lighten($color-black, 30%);
-$color-gray-border: lighten($color-black, 77%);
-$color-gray-bg: lighten($color-black, 79%);
+$color-dark-mode-primary-text: #FFF;
+$color-dark-mode-secondary-text: #AAA;
+$color-dark-mode-primary-background: #222;
+$color-dark-mode-secondary-background: #444;
+$color-dark-mode-border: #888;
+$color-dark-mode-disabled: #555;
 
 // Typographic
 $typographic-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell, 'Helvetica Neue', sans-serif;

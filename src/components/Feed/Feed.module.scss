@@ -16,12 +16,12 @@
       @include margin-bottom(.5);
 
       &-link {
-        color: var(--v-color-base);
+        color: var(--v-color-primary-text);
 
         &:hover,
         &:focus {
-          color: var(--v-color-base);
-          border-bottom: 1px solid var(--v-color-base);
+          color: var(--v-color-primary-text);
+          border-bottom: 1px solid var(--v-color-primary-text);
         }
       }
     }
@@ -35,7 +35,7 @@
     &-meta {
       &-time {
         font-size: $typographic-small-font-size;
-        color: var(--v-color-base);
+        color: var(--v-color-primary-text);
         font-weight: 600;
         text-transform: uppercase;
       }

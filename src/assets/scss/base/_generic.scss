@@ -16,22 +16,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --v-color-base: #{$color-light-mode-base};
-  --v-background-color: #{$color-light-mode-background};
+
   --v-color-primary: #{$color-light-mode-primary};
   --v-color-secondary: #{$color-light-mode-secondary};
+  --v-color-primary-text: #{$color-light-mode-primary-text};
+  --v-color-secondary-text: #{$color-light-mode-secondary-text};
+  --v-color-primary-background: #{$color-light-mode-primary-background};
+  --v-color-secondary-background: #{$color-light-mode-secondary-background};
+  --v-color-border: #{$color-light-mode-border};
+  --v-color-disabled: #{$color-light-mode-disabled};
 
-  color: var(--v-color-base);
-  background-color: var(--v-background-color);
+  color: var(--v-color-primary-text);
+  background-color: var(--v-color-primary-background);
 }
 
 body.dark {
   -webkit-font-smoothing: antialiased;
 
-  --v-color-base: #{$color-dark-mode-base};
-  --v-background-color: #{$color-dark-mode-background};
   --v-color-primary: #{$color-dark-mode-primary};
   --v-color-secondary: #{$color-dark-mode-secondary};
+  --v-color-primary-text: #{$color-dark-mode-primary-text};
+  --v-color-secondary-text: #{$color-dark-mode-secondary-text};
+  --v-color-primary-background: #{$color-dark-mode-primary-background};
+  --v-color-secondary-background: #{$color-dark-mode-secondary-background};
+  --v-color-border: #{$color-dark-mode-border};
+  --v-color-disabled: #{$color-dark-mode-disabled};
 }
 
 h1,
@@ -97,13 +106,13 @@ hr {
   margin-top: 52px;
   margin-bottom: 52px;
   border: 0;
-  color: var(--v-color-base);
+  color: var(--v-color-primary-text);
   display: block;
   height: 26px;
   margin-right: auto;
   margin-left: auto;
   background-size: 100% 26px;
-  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, var(--v-color-base) 11px, var(--v-color-base) 15px, transparent 15px, transparent 26px);
+  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, var(--v-color-primary-text) 11px, var(--v-color-primary-text) 15px, transparent 15px, transparent 26px);
   width: 100px;
 }
 
@@ -153,7 +162,7 @@ figure {
 figcaption {
   @include line-height(.75);
   @include margin-top(.25);
-  color: var(--v-color-base);
+  color: var(--v-color-primary-text);
   font-size: $typographic-small-font-size;
   font-style: italic;
   margin-bottom: 0;
