@@ -7,7 +7,7 @@ module.exports = {
   subtitle: 'Personal Website & Blog of Jonathan Beckman',
   copyright: 'Copyright © Jonathan Beckman 2021. All rights reserved.',
   postsPerPage: 3,
-  googleAnalyticsId: '',
+  googleAnalyticsId: 'UA-89697804-1',
   menu: [
     {
       label: 'Articles',
