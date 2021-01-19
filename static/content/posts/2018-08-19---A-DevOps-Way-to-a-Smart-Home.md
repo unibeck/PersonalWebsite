@@ -1,10 +1,8 @@
 ---
 title: A DevOps Way to a Smart Home
-date: "2018-08-19"
 template: "post"
 draft: false
-slug: "a-devops-way-to-a-smart-home"
-category: "DEVOPS"
+category: "DevOps"
 tags:
   - "DevOps"
   - "Infrastructure-as-Code"
@@ -14,7 +12,6 @@ tags:
 description: "A smart home is great and all, but what about having observability, automation, and Infrastructure-as-Code 
 to support your smart home stack? I incorporated these DevOps principles into my smart home, and it brought the whole 
 experience to the next level."
-socialImage: "/media/42-line-bible.jpg"
 ---
 
 - [Infrastructure-as-Code](#infrastructure-as-code)

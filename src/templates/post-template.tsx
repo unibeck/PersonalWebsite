@@ -14,11 +14,11 @@ type Props = {
 const PostTemplate = ({ data }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
-  const { title: postTitle, description: postDescription, socialImage } = frontmatter;
+  const { title: postTitle, description: postDescription } = frontmatter;
   const metaDescription = postDescription !== null ? postDescription : siteSubtitle;
 
   return (
-    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} socialImage={socialImage} >
+    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} >
       <Post post={data.markdownRemark} />
     </Layout>
   );
@@ -30,15 +30,14 @@ export const query = graphql`
       id
       html
       fields {
+        date
         slug
         tagSlugs
       }
       frontmatter {
-        date
         description
         tags
         title
-        socialImage
       }
     }
   }

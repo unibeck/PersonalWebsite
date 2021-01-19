@@ -2,7 +2,7 @@
 @import '../../../assets/scss/mixins';
 
 .author {
-  border-top: 1px solid $color-gray-border;
+  border-top: 1px solid var(--v-color-border);
   max-width: $layout-post-width;
   padding-top: 20px;
   @include line-height(1);
@@ -10,7 +10,7 @@
   @include margin-bottom(2);
 
   &__bio {
-    &-twitter {
+    &-metadata {
       display: block;
       text-decoration: underline;
     }

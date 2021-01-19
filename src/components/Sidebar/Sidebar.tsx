@@ -3,6 +3,7 @@ import Author from './Author';
 import Contacts from './Contacts';
 import Copyright from './Copyright';
 import Menu from './Menu';
+import ThemeToggle from "../ThemeToggle";
 import { useSiteMetadata } from '../../hooks';
 // @ts-ignore
 import styles from './Sidebar.module.scss';
@@ -20,7 +21,7 @@ const Sidebar = ({ isIndex }: Props) => {
         <Author author={author} isIndex={isIndex} />
         <Menu menu={menu} />
         <Contacts contacts={author.contacts} />
-        <Copyright copyright={copyright} />
+        <ThemeToggle/>
       </div>
     </div>
   );

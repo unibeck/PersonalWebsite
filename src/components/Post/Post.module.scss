@@ -14,29 +14,35 @@
     padding: 0 15px;
   }
 
-  &__home-button {
-    display: block;
-    max-width: 90px;
-    height: $button-height;
-    padding: 0 24px;
-    line-height: $button-height;
-    text-align: center;
-    color: $color-base;
-    border: 1px solid $color-gray-border;
-    border-radius: $button-border-radius;
-    font-size: $typographic-base-font-size;
-    font-weight: normal;
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin-left: auto;
     margin-right: auto;
     @include margin-top(1);
+  }
+
+  &__home-button {
+    height: $button-height;
+    padding: 0 24px;
+    line-height: $button-height;
+    color: var(--v-color-primary-text);
+    border: 1px solid var(--v-color-border);
+    border-radius: $button-border-radius;
+    font-size: $typographic-base-font-size;
+    font-weight: normal;
 
     &:hover,
     &:focus {
-      color: $color-primary;
+      color: var(--v-color-primary);
     }
-
   }
 
+  &__theme-toggle {
+    padding: 24px;
+  }
 }
 
 @include breakpoint-md {
@@ -49,14 +55,17 @@
       padding: 0;
     }
 
-    &__home-button {
+    &__menu {
       position: fixed;
-      max-width: auto;
       margin: 0;
       top: 30px;
-      left: 30px
+      left: 30px;
+
+      display: block;
     }
-
+    &__home-button {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
   }
-
 }

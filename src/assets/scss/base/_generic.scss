@@ -8,7 +8,6 @@ html {
 body {
   margin: 0 0 0 calc(100vw - 100%);
   font-family: $typographic-font-family;
-  color: $typographic-base-font-color;
   line-height: $typographic-base-line-height;
   font-size: $typographic-base-font-size;
   -ms-text-size-adjust: 100%;
@@ -16,6 +15,33 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+  --v-color-primary: #{$color-light-mode-primary};
+  --v-color-secondary: #{$color-light-mode-secondary};
+  --v-color-primary-text: #{$color-light-mode-primary-text};
+  --v-color-secondary-text: #{$color-light-mode-secondary-text};
+  --v-color-primary-background: #{$color-light-mode-primary-background};
+  --v-color-secondary-background: #{$color-light-mode-secondary-background};
+  --v-color-border: #{$color-light-mode-border};
+  --v-color-disabled: #{$color-light-mode-disabled};
+
+  color: var(--v-color-primary-text);
+  background-color: var(--v-color-primary-background);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  --v-color-primary: #{$color-dark-mode-primary};
+  --v-color-secondary: #{$color-dark-mode-secondary};
+  --v-color-primary-text: #{$color-dark-mode-primary-text};
+  --v-color-secondary-text: #{$color-dark-mode-secondary-text};
+  --v-color-primary-background: #{$color-dark-mode-primary-background};
+  --v-color-secondary-background: #{$color-dark-mode-secondary-background};
+  --v-color-border: #{$color-dark-mode-border};
+  --v-color-disabled: #{$color-dark-mode-disabled};
 }
 
 h1,
@@ -81,26 +107,25 @@ hr {
   margin-top: 52px;
   margin-bottom: 52px;
   border: 0;
-  color: $color-base;
+  color: var(--v-color-primary-text);
   display: block;
   height: 26px;
   margin-right: auto;
   margin-left: auto;
   background-size: 100% 26px;
-  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, $color-base 11px, $color-base 15px, transparent 15px, transparent 26px);
+  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, var(--v-color-primary-text) 11px, var(--v-color-primary-text) 15px, transparent 15px, transparent 26px);
   width: 100px;
 }
 
 a {
-  color: $typographic-link-p-font-color;
+  color: var(--v-color-primary);
   text-decoration: none;
 
   &:hover,
   &:focus,
   &:active {
-    color: $typographic-link-s-font-color;
+    color: var(--v-color-secondary);
   }
-
 }
 
 b,
@@ -116,7 +141,6 @@ ul {
     padding: 0 5px;
     margin-bottom: 10px;
   }
-
 }
 
 p {
@@ -139,7 +163,7 @@ figure {
 figcaption {
   @include line-height(.75);
   @include margin-top(.25);
-  color: $color-base;
+  color: var(--v-color-primary-text);
   font-size: $typographic-small-font-size;
   font-style: italic;
   margin-bottom: 0;
@@ -147,8 +171,9 @@ figcaption {
 }
 
 .anchor {
-  margin-left: -30px !important;
-  padding-right: 14px !important;
+  margin-left: 0 !important;
+  padding-right: 8px !important;
+  fill: var(--v-color-primary-text);
 }
 
 @include breakpoint-sm {
@@ -165,5 +190,4 @@ figcaption {
   .float-left {
     float: left;
   }
-
 }

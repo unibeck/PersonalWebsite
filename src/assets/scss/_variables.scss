@@ -2,15 +2,24 @@
  * Variables
  */
 
-// Colors
-$color-base: #222;
-$color-primary: #5D93FF;
-$color-secondary: #F7A046;
+// Theme colors
+$color-light-mode-primary: #5D93FF;
+$color-light-mode-secondary: #F7A046;
+$color-light-mode-primary-text: #121212;
+$color-light-mode-secondary-text: #555;
+$color-light-mode-primary-background: #FFF;
+$color-light-mode-secondary-background: #DDD;
+$color-light-mode-border: #888;
+$color-light-mode-disabled: #AAA;
 
-$color-white: #FFF;
-$color-gray: lighten($color-base, 40%);
-$color-gray-border: lighten($color-base, 77%);
-$color-gray-bg: lighten($color-base, 79%);
+$color-dark-mode-primary: #5D93FF;
+$color-dark-mode-secondary: #F7A046;
+$color-dark-mode-primary-text: #EDEDED;
+$color-dark-mode-secondary-text: #AAA;
+$color-dark-mode-primary-background: #121212;
+$color-dark-mode-secondary-background: #444;
+$color-dark-mode-border: #888;
+$color-dark-mode-disabled: #555;
 
 // Typographic
 $typographic-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell, 'Helvetica Neue', sans-serif;
@@ -20,10 +29,6 @@ $typographic-base-font-size: 16px;
 $typographic-small-font-size: 14px;
 
 $typographic-base-line-height: 1.625;
-
-$typographic-base-font-color: $color-base;
-$typographic-link-p-font-color: $color-primary;
-$typographic-link-s-font-color: $color-secondary;
 
 $typographic-leading: round(16 * ($typographic-root-font-size / 100) * $typographic-base-line-height);
 

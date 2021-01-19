@@ -54,7 +54,7 @@ module.exports = {
             allMarkdownRemark.edges.map((edge) => ({
               ...edge.node.frontmatter,
               description: edge.node.frontmatter.description,
-              date: edge.node.frontmatter.date,
+              date: edge.node.fields.date,
               url: site.siteMetadata.siteUrl + edge.node.fields.slug,
               guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
               custom_elements: [{ 'content:encoded': edge.node.html }]
@@ -64,18 +64,18 @@ module.exports = {
               {
                 allMarkdownRemark(
                   limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { order: DESC, fields: [fields___date] },
                   filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
                 ) {
                   edges {
                     node {
                       html
                       fields {
+                        date
                         slug
                       }
                       frontmatter {
                         title
-                        date
                         template
                         draft
                         description
@@ -118,7 +118,12 @@ module.exports = {
 
     // Parse all images files
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        icon: 'static/media/profile.jpg'
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-google-gtag',
@@ -196,5 +201,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-optimize-svgs',
+    'gatsby-plugin-dark-mode'
   ]
 };

@@ -16,16 +16,14 @@
       @include margin-bottom(.5);
 
       &-link {
-        color: $color-base;
+        color: var(--v-color-primary-text);
 
         &:hover,
         &:focus {
-          color: $color-base;
-          border-bottom: 1px solid $color-base;
+          color: var(--v-color-primary-text);
+          border-bottom: 1px solid var(--v-color-primary-text);
         }
-
       }
-
     }
 
     &-description {
@@ -37,7 +35,7 @@
     &-meta {
       &-time {
         font-size: $typographic-small-font-size;
-        color: $color-base;
+        color: var(--v-color-primary-text);
         font-weight: 600;
         text-transform: uppercase;
       }
@@ -49,33 +47,27 @@
       &-category {
         &-link {
           font-size: $typographic-small-font-size;
-          color: $color-secondary;
+          color: var(--v-color-secondary);
           font-weight: 600;
           text-transform: uppercase;
 
           &:hover,
           &:focus {
-            color: $color-primary;
+            color: var(--v-color-primary);
           }
-
         }
-
       }
-
     }
 
     &-readmore {
       font-size: $typographic-base-font-size;
-      color: $color-primary;
+      color: var(--v-color-primary);
 
       &:hover,
       &:focus {
-        color: $color-primary;
-        border-bottom: 1px solid $color-primary;
+        color: var(--v-color-primary);
+        border-bottom: 1px solid var(--v-color-primary);
       }
-
     }
-
   }
-
 }

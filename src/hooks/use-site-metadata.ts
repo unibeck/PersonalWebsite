@@ -15,11 +15,14 @@ const useSiteMetadata = () => {
                 linkedin
                 gitlab
                 github
+                medium
+                phone
               }
             }
             menu {
               label
               path
+              isNotGatsbyPage
             }
             url
             title

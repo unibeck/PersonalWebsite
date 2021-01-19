@@ -49,17 +49,17 @@ export const query = graphql`
         limit: $postsLimit,
         skip: $postsOffset,
         filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } },
-        sort: { order: DESC, fields: [frontmatter___date] }
+        sort: { order: DESC, fields: [fields___date] }
       ){
       edges {
         node {
           fields {
+            date
             slug
             categorySlug
           }
           frontmatter {
             title
-            date
             category
             description
           }

@@ -1,21 +1,19 @@
 ---
 title: Scalable Chess PWA with Deep Learning
-date: "2018-01-09T22:40:32.169Z"
 template: "post"
 draft: false
 slug: "scalable-chess-pwa-with-deep-learning"
-category: "DEVOPS"
+category: "DevOps"
 tags:
+  - "DevOps"
   - "Kubernetes"
   - "GCP"
   - "Tensorflow"
-  - "K8"
   - "Deep Learning"
   - "Artificial Intelligence"
 description: "Ever been annoyed with an app's price model or incessant ads or poor UI? Ever thought 'I could do this 
 better'? That is the position I found myself in when my father and I started to get involved with chess. Along this 
 journey I built some amazing friendships and learned more than I ever expected."
-socialImage: "/media/chessmates.png"
 ---
 
 - [What is ChessMates](#what-is-chessmates)

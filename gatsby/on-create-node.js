@@ -2,26 +2,28 @@
 
 const _ = require('lodash');
 const { createFilePath } = require('gatsby-source-filesystem');
+const path = require('path');
 
 const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark') {
-    if (typeof node.frontmatter.slug !== 'undefined') {
-      const dirname = getNode(node.parent).relativeDirectory;
-      createNodeField({
-        node,
-        name: 'slug',
-        value: `/${dirname}/${node.frontmatter.slug}`
-      });
-    } else {
-      const value = createFilePath({ node, getNode });
-      createNodeField({
-        node,
-        name: 'slug',
-        value
-      });
-    }
+    // Get metadata from file
+    const filePath = createFilePath({ node, getNode });
+    const filename = path.parse(filePath).base;
+    const date = filename.split('---')[0];
+
+    createNodeField({
+      node,
+      name: 'date',
+      value: date
+    });
+
+    createNodeField({
+      node,
+      name: 'slug',
+      value: filePath
+    });
 
     if (node.frontmatter.tags) {
       const tagSlugs = node.frontmatter.tags.map((tag) => `/tag/${_.kebabCase(tag)}/`);
