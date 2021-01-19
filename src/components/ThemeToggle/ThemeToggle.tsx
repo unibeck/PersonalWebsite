@@ -5,24 +5,26 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import styles from './ThemeToggle.module.scss';
 
 type Props = {
-  isIndex?: boolean,
+  className?: string
 };
 
-const ThemeToggle = ({ isIndex }: Props) => {
+const ThemeToggle = ({ className }: Props) => {
   return (
-    <ThemeToggler>
-      {({ theme, toggleTheme }) => (
-        <div className={styles["theme-toggle-button"]}>
-          <input
-            type="checkbox"
-            id="toggle"
-            onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-            checked={theme === 'dark'}
-          />
-          <label htmlFor="toggle"/>
-        </div>
-      )}
-    </ThemeToggler>
+    <div className={className}>
+      <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+          <div className={styles["theme-toggle-button"]}>
+            <input
+              type="checkbox"
+              id="toggle"
+              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+              checked={theme === 'dark'}
+            />
+            <label htmlFor="toggle"/>
+          </div>
+        )}
+      </ThemeToggler>
+    </div>
   );
 };
 

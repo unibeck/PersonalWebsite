@@ -22,7 +22,6 @@ const Sidebar = ({ isIndex }: Props) => {
         <Menu menu={menu} />
         <Contacts contacts={author.contacts} />
         <ThemeToggle/>
-        <Copyright copyright={copyright} />
       </div>
     </div>
   );

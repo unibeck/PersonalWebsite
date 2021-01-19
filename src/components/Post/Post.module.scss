@@ -14,26 +14,34 @@
     padding: 0 15px;
   }
 
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    @include margin-top(1);
+  }
+
   &__home-button {
-    display: block;
     max-width: 90px;
     height: $button-height;
     padding: 0 24px;
     line-height: $button-height;
-    text-align: center;
-    color: var(--v-color-base);
-    border: 1px solid $color-gray-border;
+    color: var(--v-color-primary-text);
+    border: 1px solid var(--v-color-border);
     border-radius: $button-border-radius;
     font-size: $typographic-base-font-size;
     font-weight: normal;
-    margin-left: auto;
-    margin-right: auto;
-    @include margin-top(1);
 
     &:hover,
     &:focus {
       color: var(--v-color-primary);
     }
+  }
+
+  &__theme-toggle {
+    padding: 0 24px;
   }
 }
 
@@ -47,7 +55,7 @@
       padding: 0;
     }
 
-    &__home-button {
+    &__menu {
       position: fixed;
       max-width: auto;
       margin: 0;
