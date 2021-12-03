@@ -82,6 +82,13 @@ ncu '/^(?!react).*$/' -u
 Here are some useful URLs:
 - https://search.google.com/search-console/about
 
+## Wishlist
+1) Status page
+- Include this website, along with other websites under my control (chessmates.io?)
+  - Interesting option (https://github.com/eidam/cf-workers-status-page)
+2) Terraform Cloudflare resources (migrate everything to cloudflare?)
+3) Terraform AWS resources
+
 ## Credits
 Built and owned by myself, Jonathan Beckman. All artwork and photographs, unless expressed otherwise, are owned by me. 
 Usage of images on this site is prohibited unless given consent. All inquiries should be sent to hello@jonbeckman.com.
