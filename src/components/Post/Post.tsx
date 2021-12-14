@@ -7,7 +7,7 @@ import Tags from './Tags';
 import type { Node } from '../../types';
 
 // @ts-ignore
-import styles from './Post.module.scss';
+import * as styles from './Post.module.scss';
 import ThemeToggle from "../ThemeToggle";
 
 type Props = {

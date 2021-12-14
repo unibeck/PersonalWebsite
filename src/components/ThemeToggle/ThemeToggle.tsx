@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 // @ts-ignore
-import styles from './ThemeToggle.module.scss';
+import * as styles from './ThemeToggle.module.scss';
 
 type Props = {
   className?: string

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 // @ts-ignore
-import styles from './Menu.module.scss';
+import * as styles from './Menu.module.scss';
 
 type MenuItem = {
   label: string,

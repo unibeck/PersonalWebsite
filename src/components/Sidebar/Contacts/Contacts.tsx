@@ -2,7 +2,7 @@ import React from 'react';
 import { getContactHref, getIcon } from '../../../utils';
 import Icon from '../../Icon';
 // @ts-ignore
-import styles from './Contacts.module.scss';
+import * as styles from './Contacts.module.scss';
 
 type Props = {
   contacts: {

@@ -1,6 +1,6 @@
 import React from 'react';
 // @ts-ignore
-import styles from './Content.module.scss';
+import * as styles from './Content.module.scss';
 
 type Props = {
   body: string,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { withPrefix, Link } from 'gatsby';
 // @ts-ignore
-import styles from './Author.module.scss';
+import * as styles from './Author.module.scss';
 
 type Props = {
   author: {

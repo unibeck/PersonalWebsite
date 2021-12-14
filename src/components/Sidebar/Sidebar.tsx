@@ -6,7 +6,7 @@ import Menu from './Menu';
 import ThemeToggle from "../ThemeToggle";
 import { useSiteMetadata } from '../../hooks';
 // @ts-ignore
-import styles from './Sidebar.module.scss';
+import * as styles from './Sidebar.module.scss';
 
 type Props = {
   isIndex?: boolean,

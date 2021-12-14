@@ -3,7 +3,7 @@ import { getContactHref } from '../../../utils';
 import { useSiteMetadata } from '../../../hooks';
 
 // @ts-ignore
-import styles from './Author.module.scss';
+import * as styles from './Author.module.scss';
 
 const Author = () => {
   const { author } = useSiteMetadata();

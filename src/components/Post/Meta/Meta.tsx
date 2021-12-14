@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 // @ts-ignore
-import styles from './Meta.module.scss';
+import * as styles from './Meta.module.scss';
 
 type Props = {
   date: string

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 // @ts-ignore
-import styles from './Tags.module.scss';
+import * as styles from './Tags.module.scss';
 
 type Props = {
   tags: string[],

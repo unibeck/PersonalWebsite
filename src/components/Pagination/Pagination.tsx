@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'gatsby';
 import { PAGINATION } from '../../constants';
 // @ts-ignore
-import styles from './Pagination.module.scss';
+import * as styles from './Pagination.module.scss';
 
 type Props = {
   prevPagePath: string,

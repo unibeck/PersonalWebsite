@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, ReactNode} from 'react';
 // @ts-ignore
-import styles from './Page.module.scss';
+import * as styles from './Page.module.scss';
 
 type Props = {
   title?: string,

@@ -4,7 +4,7 @@ import { withPrefix } from 'gatsby';
 import { ReactNode } from "react";
 import { useSiteMetadata } from '../../hooks';
 // @ts-ignore
-import styles from './Layout.module.scss';
+import * as styles from './Layout.module.scss';
 
 type Props = {
   children: ReactNode,

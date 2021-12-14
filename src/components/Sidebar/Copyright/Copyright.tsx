@@ -1,6 +1,6 @@
 import React from 'react';
 // @ts-ignore
-import styles from './Copyright.module.scss';
+import * as styles from './Copyright.module.scss';
 
 type Props = {
   copyright: string
