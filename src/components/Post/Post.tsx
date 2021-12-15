@@ -7,7 +7,6 @@ import Author from './Author';
 import Content from './Content';
 import Meta from './Meta';
 import * as styles from './Post.module.scss';
-import Tags from './Tags';
 
 type Props = {
   post: Node
@@ -36,8 +35,7 @@ const Post = ({ post }: Props) => {
       </div>
 
       <div className={styles.post__footer}>
-        <Meta date={date}/>
-        {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
+        <Meta date={date} tags={tags} tagSlugs={tagSlugs}/>
         <Author/>
       </div>
     </div>

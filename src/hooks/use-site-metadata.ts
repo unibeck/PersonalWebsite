@@ -27,7 +27,7 @@ const useSiteMetadata = () => {
             url
             title
             subtitle
-            copyright
+            disclaimer
           }
         }
       }
