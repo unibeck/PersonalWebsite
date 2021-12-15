@@ -202,15 +202,6 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         postCssPlugins: [...postCssPlugins],
-        implementation: require('node-sass'),
-        // cssLoaderOptions: {
-        //     camelCase: false,
-        // esModule: true,
-        // modules: {
-        //     exportLocalsConvention: 'camelCaseOnly'
-        // namedExport: true,
-        // },
-        // }
       }
     },
     'gatsby-plugin-optimize-svgs',

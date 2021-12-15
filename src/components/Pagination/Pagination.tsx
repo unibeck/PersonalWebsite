@@ -21,13 +21,13 @@ const Pagination = ({
   hasPrevPage
 }: Props) => {
   const prevClassName = cx({
-    'pagination__prev-link': true,
-    'pagination__prev-link--disable': !hasPrevPage
+    'pagination__prev_link': true,
+    'pagination__prev_link__disable': !hasPrevPage
   });
 
   const nextClassName = cx({
-    'pagination__next-link': true,
-    'pagination__next-link--disable': !hasNextPage
+    'pagination__next_link': true,
+    'pagination__next_link__disable': !hasNextPage
   });
 
   return (

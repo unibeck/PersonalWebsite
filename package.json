@@ -50,7 +50,6 @@
     "invariant": "^2.2.4",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "node-sass": "^6.0.1",
     "normalize-scss": "^7.0.1",
     "postcss": "^8.4.4",
     "prismjs": "^1.25.0",
