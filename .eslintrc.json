@@ -1,8 +1,10 @@
 {
-  "parser": "@typescript-eslint/parser",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "extends": [
-    "airbnb-base",
-    "plugin:@typescript-eslint/recommended"
+    "airbnb-base"
   ],
   "env": {
     "browser": true,
@@ -15,32 +17,18 @@
     "jest",
     "jsx-a11y",
     "import",
-    "simple-import-sort",
-    "@typescript-eslint"
+    "simple-import-sort"
   ],
   "settings": {
     "import/extensions": [
       ".js",
-      ".jsx",
-      ".ts",
-      ".tsx"
+      ".jsx"
     ],
-    "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
-    },
     "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true
-      },
       "node": {
         "extensions": [
           ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
+          ".jsx"
         ]
       }
     }
@@ -109,9 +97,58 @@
   },
   "overrides": [
     {
-      "files": ["**/*.js", "**/*.jsx"],
-      "rules": {
-        "@typescript-eslint/*": "off"
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+      },
+      "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import",
+        "simple-import-sort"
+      ],
+      "settings": {
+        "import/extensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "import/parsers": {
+          "@typescript-eslint/parser": [
+            ".ts",
+            ".tsx"
+          ]
+        },
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true
+          },
+          "node": {
+            "extensions": [
+              ".ts",
+              ".tsx"
+            ]
+          }
+        },
+        "react": {
+          "version": "detect"
+        }
       }
     }
   ]
