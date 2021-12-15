@@ -1,4 +1,4 @@
-image: cypress/browsers:node12.18.3-chrome83-ff77
+image: cypress/browsers:node16.5.0-chrome94-ff93
 
 stages:
   - build

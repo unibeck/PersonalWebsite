@@ -1,9 +1,9 @@
 import moment from 'moment';
 import React from 'react';
 
-import * as styles from './Meta.module.scss';
 import { useSiteMetadata } from '../../../hooks';
 import Tags from '../Tags';
+import * as styles from './Meta.module.scss';
 
 type Props = {
   date: string,
