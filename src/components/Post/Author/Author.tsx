@@ -8,11 +8,11 @@ const Author = () => {
   const { author } = useSiteMetadata();
 
   return (
-    <div className={styles['author']}>
-      <p className={styles['author__bio']}>
+    <div className={styles.author}>
+      <p className={styles.author__bio}>
         {author.bio}
         <a
-          className={styles['author__bio_metadata']}
+          className={styles.author__bio_metadata}
           href={getContactHref('linkedin', author.contacts.linkedin)}
           rel="noopener noreferrer"
           target="_blank"

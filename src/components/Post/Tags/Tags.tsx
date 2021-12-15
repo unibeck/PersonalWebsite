@@ -12,11 +12,11 @@ const Tags = ({
   tags,
   tagSlugs
 }: Props) => (
-  <div className={styles['tags']}>
-    <ul className={styles['tags__list']}>
+  <div className={styles.tags}>
+    <ul className={styles.tags__list}>
       {tagSlugs && tagSlugs.map((slug, i) => (
-        <li className={styles['tags__list-item']} key={tags[i]}>
-          <Link to={slug} className={styles['tags__list-item-link']}>
+        <li className={styles.tags__list_item} key={tags[i]}>
+          <Link to={slug} className={styles.tags__list_item_link}>
             {tags[i]}
           </Link>
         </li>

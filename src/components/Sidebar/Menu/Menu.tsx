@@ -14,10 +14,10 @@ type Props = {
 };
 
 const Menu = ({ menu }: Props) => (
-  <nav className={styles['menu']}>
-    <ul className={styles['menu__list']}>
+  <nav className={styles.menu}>
+    <ul className={styles.menu__list}>
       {menu.map((item) => (
-        <li className={styles['menu__list-item']} key={item.path}>
+        <li className={styles.menu__list_item} key={item.path}>
           {renderMenuLink(item)}
         </li>
       ))}
@@ -28,12 +28,12 @@ const Menu = ({ menu }: Props) => (
 const renderMenuLink = (item: MenuItem) => {
   if (item.isNotGatsbyPage) {
     return <a href={item.path}
-              className={styles['menu__list-item-link']}>{item.label}</a>;
+              className={styles.menu__list_item_link}>{item.label}</a>;
   }
   return <Link
     to={item.path}
-    className={styles['menu__list-item-link']}
-    activeClassName={styles['menu__list-item-link--active']}
+    className={styles.menu__list_item_link}
+    activeClassName={styles.menu__list_item_link__active}
   >
     {item.label}
   </Link>;

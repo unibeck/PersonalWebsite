@@ -53,9 +53,7 @@
     & img {
       max-width: 100%;
     }
-
   }
-
 }
 
 @include breakpoint-md {
@@ -79,9 +77,6 @@
         @include line-height(1.125);
         @include margin-bottom(1.125)
       }
-
     }
-
   }
-
 }

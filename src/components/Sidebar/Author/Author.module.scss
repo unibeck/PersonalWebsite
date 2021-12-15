@@ -2,6 +2,8 @@
 @import '../../../assets/scss/mixins';
 
 .author {
+  -noop-for-export: noop;
+
   &__photo {
     display: inline-block;
     margin-bottom: 0;

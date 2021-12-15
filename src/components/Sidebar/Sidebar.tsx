@@ -19,8 +19,8 @@ const Sidebar = ({ isIndex }: Props) => {
   } = useSiteMetadata();
 
   return (
-    <div className={styles['sidebar']}>
-      <div className={styles['sidebar__inner']}>
+    <div className={styles.sidebar}>
+      <div className={styles.sidebar__inner}>
         <Author author={author} isIndex={isIndex}/>
         <p>{copyright}</p>
         <Menu menu={menu}/>

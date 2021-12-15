@@ -2,6 +2,8 @@
 @import '../../assets/scss/mixins';
 
 .post {
+  -noop-for-export: noop;
+
   &__footer {
     max-width: $layout-post-width;
     margin: 0 auto;
@@ -24,7 +26,12 @@
     @include margin-top(1);
   }
 
-  &__home-button {
+  &__content {
+    //TODO: Figure out what style is missing here
+    -noop-for-export: noop;
+  }
+
+  &__home_button {
     height: $button-height;
     padding: 0 24px;
     line-height: $button-height;
@@ -40,7 +47,7 @@
     }
   }
 
-  &__theme-toggle {
+  &__theme_toggle {
     padding: 24px;
   }
 }

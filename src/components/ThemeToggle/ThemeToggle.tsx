@@ -14,7 +14,7 @@ const ThemeToggle = ({ className }: Props) => (
         theme,
         toggleTheme
       }) => (
-        <div className={styles['theme-toggle-button']}>
+        <div className={styles.theme_toggle_button}>
           <input
             type="checkbox"
             id="toggle"

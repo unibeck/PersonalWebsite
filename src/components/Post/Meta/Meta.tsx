@@ -8,8 +8,8 @@ type Props = {
 };
 
 const Meta = ({ date }: Props) => (
-  <div className={styles['meta']}>
-    <p className={styles['meta__date']}>Published on {moment(date)
+  <div className={styles.meta}>
+    <p className={styles.meta__date}>Published on {moment(date)
       .format('MMMM Do, YYYY')}</p>
   </div>
 );
