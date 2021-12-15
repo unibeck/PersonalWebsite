@@ -1,5 +1,5 @@
 import React from 'react';
-// @ts-ignore
+
 import * as styles from './Icon.module.scss';
 
 type Props = {
@@ -10,10 +10,13 @@ type Props = {
   }
 };
 
-const Icon = ({ name, icon }: Props) => (
+const Icon = ({
+  name,
+  icon
+}: Props) => (
   <svg className={styles['icon']} viewBox={icon.viewBox}>
     <title>{name}</title>
-    <path d={icon.path} />
+    <path d={icon.path}/>
   </svg>
 );
 

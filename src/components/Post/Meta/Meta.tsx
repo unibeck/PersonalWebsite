@@ -1,6 +1,6 @@
-import React from 'react';
 import moment from 'moment';
-// @ts-ignore
+import React from 'react';
+
 import * as styles from './Meta.module.scss';
 
 type Props = {
@@ -9,7 +9,8 @@ type Props = {
 
 const Meta = ({ date }: Props) => (
   <div className={styles['meta']}>
-    <p className={styles['meta__date']}>Published on {moment(date).format('MMMM Do, YYYY')}</p>
+    <p className={styles['meta__date']}>Published on {moment(date)
+      .format('MMMM Do, YYYY')}</p>
   </div>
 );
 

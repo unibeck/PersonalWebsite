@@ -1,14 +1,13 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
+
+import type { Node } from '../../types';
+import ThemeToggle from '../ThemeToggle';
 import Author from './Author';
 import Content from './Content';
 import Meta from './Meta';
-import Tags from './Tags';
-import type { Node } from '../../types';
-
-// @ts-ignore
 import * as styles from './Post.module.scss';
-import ThemeToggle from "../ThemeToggle";
+import Tags from './Tags';
 
 type Props = {
   post: Node
@@ -16,8 +15,14 @@ type Props = {
 
 const Post = ({ post }: Props) => {
   const { html } = post;
-  const { date, tagSlugs } = post.fields;
-  const { tags, title } = post.frontmatter;
+  const {
+    date,
+    tagSlugs
+  } = post.fields;
+  const {
+    tags,
+    title
+  } = post.frontmatter;
 
   return (
     <div className={styles['post']}>
@@ -27,13 +32,13 @@ const Post = ({ post }: Props) => {
       </div>
 
       <div className={styles['post__content']}>
-        <Content body={html} title={title} />
+        <Content body={html} title={title}/>
       </div>
 
       <div className={styles['post__footer']}>
-        <Meta date={date} />
-        {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
-        <Author />
+        <Meta date={date}/>
+        {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs}/>}
+        <Author/>
       </div>
     </div>
   );

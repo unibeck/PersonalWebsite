@@ -1,9 +1,10 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 
 :export {
-  @import '../../assets/scss/variables';
-  @import '../../assets/scss/mixins';
-
   .feed {
+    -noop-for-export: noop;
+
     &__item {
       @include margin-bottom(1.25);
 
@@ -35,6 +36,8 @@
       }
 
       &_meta {
+        -noop-for-export: noop;
+
         &_time {
           font-size: $typographic-small-font-size;
           color: var(--v-color-primary-text);
@@ -47,6 +50,8 @@
         }
 
         &_category {
+          -noop-for-export: noop;
+
           &_link {
             font-size: $typographic-small-font-size;
             color: var(--v-color-secondary);

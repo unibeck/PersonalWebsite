@@ -1,5 +1,5 @@
-import React, {useRef, useEffect, ReactNode} from 'react';
-// @ts-ignore
+import React, { ReactNode, useEffect, useRef } from 'react';
+
 import * as styles from './Page.module.scss';
 
 type Props = {
@@ -7,7 +7,10 @@ type Props = {
   children: ReactNode
 };
 
-const Page = ({ title, children }: Props) => {
+const Page = ({
+  title,
+  children
+}: Props) => {
   const pageRef = useRef(null);
 
   useEffect(() => {
@@ -17,7 +20,7 @@ const Page = ({ title, children }: Props) => {
   return (
     <div ref={pageRef} className={styles['page']}>
       <div className={styles['page__inner']}>
-        { title && <h1 className={styles['page__title']}>{title}</h1>}
+        {title && <h1 className={styles['page__title']}>{title}</h1>}
         <div className={styles['page__body']}>
           {children}
         </div>

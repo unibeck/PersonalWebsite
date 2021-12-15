@@ -1,16 +1,3 @@
-import type { ReactNode } from 'react';
-
-export type RenderCallback = {
-  // $FlowFixMe
-  render: (data: any) => ReactNode;
-}
-
-export type Entry = {
-  getIn: (string[]);
-}
-
-export type WidgetFor = (string) => string;
-
 export type PageContext = {
   tag: string,
   category: string,

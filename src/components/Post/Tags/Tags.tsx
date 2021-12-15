@@ -1,6 +1,6 @@
-import React from 'react';
 import { Link } from 'gatsby';
-// @ts-ignore
+import React from 'react';
+
 import * as styles from './Tags.module.scss';
 
 type Props = {
@@ -8,7 +8,10 @@ type Props = {
   tagSlugs: string[]
 };
 
-const Tags = ({ tags, tagSlugs }: Props) => (
+const Tags = ({
+  tags,
+  tagSlugs
+}: Props) => (
   <div className={styles['tags']}>
     <ul className={styles['tags__list']}>
       {tagSlugs && tagSlugs.map((slug, i) => (

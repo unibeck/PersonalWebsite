@@ -1,11 +1,10 @@
 import React from 'react';
+
+import { useSiteMetadata } from '../../hooks';
+import ThemeToggle from '../ThemeToggle';
 import Author from './Author';
 import Contacts from './Contacts';
-import Copyright from './Copyright';
 import Menu from './Menu';
-import ThemeToggle from "../ThemeToggle";
-import { useSiteMetadata } from '../../hooks';
-// @ts-ignore
 import * as styles from './Sidebar.module.scss';
 
 type Props = {
@@ -13,14 +12,19 @@ type Props = {
 };
 
 const Sidebar = ({ isIndex }: Props) => {
-  const { author, copyright, menu } = useSiteMetadata();
+  const {
+    author,
+    copyright,
+    menu
+  } = useSiteMetadata();
 
   return (
     <div className={styles['sidebar']}>
       <div className={styles['sidebar__inner']}>
-        <Author author={author} isIndex={isIndex} />
-        <Menu menu={menu} />
-        <Contacts contacts={author.contacts} />
+        <Author author={author} isIndex={isIndex}/>
+        <p>{copyright}</p>
+        <Menu menu={menu}/>
+        <Contacts contacts={author.contacts}/>
         <ThemeToggle/>
       </div>
     </div>

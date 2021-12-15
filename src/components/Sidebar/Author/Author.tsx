@@ -1,6 +1,6 @@
+import { Link, withPrefix } from 'gatsby';
 import React from 'react';
-import { withPrefix, Link } from 'gatsby';
-// @ts-ignore
+
 import * as styles from './Author.module.scss';
 
 type Props = {
@@ -12,7 +12,10 @@ type Props = {
   isIndex: boolean
 };
 
-const Author = ({ author, isIndex }: Props) => (
+const Author = ({
+  author,
+  isIndex
+}: Props) => (
   <div className={styles['author']}>
     <Link to="/">
       <img
@@ -24,13 +27,13 @@ const Author = ({ author, isIndex }: Props) => (
       />
     </Link>
 
-    { isIndex === true ? (
+    {isIndex === true ? (
       <h1 className={styles['author__title']}>
-        <Link className={styles['author__title-link']} to="/">{author.name}</Link>
+        <Link className={styles['author__title_link']} to="/">{author.name}</Link>
       </h1>
     ) : (
       <h2 className={styles['author__title']}>
-        <Link className={styles['author__title-link']} to="/">{author.name}</Link>
+        <Link className={styles['author__title_link']} to="/">{author.name}</Link>
       </h2>
     )}
     <p className={styles['author__subtitle']}>{author.bio}</p>

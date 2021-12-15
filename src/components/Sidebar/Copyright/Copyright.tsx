@@ -1,5 +1,5 @@
 import React from 'react';
-// @ts-ignore
+
 import * as styles from './Copyright.module.scss';
 
 type Props = {

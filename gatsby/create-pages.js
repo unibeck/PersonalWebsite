@@ -2,9 +2,9 @@
 
 const path = require('path');
 const _ = require('lodash');
-const createCategoriesPages = require('./pagination/create-categories-pages.js');
-const createTagsPages = require('./pagination/create-tags-pages.js');
-const createPostsPages = require('./pagination/create-posts-pages.js');
+const createCategoriesPages = require('./pagination/create-categories-pages');
+const createTagsPages = require('./pagination/create-tags-pages');
+const createPostsPages = require('./pagination/create-posts-pages');
 
 const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;

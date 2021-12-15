@@ -1,10 +1,11 @@
-import * as React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Sidebar from '../components/Sidebar';
+import * as React from 'react';
+
 import Feed from '../components/Feed';
+import Layout from '../components/Layout';
 import Page from '../components/Page';
 import Pagination from '../components/Pagination';
+import Sidebar from '../components/Sidebar';
 import { useSiteMetadata } from '../hooks';
 import type { AllMarkdownRemark, PageContext } from '../types';
 
@@ -13,8 +14,14 @@ type Props = {
   pageContext: PageContext
 };
 
-const TagTemplate = ({ data, pageContext }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+const TagTemplate = ({
+  data,
+  pageContext
+}: Props) => {
+  const {
+    title: siteTitle,
+    subtitle: siteSubtitle
+  } = useSiteMetadata();
 
   const {
     tag,
@@ -30,9 +37,9 @@ const TagTemplate = ({ data, pageContext }: Props) => {
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Sidebar />
+      <Sidebar/>
       <Page title={tag}>
-        <Feed edges={edges} />
+        <Feed edges={edges}/>
         <Pagination
           prevPagePath={prevPagePath}
           nextPagePath={nextPagePath}
