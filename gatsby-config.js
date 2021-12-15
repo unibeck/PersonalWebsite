@@ -117,12 +117,7 @@ module.exports = {
 
     // Parse all images files
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-sharp',
-      // options: {
-      //   icon: 'static/media/profile.jpg'
-      // },
-    },
+    'gatsby-plugin-sharp',
 
     {
       resolve: 'gatsby-plugin-google-gtag',
@@ -132,7 +127,6 @@ module.exports = {
           // Puts tracking script in the head instead of the body
           head: true,
 
-          // Setting this parameter is also optional
           respectDNT: true
         },
       },
