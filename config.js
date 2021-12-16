@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       label: 'Site Map',
-      path: '/sitemap.xml',
+      path: '/sitemap/sitemap-0.xml',
       isNotGatsbyPage: true
     }
   ],

@@ -1,4 +1,4 @@
-image: cypress/browsers:node16.5.0-chrome94-ff93
+image: cypress/browsers:node14.15.0-chrome86-ff82
 
 stages:
   - build
@@ -33,6 +33,8 @@ test:lighthouse:
   dependencies:
     - build
   script:
+    - npm install
+    - npm run build
     - ls -lah public/
   # Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
 # GitLab, however, it does not local. Thus you have to run it as part of this job
