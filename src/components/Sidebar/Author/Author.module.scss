@@ -2,6 +2,8 @@
 @import '../../../assets/scss/mixins';
 
 .author {
+  -noop-for-export: noop;
+
   &__photo {
     display: inline-block;
     margin-bottom: 0;
@@ -15,7 +17,7 @@
     @include line-height(1.125);
     @include margin(.5, 0, .5, 0);
 
-    &-link {
+    &_link {
       color: var(--v-color-primary-text);
 
       &:hover,

@@ -1,0 +1,155 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "extends": [
+    "airbnb-base"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "plugins": [
+    "react",
+    "jest",
+    "jsx-a11y",
+    "import",
+    "simple-import-sort"
+  ],
+  "settings": {
+    "import/extensions": [
+      ".js",
+      ".jsx"
+    ],
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    }
+  },
+  "globals": {
+    "graphql": true
+  },
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "comma-dangle": 0,
+    "global-require": 0,
+    "class-methods-use-this": 0,
+    "arrow-body-style": [
+      2,
+      "as-needed"
+    ],
+    "arrow-parens": [
+      "error",
+      "always"
+    ],
+    "no-restricted-exports": 0,
+    "import/imports-first": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-debugger": 0,
+    "dot-notation": 0,
+    "no-console": 0,
+    "new-cap": 0,
+    "strict": 0,
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ],
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "eol-last": 0,
+    "no-shadow": 0,
+    "quotes": [
+      2,
+      "single"
+    ],
+    "jsx-quotes": [
+      0,
+      "prefer-single"
+    ],
+    "react/jsx-no-undef": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+      },
+      "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import",
+        "simple-import-sort"
+      ],
+      "settings": {
+        "import/extensions": [
+          ".ts",
+          ".tsx"
+        ],
+        "import/parsers": {
+          "@typescript-eslint/parser": [
+            ".ts",
+            ".tsx"
+          ]
+        },
+        "import/resolver": {
+          "typescript": {
+            "alwaysTryTypes": true
+          },
+          "node": {
+            "extensions": [
+              ".ts",
+              ".tsx"
+            ]
+          }
+        },
+        "react": {
+          "version": "detect"
+        }
+      }
+    }
+  ]
+}

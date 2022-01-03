@@ -10,7 +10,9 @@
   @include margin-bottom(2);
 
   &__bio {
-    &-metadata {
+    -noop-for-export: noop;
+
+    &_metadata {
       display: block;
       text-decoration: underline;
     }
@@ -22,5 +24,4 @@
     margin-left: auto;
     margin-right: auto;
   }
-
 }

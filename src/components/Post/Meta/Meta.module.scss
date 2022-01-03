@@ -2,8 +2,9 @@
 @import '../../../assets/scss/mixins';
 
 .meta {
+  -noop-for-export: noop;
+
   &__date {
     font-style: italic;
   }
-
 }

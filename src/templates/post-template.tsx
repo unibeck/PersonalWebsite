@@ -1,5 +1,6 @@
-import React from 'react';
 import { graphql } from 'gatsby';
+import React from 'react';
+
 import Layout from '../components/Layout';
 import Post from '../components/Post';
 import { useSiteMetadata } from '../hooks';
@@ -12,14 +13,20 @@ type Props = {
 };
 
 const PostTemplate = ({ data }: Props) => {
-  const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+  const {
+    title: siteTitle,
+    subtitle: siteSubtitle
+  } = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
-  const { title: postTitle, description: postDescription } = frontmatter;
+  const {
+    title: postTitle,
+    description: postDescription
+  } = frontmatter;
   const metaDescription = postDescription !== null ? postDescription : siteSubtitle;
 
   return (
-    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription} >
-      <Post post={data.markdownRemark} />
+    <Layout title={`${postTitle} - ${siteTitle}`} description={metaDescription}>
+      <Post post={data.markdownRemark}/>
     </Layout>
   );
 };

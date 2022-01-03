@@ -14,7 +14,7 @@
     margin: 10px -3px 0px;
     width: 140px;
 
-    &-item {
+    &_item {
       padding: 0;
       margin: 4px;
       display: flex;
@@ -28,11 +28,11 @@
       text-align: center;
       border: 1px solid var(--v-color-border);
 
-      &-link {
+      &_link {
         border: 0;
         display: flex;
         color: var(--v-color-primary-text);
-  
+
         &:hover,
         &:focus {
           color: var(--v-color-primary);

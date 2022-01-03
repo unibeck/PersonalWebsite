@@ -1,63 +1,63 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
 
-.theme-toggle-button {
+.theme_toggle_button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before,
+  &:after {
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+
+  label {
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: $color-dark-mode-secondary-background;
+    overflow: hidden;
+    cursor: pointer;
 
     &:before,
     &:after {
-        box-sizing: border-box;
+      display: block;
+      position: absolute;
+      content: '';
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: 0.3s ease;
     }
 
-    label {
-        position: relative;
-        display: block;
-        width: 45px;
-        height: 25px;
-        border-radius: 100px;
-        background-color: $color-dark-mode-secondary-background;
-        overflow: hidden;
-        cursor: pointer;
-
-        &:before,
-        &:after {
-            display: block;
-            position: absolute;
-            content: '';
-            width: 19px;
-            height: 19px;
-            border-radius: 50%;
-            top: 3px;
-            left: 3px;
-            transition: 0.3s ease;
-        }
-
-        &:before {
-            background-color: $color-light-mode-secondary;
-        }
-
-        &:after {
-            background-color: $color-dark-mode-secondary-background;
-            left: -58px;
-            transform: scale(0.1);
-        }
+    &:before {
+      background-color: $color-light-mode-secondary;
     }
 
-    input[type='checkbox'] {
-        display: none;
-
-        &:checked + label {
-            &:before {
-                background-color: $color-light-mode-primary;
-                transform: translateX(20px);
-            }
-
-            &:after {
-                transform: translateX(75px) scale(1);
-            }
-        }
+    &:after {
+      background-color: $color-dark-mode-secondary-background;
+      left: -58px;
+      transform: scale(0.1);
     }
+  }
+
+  input[type='checkbox'] {
+    display: none;
+
+    &:checked + label {
+      &:before {
+        background-color: $color-light-mode-primary;
+        transform: translateX(20px);
+      }
+
+      &:after {
+        transform: translateX(75px) scale(1);
+      }
+    }
+  }
 }

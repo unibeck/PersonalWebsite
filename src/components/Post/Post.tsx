@@ -1,14 +1,12 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
+
+import type { Node } from '../../types';
+import ThemeToggle from '../ThemeToggle';
 import Author from './Author';
 import Content from './Content';
 import Meta from './Meta';
-import Tags from './Tags';
-import type { Node } from '../../types';
-
-// @ts-ignore
-import styles from './Post.module.scss';
-import ThemeToggle from "../ThemeToggle";
+import * as styles from './Post.module.scss';
 
 type Props = {
   post: Node
@@ -16,24 +14,29 @@ type Props = {
 
 const Post = ({ post }: Props) => {
   const { html } = post;
-  const { date, tagSlugs } = post.fields;
-  const { tags, title } = post.frontmatter;
+  const {
+    date,
+    tagSlugs
+  } = post.fields;
+  const {
+    tags,
+    title
+  } = post.frontmatter;
 
   return (
-    <div className={styles['post']}>
-      <div className={styles['post__menu']}>
-        <Link className={styles['post__home-button']} to="/">All Articles</Link>
-        <ThemeToggle className={styles['post__theme-toggle']}/>
+    <div className={styles.post}>
+      <div className={styles.post__menu}>
+        <Link className={styles.post__home_button} to="/">All Articles</Link>
+        <ThemeToggle className={styles.post__theme_toggle}/>
       </div>
 
-      <div className={styles['post__content']}>
-        <Content body={html} title={title} />
+      <div className={styles.post__content}>
+        <Content body={html} title={title}/>
       </div>
 
-      <div className={styles['post__footer']}>
-        <Meta date={date} />
-        {tags && tagSlugs && <Tags tags={tags} tagSlugs={tagSlugs} />}
-        <Author />
+      <div className={styles.post__footer}>
+        <Meta date={date} tags={tags} tagSlugs={tagSlugs}/>
+        <Author/>
       </div>
     </div>
   );

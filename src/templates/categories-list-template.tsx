@@ -1,18 +1,22 @@
-import * as React from 'react';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
-import Sidebar from '../components/Sidebar';
+import * as React from 'react';
+
 import Layout from '../components/Layout';
 import Page from '../components/Page';
-import { useSiteMetadata, useCategoriesList } from '../hooks';
+import Sidebar from '../components/Sidebar';
+import { useCategoriesList, useSiteMetadata } from '../hooks';
 
 const CategoriesListTemplate = () => {
-  const { title, subtitle } = useSiteMetadata();
+  const {
+    title,
+    subtitle
+  } = useSiteMetadata();
   const categories = useCategoriesList();
 
   return (
     <Layout title={`Categories - ${title}`} description={subtitle}>
-      <Sidebar />
+      <Sidebar/>
       <Page title="Categories">
         <ul>
           {categories.map((category) => (

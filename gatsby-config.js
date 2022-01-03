@@ -1,15 +1,16 @@
 'use strict';
 
-const siteConfig = require('./config.js');
-const postCssPlugins = require('./postcss-config.js');
+const siteConfig = require('./config');
+const postCssPlugins = require('./postcss-config');
 
 module.exports = {
   pathPrefix: siteConfig.pathPrefix,
   siteMetadata: {
     url: siteConfig.url,
+    siteUrl: siteConfig.url,
     title: siteConfig.title,
     subtitle: siteConfig.subtitle,
-    copyright: siteConfig.copyright,
+    disclaimer: siteConfig.disclaimer,
     menu: siteConfig.menu,
     author: siteConfig.author
   },
@@ -99,8 +100,7 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 960,
-              withWebp: true,
-              ignoreFileExtensions: [],
+              withWebp: true
             }
           },
           {
@@ -118,12 +118,7 @@ module.exports = {
 
     // Parse all images files
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        icon: 'static/media/profile.jpg'
-      },
-    },
+    'gatsby-plugin-sharp',
 
     {
       resolve: 'gatsby-plugin-google-gtag',
@@ -133,49 +128,17 @@ module.exports = {
           // Puts tracking script in the head instead of the body
           head: true,
 
-          // Setting this parameter is also optional
           respectDNT: true
         },
       },
     },
+
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: siteConfig.url,
-        sitemap: `${siteConfig.url}/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }]
-      }
-    },
-
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                siteUrl: url
-              }
-            }
-            allSitePage(
-              filter: {
-                path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-              }
-            ) {
-              edges {
-                node {
-                  path
-                }
-              }
-            }
-          }
-        `,
-        output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.siteUrl + edge.node.path,
-          changefreq: 'daily',
-          priority: 0.7
-        }))
       }
     },
 
@@ -203,9 +166,6 @@ module.exports = {
       resolve: 'gatsby-plugin-sass',
       options: {
         postCssPlugins: [...postCssPlugins],
-        cssLoaderOptions: {
-          camelCase: false,
-        }
       }
     },
     'gatsby-plugin-optimize-svgs',

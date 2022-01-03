@@ -5,7 +5,8 @@ module.exports = {
   pathPrefix: '/',
   title: 'Jonathan Beckman',
   subtitle: 'Personal Website & Blog of Jonathan Beckman',
-  copyright: 'Copyright © Jonathan Beckman 2021. All rights reserved.',
+  disclaimer: 'Views expressed within are of my own, they may or may not reflect the opinion of '
+    + 'my employer. Copyright © Jonathan Beckman 2022. All rights reserved.',
   postsPerPage: 3,
   googleAnalyticsId: 'UA-89697804-1',
   menu: [
@@ -28,7 +29,7 @@ module.exports = {
     },
     {
       label: 'Site Map',
-      path: '/sitemap.xml',
+      path: '/sitemap/sitemap-0.xml',
       isNotGatsbyPage: true
     }
   ],

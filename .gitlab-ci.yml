@@ -1,4 +1,4 @@
-image: cypress/browsers:node12.18.3-chrome83-ff77
+image: cypress/browsers:node14.15.0-chrome86-ff82
 
 stages:
   - build
@@ -28,21 +28,21 @@ test:lint:
     - npm install --include=dev
     - npm run lint
 
-test:lighthouse:
-  stage: test
-  dependencies:
-    - build
-  script:
-    - ls -lah public/
-  # Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
-# GitLab, however, it does not local. Thus you have to run it as part of this job
-#    - npm run build
-    - npm install --include=dev
-    - npm run lighthouse
-    - ls -lah .lighthouseci/
-  artifacts:
-    paths:
-      - .lighthouseci/*.html
+#test:lighthouse:
+#  stage: test
+#  dependencies:
+#    - build
+#  script:
+#    - ls -lah public/
+#  # Uncomment when running and testing this pipeline locally. The build occurs earlier in the pipeline when running on
+## GitLab, however, it does not local. Thus you have to run it as part of this job
+##    - npm run build
+#    - npm install --include=dev
+#    - npm run lighthouse
+#    - ls -lah .lighthouseci/
+#  artifacts:
+#    paths:
+#      - .lighthouseci/*.html
 
 deploy:staging:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest

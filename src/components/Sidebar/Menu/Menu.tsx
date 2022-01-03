@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from 'gatsby';
-// @ts-ignore
-import styles from './Menu.module.scss';
+import React from 'react';
+
+import * as styles from './Menu.module.scss';
 
 type MenuItem = {
   label: string,
@@ -13,11 +13,11 @@ type Props = {
   menu: MenuItem[]
 };
 
-const Menu = ({menu}: Props) => (
-  <nav className={styles['menu']}>
-    <ul className={styles['menu__list']}>
+const Menu = ({ menu }: Props) => (
+  <nav className={styles.menu}>
+    <ul className={styles.menu__list}>
       {menu.map((item) => (
-        <li className={styles['menu__list-item']} key={item.path}>
+        <li className={styles.menu__list_item} key={item.path}>
           {renderMenuLink(item)}
         </li>
       ))}
@@ -28,16 +28,15 @@ const Menu = ({menu}: Props) => (
 const renderMenuLink = (item: MenuItem) => {
   if (item.isNotGatsbyPage) {
     return <a href={item.path}
-              className={styles['menu__list-item-link']}>{item.label}</a>
-  } else {
-    return <Link
-      to={item.path}
-      className={styles['menu__list-item-link']}
-      activeClassName={styles['menu__list-item-link--active']}
-    >
-      {item.label}
-    </Link>
+              className={styles.menu__list_item_link}>{item.label}</a>;
   }
-}
+  return <Link
+    to={item.path}
+    className={styles.menu__list_item_link}
+    activeClassName={styles.menu__list_item_link__active}
+  >
+    {item.label}
+  </Link>;
+};
 
 export default Menu;

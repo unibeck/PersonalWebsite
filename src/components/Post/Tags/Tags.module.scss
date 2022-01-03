@@ -9,11 +9,11 @@
     margin: 0 -10px;
     padding: 0;
 
-    &-item {
+    &_item {
       display: inline-block;
       margin: 10px 5px;
 
-      &-link {
+      &_link {
         display: inline-block;
         height: $button-height;
         padding: 0 24px;

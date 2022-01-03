@@ -71,6 +71,9 @@ There is a convenient called `npm-check-updates` which updates the dependencies 
 detailed report of what major, minor, and patch versions changed. Run `npm install -g npm-check-updates`to install it. 
 Some common commands to run are:
 ```
+# Run audit of packages
+ncu
+
 # Update all packages to the latest minor and patch versions
 ncu --target minor -u
 

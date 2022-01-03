@@ -2,6 +2,7 @@ ci:
   collect:
     additive: false
     start-server-command: gatsby serve
+    start-server-ready-pattern: "localhost:9000"
     url: http://localhost:9000/
     settings:
       chromeFlags: --no-sandbox
