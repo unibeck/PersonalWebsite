@@ -16,7 +16,7 @@ const useSiteMetadata = () => {
                 gitlab
                 github
                 medium
-                phone
+                status
               }
             }
             menu {

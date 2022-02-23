@@ -20,6 +20,9 @@ const getContactHref = (name: string, contact: string) => {
     case 'medium':
       href = `https://medium.com/@${contact}`;
       break;
+    case 'status':
+      href = `https://${contact}/`;
+      break;
     default:
       href = contact;
       break;

@@ -44,6 +44,7 @@ module.exports = {
       github: 'unibeck',
       medium: 'jonathantbeckman',
       phone: '6784041601',
+      status: 'status.jonbeckman.com',
     }
   }
 };

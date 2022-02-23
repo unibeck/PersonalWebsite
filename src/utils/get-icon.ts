@@ -25,6 +25,9 @@ const getIcon = (name: string) => {
     case 'medium':
       icon = ICONS.MEDIUM;
       break;
+    case 'status':
+      icon = ICONS.STATUS;
+      break;
     default:
       icon = {};
       break;
