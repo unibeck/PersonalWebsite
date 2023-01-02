@@ -1,4 +1,4 @@
-name: Build and Lint
+name: Lint and Build
 
 on:
   pull_request:
@@ -6,29 +6,18 @@ on:
     types: [ opened, synchronize ]
 
 jobs:
-  build:
+  lint_and_build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+      - name: Lint
+        run: npm run lint
       - name: Build
         run: npm run build
       - name: Save build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: public
           path: public/
-
-  lint:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
-        with:
-          name: public
-      - name: Install dev dependencies
-        run: npm install --include=dev
-      - name: Lint
-        run: npm run lint
