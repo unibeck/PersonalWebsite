@@ -2,6 +2,10 @@
 .idea/
 *.iml
 
+# VS Code
+.vscode/
+.DS_Store
+
 # Node / NPM
 node_modules/
 npm-debug.log
