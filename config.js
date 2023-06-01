@@ -8,7 +8,7 @@ module.exports = {
   disclaimer: 'Views expressed within are of my own, they may or may not reflect the opinion of '
     + 'my employer. Copyright © Jonathan Beckman 2022. All rights reserved.',
   postsPerPage: 3,
-  googleAnalyticsId: 'UA-89697804-1',
+  googleAnalyticsId: 'G-NV3GRHNDN2',
   menu: [
     {
       label: 'Articles',
